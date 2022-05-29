@@ -32,6 +32,7 @@ public class Letter {
         letterContent=content;
         letterPos=pos;
         letterColor=LetterColor.Black;
+
     }
 
     /**

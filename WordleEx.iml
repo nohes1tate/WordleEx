@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/word" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/algorithm" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/TestDir" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

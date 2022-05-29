@@ -1,12 +1,11 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 单词列表
- * 包含合法的输入单词和可以成为答案的单词
+ * 包含合法输入单词和可以成为答案的单词
  *
  * @author 宋益康
  */
@@ -22,7 +21,7 @@ public class WordList {
     private WordList(){}
 
     /**
-     * 合法的输入单词
+     * 合法输入单词
      */
     static Set<String> LegalWord = new HashSet<>();
 
@@ -30,6 +29,11 @@ public class WordList {
      * 可能为答案的单词
      */
     static Set<String> PossibleWord = new HashSet<>();
+
+    /**
+     * 单词权重
+     */
+    static HashMap<String,Double> WordPrior = new HashMap<>();
 
     /**
      * 读单词
@@ -48,5 +52,66 @@ public class WordList {
         }
         br.close();
         return WordSet;
+    }
+
+    /**
+     * 读入单词对应的词频
+     *
+     * @param fileName 文件名称
+     * @return {@link HashMap}<{@link String}, {@link Double}>
+     * @throws IOException 抛出IO异常
+     */
+    public static HashMap<String,Double> ReadPrior(String fileName) throws IOException {
+        HashMap<String,Double> PriorMap = new HashMap<>();
+        ArrayList<WordWithFreq> wfList = new ArrayList<>();
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        String freqFile;
+        freqFile = br.readLine();
+        String[] nani = freqFile.split(",");
+        for(String str:nani){
+            str = str.replace("\"","");
+            str = str.replace("{","");
+            str = str.replace("}","");
+            str = str.replace(" ","");
+            String[] WandF = str.split(":");
+            String word = WandF[0];
+            double freq = Double.parseDouble(WandF[1]);
+            wfList.add(new WordWithFreq(word,freq));
+        }
+        Collections.sort(wfList);
+        for(int i=0;i< wfList.size();i++){
+            int nCommon = 3000;
+            int sigmoidWidth = 10;
+            double x;
+            double prior;
+            x=sigmoidWidth*(-0.5+((double)i -(double) nCommon)/(double) wfList.size());
+            WordWithFreq wf =wfList.get(i);
+            prior=Utils.sigmoid(x);
+            PriorMap.put(wf.word,prior);
+        }
+        return PriorMap;
+    }
+}
+
+/**
+ * 保存单词及其频率
+ *
+ * @author 宋益康
+ */
+class WordWithFreq implements Comparable<WordWithFreq>{
+    String word;
+    double freq;
+    WordWithFreq(String w,double f){
+        word=w;
+        freq=f;
+    }
+
+    @Override
+    public int compareTo(WordWithFreq w){
+        if(this.freq>w.freq)
+            return 1;
+        else if(this.freq== w.freq)
+            return 0;
+        return -1;
     }
 }
