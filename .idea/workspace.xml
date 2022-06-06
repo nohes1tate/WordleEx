@@ -5,23 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="basic function">
-      <change afterPath="$PROJECT_DIR$/src/Data/freq_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestDir/naniTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algorithm/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/AniLetter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/menuScreen.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WordleEx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WordleEx.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/Letter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Letter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/WordList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Letter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Letter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LetterIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterIOException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordIllegalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordIllegalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordSizeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordSizeException.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,11 +28,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -50,26 +52,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Data" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/IdeaProjects/WordleEx/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.wordleex.HelloApplication" />
       <module name="WordleEx" />
@@ -86,7 +88,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="WordleEx" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\JavaFX\javafx-sdk-18\lib&quot; --add-modules javafx.controls,javafx.fxml" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\JavaFX\javafx-sdk-17.0.2\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,17 +108,15 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.naniTest" />
+      <item itemvalue="应用程序.HelloApplication" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.Test" />
+      <item itemvalue="应用程序.naniTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.naniTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -137,6 +137,7 @@
       <workItem from="1653655065606" duration="287000" />
       <workItem from="1653700967604" duration="6596000" />
       <workItem from="1653782154243" duration="10560000" />
+      <workItem from="1654502867795" duration="10825000" />
     </task>
     <servers />
   </component>
@@ -159,15 +160,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="basic function" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="WordList.WordPrior" language="JAVA" />
