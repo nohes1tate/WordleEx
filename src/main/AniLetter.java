@@ -10,7 +10,7 @@ public class AniLetter {
     Text text;
     FadeTransition ft = new FadeTransition();
     AniLetter (String s){
-        text = new Text(s);
+        text = new Text(s.toUpperCase());
         text.setFont(Font.font("verdana", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
         text.setFill(Color.gray(0.9));
         ft.setNode(text);

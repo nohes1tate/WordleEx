@@ -1,27 +1,14 @@
-import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.Objects;
 
 public class Main extends Application {
@@ -63,32 +50,39 @@ public class Main extends Application {
                 AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 100.0 + index * 100.0);
                 AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 100.0 + line * 100);
                 aniLetters[index].ft.play();
+
                 index += 1;
                 System.out.println(testword.WordContent);
 
                 if (testword.letters.size() == 5) {
                     try {
                         index = 0;
-                        line ++;
+                        line++;
                         testword.CheckAns(ans);
                         System.out.println(testword.ShowColor());
-                        for(int i=0;i<5;i++){
-                            if(testword.letters.get(i).letterColor==LetterColor.Green){
+                        for (int i = 0; i < 5; i++) {
+                            if (testword.letters.get(i).letterColor == LetterColor.Green) {
                                 aniLetters[i].text.setFill(Color.GREEN);
                             }
-                            if(testword.letters.get(i).letterColor==LetterColor.Yellow){
+                            if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
                                 aniLetters[i].text.setFill(Color.YELLOW);
                             }
                         }
-                        for(int i=0;i<5;i++){
+                        for (int i = 0; i < 5; i++) {
                             testword.RemoveLetter();
                         }
 
                     } catch (Exception e) {
                         //throw new RuntimeException(e);
                         System.out.println("Not in the list");
-                        for(int i=0;i<5;i++){
+                        for (int i = 0; i < 5; i++) {
+                            if (testword.letters.get(i).letterColor == LetterColor.Black) {
+                                aniLetters[i].text.setFill(Color.BLANCHEDALMOND);
+                            }
+                        }
+                        for (int i = 0; i < 5; i++) {
                             testword.RemoveLetter();
+                            pane.getChildren().remove(aniLetters[i].ft.getNode());
                         }
                     }
                 }
