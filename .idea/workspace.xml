@@ -4,24 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="basic function">
-      <change afterPath="$PROJECT_DIR$/src/Data/freq_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestDir/naniTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/algorithm/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/allowed_words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/possible_words.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/word/Letter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/word/LetterColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/word/Word.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WordleEx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WordleEx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/Letter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Letter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/WordList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Letter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Letter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LetterIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterIOException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordleex/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wordleex/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/wordleex/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/wordleex/HelloApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/wordleex/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/wordleex/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,14 +62,11 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="com.star.easydoc.view.template.ClassConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Test">
@@ -86,7 +86,6 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="WordleEx" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\JavaFX\javafx-sdk-18\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -98,23 +97,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="naniTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="naniTest" />
-      <module name="WordleEx" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.naniTest" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.naniTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.HelloApplication" />
       </list>
@@ -129,14 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1650375842923</updated>
       <workItem from="1650375843003" duration="1275000" />
-      <workItem from="1653198377145" duration="16052000" />
-      <workItem from="1653449527897" duration="695000" />
-      <workItem from="1653643590526" duration="2473000" />
-      <workItem from="1653646119075" duration="2032000" />
-      <workItem from="1653650061497" duration="1435000" />
-      <workItem from="1653655065606" duration="287000" />
-      <workItem from="1653700967604" duration="6596000" />
-      <workItem from="1653782154243" duration="10560000" />
+      <workItem from="1653198377145" duration="14207000" />
     </task>
     <servers />
   </component>
@@ -154,29 +132,31 @@
       </map>
     </option>
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="basic function" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic function" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/Main.java</url>
-          <line>11</line>
+          <line>4</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Test.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Test.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="WordList.WordPrior" language="JAVA" />
-        <watch expression="GuessAlgorithm.wsList" language="JAVA" />
+        <watch expression="WordList.PossibleWord" language="JAVA" />
+        <watch expression="testWord" language="JAVA" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
