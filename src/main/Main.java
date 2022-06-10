@@ -115,6 +115,9 @@ public class Main extends Application {
                                 }
                             }
                         }
+                        else{
+                            System.out.println("not enough letter!");
+                        }
                     }
 
                 } catch (Exception e) {
