@@ -96,6 +96,10 @@ public class Word {
         return sb.toString();
     }
 
+    public static boolean CheckInList(String content) {
+        return WordList.LegalWord.contains(content);
+    }
+
     /**
      * 检查输入答案并对字母着色
      * 字母着色规则见LetterColor
@@ -111,7 +115,7 @@ public class Word {
         }
         else {
             String wordContent = this.WordContent.toString();
-            if(!WordList.LegalWord.contains(wordContent)){
+            if(!CheckInList(wordContent)){
                 throw new WordIllegalException("Not in the word list");
             }
             else {
