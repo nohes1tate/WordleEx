@@ -60,8 +60,8 @@ public class Main extends Application {
                         testword.AddLetter(toAddLetter);
                         aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
                         pane.getChildren().add(aniLetters[index].ft.getNode());
-                        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 60.0 + index * 60.0);
-                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 60.0 + line * 60.);
+                        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
                         aniLetters[index].ft.play();
                         index += 1;
                         System.out.println(testword.WordContent);
