@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="basic function">
-      <change afterPath="$PROJECT_DIR$/src/main/AniLetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/menuScreen.png" afterDir="false" />
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="make some adjustment">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Word.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordIllegalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordIllegalException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordSizeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordSizeException.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +31,7 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,6 +43,13 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -75,9 +74,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="WordleEx" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\JavaFX\javafx-sdk-18\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,18 +97,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.HelloApplication" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.HelloApplication" />
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.naniTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.HelloApplication" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -128,7 +121,33 @@
       <workItem from="1653700967604" duration="6596000" />
       <workItem from="1653782154243" duration="10560000" />
       <workItem from="1654502867795" duration="10825000" />
+      <workItem from="1654528669522" duration="1184000" />
+      <workItem from="1654530024195" duration="729000" />
+      <workItem from="1654709314006" duration="4059000" />
+      <workItem from="1654901364999" duration="401000" />
     </task>
+    <task id="LOCAL-00001" summary="merge">
+      <created>1654525263964</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1654525263964</updated>
+    </task>
+    <task id="LOCAL-00002" summary="make some adjustment">
+      <created>1654713210637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654713210637</updated>
+    </task>
+    <task id="LOCAL-00003" summary="make some adjustment">
+      <created>1654901414811</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654901414812</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,7 +158,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -147,7 +178,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic function" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic function" />
+    <MESSAGE value="merge" />
+    <MESSAGE value="make some adjustment" />
+    <option name="LAST_COMMIT_MESSAGE" value="make some adjustment" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
