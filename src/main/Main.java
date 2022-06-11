@@ -383,13 +383,13 @@ public class Main extends Application {
                                     AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
                                     aniStrings.get(aniStrings.size() - 1).ft.play();
 
-                                    aniStrings.add(new AniString("" + GuessAlgorithm.possibilities + "/", Color.WHITE));
+                                    aniStrings.add(new AniString("" + GuessAlgorithm.possibilities , Color.WHITE));
                                     pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
                                     AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
                                     AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
                                     aniStrings.get(aniStrings.size() - 1).ft.play();
 
-                                    aniStrings.add(new AniString("E:", Color.SKYBLUE));
+                                    aniStrings.add(new AniString("/ E:", Color.SKYBLUE));
                                     pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
                                     AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
                                     AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
