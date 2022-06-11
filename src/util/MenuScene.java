@@ -59,6 +59,7 @@ public class MenuScene {
      * @throws Exception “Ï≥£
      */
     public void backToMenu() throws Exception {
+        GuessAlgorithm.isFirst= true;
         Parent normalLayout = FXMLLoader.load(Main.class.getResource("/resources/menuScene.fxml"));
         Main.setMainMenuScene(new Scene(normalLayout));
         Main.backMainMenu();
