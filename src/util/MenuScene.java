@@ -28,4 +28,10 @@ public class MenuScene {
         Main.setMainMenuScene(new Scene(normalLayout));
         Main.startNormalMode();
     }
+
+    public void backToMenu() throws Exception {
+        Parent normalLayout = FXMLLoader.load(Main.class.getResource("/resources/menuScene.fxml"));
+        Main.setMainMenuScene(new Scene(normalLayout));
+        Main.backMainMenu();
+    }
 }
