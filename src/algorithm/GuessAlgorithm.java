@@ -2,8 +2,14 @@ import java.util.*;
 
 public class GuessAlgorithm {
 
+    /**
+     * 保存颜色状态的可视化信息
+     */
     static ArrayList<StatusInfo> StateInfoList;
 
+    /**
+     * 保存当前剩余的可能的单词的几率
+     */
     static ArrayList<WordWithChance> PossibleWordChance;
 
     /**
@@ -185,6 +191,13 @@ public class GuessAlgorithm {
         return res;
     }
 
+    /**
+     * 获取所猜测的单词对应的状态信息
+     *
+     * @param guessWord    猜词
+     * @param PossibleWord 可能词
+     * @throws Exception 异常
+     */
     public static void getWordStatusInfo(String guessWord, Set<String> PossibleWord) throws Exception{
         int[] guessTimes = new int[3*3*3*3*3];
         int sum=0;
@@ -219,6 +232,12 @@ public class GuessAlgorithm {
 }
 
 
+/**
+ * 状态的颜色
+ *
+ * @author 86153
+ * @date 2022/06/11
+ */
 class StatusColor {
     LetterColor[] color;
     StatusColor(LetterColor[] sColor){
@@ -253,6 +272,12 @@ public int compareTo(WordWithScore w){
         }
 }
 
+/**
+ * 状态信息
+ *
+ * @author 86153
+ * @date 2022/06/11
+ */
 class StatusInfo  implements Comparable<StatusInfo>{
     int times;
     int sum;

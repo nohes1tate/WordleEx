@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="make some adjustment">
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="finish some visible data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/WordList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordList.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordWithFreq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithFreq.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordWithScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithScore.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +128,7 @@
       <workItem from="1654530024195" duration="729000" />
       <workItem from="1654709314006" duration="4059000" />
       <workItem from="1654901364999" duration="867000" />
-      <workItem from="1654902260019" duration="9694000" />
+      <workItem from="1654902260019" duration="11137000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -172,7 +165,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654903017507</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="finish some visible data">
+      <created>1654912069036</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1654912069036</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,18 +205,10 @@
     <MESSAGE value="basic function" />
     <MESSAGE value="merge" />
     <MESSAGE value="make some adjustment" />
-    <option name="LAST_COMMIT_MESSAGE" value="make some adjustment" />
+    <MESSAGE value="finish some visible data" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish some visible data" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/Test.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="WordList.WordPrior" language="JAVA" />
