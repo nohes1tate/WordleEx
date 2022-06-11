@@ -8,7 +8,7 @@ public class AniLetter {
     FadeTransition ft = new FadeTransition();
     AniLetter (String s){
         text = new Text(s);
-        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 60));
+        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 50));
         text.setTextAlignment(TextAlignment.JUSTIFY);
         text.setFill(Color.gray(0.9));
         ft.setNode(text);

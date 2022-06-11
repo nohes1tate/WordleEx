@@ -18,10 +18,11 @@ public class MenuScene {
         Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
     }
 
-    public void test() throws Exception {
-        System.out.println("test");
-    }
-
+    /**
+     * 开始正常按钮
+     *
+     * @throws Exception 异常
+     */
     public void startNormalButton() throws Exception {
         Parent normalLayout = FXMLLoader.load(Main.class.getResource("/resources/mainScene.fxml"));
         Main.setMainMenuScene(new Scene(normalLayout));

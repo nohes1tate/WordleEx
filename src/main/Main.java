@@ -100,11 +100,11 @@ public class Main extends Application {
     public void start(Stage menuStage) throws Exception {
         menuStage.setTitle("WORDLE-EX");
         menuStage.setResizable(false);
-        menuStage.setAlwaysOnTop(true);
+        menuStage.setAlwaysOnTop(false);
 
         mainWindow = menuStage;
         mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
-        mainMenuScene = new Scene(mainMenuLayout, 1280, 720);
+        mainMenuScene = new Scene(mainMenuLayout, 1280, 800);
 
         menuStage.setScene(mainMenuScene);
         menuStage.show();
@@ -211,7 +211,7 @@ public class Main extends Application {
         pane.getChildren().add(mainScene);
 
 
-        Scene scene = new Scene(pane, 1280, 720);
+        Scene scene = new Scene(pane, 1280, 800);
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
