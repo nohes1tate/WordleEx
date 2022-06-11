@@ -255,7 +255,7 @@ public class Main extends Application {
         AniString[] recommendInfo = new AniString[5];
         AniString[] recommendPossibility = new AniString[5];
 
-        DecimalFormat df2 = new DecimalFormat("#.00");
+        DecimalFormat df2 = new DecimalFormat("#.##");
         DecimalFormat df6 = new DecimalFormat("#.#####");
 
         for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
