@@ -22,6 +22,8 @@ import javafx.util.Duration;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -110,7 +112,7 @@ public class Main extends Application {
         menuStage.show();
     }
 
-    public static void startNormalMode() throws Exception{
+    public static void startNormalMode() throws Exception {
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
         Word testword = new Word();
@@ -152,7 +154,7 @@ public class Main extends Application {
                         if (testword.letters.size() == 5) {
                             try {
                                 int status;
-                                if(Word.CheckInList(testword.WordContent.toString())){
+                                if (Word.CheckInList(testword.WordContent.toString())) {
                                     index = 0;
                                     line++;
                                     testword.CheckAns(ans);
@@ -168,20 +170,19 @@ public class Main extends Application {
                                             aniLetters[i].text.setFill(Color.BLACK);
                                         }
                                     }
-                                    status=testword.getState();
-                                    if(status==0){
+                                    status = testword.getState();
+                                    if (status == 0) {
                                         System.out.println("you win");
                                     }
-                                    if(line==6){
+                                    if (line == 6) {
                                         System.out.println("you lose");
                                     }
                                     for (int i = 0; i < 5; i++) {
                                         testword.RemoveLetter();
                                     }
 
-                                }
-                                else {
-                                    System.out.println("Not in list");
+                                } else {
+                                    System.out.println("Not in the list");
                                 }
 
                             } catch (Exception e) {
@@ -191,8 +192,7 @@ public class Main extends Application {
                                     testword.RemoveLetter();
                                 }
                             }
-                        }
-                        else{
+                        } else {
                             System.out.println("not enough letter!");
                         }
                     }
@@ -218,9 +218,204 @@ public class Main extends Application {
         mainWindow.show();
     }
 
-    public static void backMainMenu() throws Exception{
+    public static void startAdvanceMode() throws Exception {
+        Button button = new Button("测试");
+        AnchorPane pane = new AnchorPane();
+        pane.getChildren().add(button);
+        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/advanceScene.fxml")));
+        pane.getChildren().add(mainScene);
+
+        Scene scene = new Scene(pane, 1280, 800);
+
+        mainWindow.setScene(scene);
+        mainWindow.setTitle("WORDLE-EX");
+        mainWindow.show();
+
+
+        WordList.AnswerWord = WordList.ReadWord("src/Data/possible_words.txt");
+        WordList.PossibleWord = WordList.ReadWord("src/Data/allowed_words.txt");
+        WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
+        WordList.WordPrior = WordList.ReadPrior("src/Data/freq_map.json");
+        Word testword = new Word();
+        String ans = "about";
+
+        GuessAlgorithm.eNow = GuessAlgorithm.calENow(WordList.PossibleWord);
+        GuessAlgorithm.possibilities = WordList.PossibleWord.size();
+        GuessAlgorithm.getShowList(WordList.PossibleWord);
+
+        GuessAlgorithm.getWordScore(WordList.LegalWord, WordList.PossibleWord);
+        for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
+            System.out.println(GuessAlgorithm.wsList.get(i).word+" "+GuessAlgorithm.wsList.get(i).entropy + " " + GuessAlgorithm.wsList.get(i).possible + " " + GuessAlgorithm.wsList.get(i).score);
+        }
+
+        AniLetter[] aniLetters = new AniLetter[5];
+        ArrayList<AniString> aniStrings = new ArrayList<>();
+
+
+        aniStrings.add(new AniString("Possibilities:", Color.WHITE));
+        pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+        AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0);
+        AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
+        aniStrings.get(aniStrings.size() - 1).ft.play();
+
+        aniStrings.add(new AniString("" + GuessAlgorithm.possibilities + "/", Color.WHITE));
+        pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+        AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+        AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
+        aniStrings.get(aniStrings.size() - 1).ft.play();
+
+        aniStrings.add(new AniString("E:", Color.SKYBLUE));
+        pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+        AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+        AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
+        aniStrings.get(aniStrings.size() - 1).ft.play();
+
+        // 保留小数点后两位
+        DecimalFormat df = new DecimalFormat("#.00");
+        aniStrings.add(new AniString("" + df.format(GuessAlgorithm.eNow), Color.SKYBLUE));
+        pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+        AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 120  + aniStrings.size() * 75.0);
+        AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
+        aniStrings.get(aniStrings.size() - 1).ft.play();
+
+        aniStrings.clear();
+
+        button.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            private int index = 0;
+            private int line = 0;
+
+            private int leftLine = 0;
+            private int rightLine = 0;
+
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                KeyCode kCode = keyEvent.getCode();
+                System.out.println(kCode.getName());
+                char toAddLetter;
+                try {
+                    if (kCode.isLetterKey() && index < 5) {
+                        toAddLetter = (char) (kCode.getCode() + 32);
+                        testword.AddLetter(toAddLetter);
+                        aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
+                        pane.getChildren().add(aniLetters[index].ft.getNode());
+                        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+                        aniLetters[index].ft.play();
+                        index += 1;
+                        System.out.println(testword.WordContent);
+                    }
+                    if (kCode == KeyCode.BACK_SPACE && index >= 1) {
+                        testword.RemoveLetter();
+                        pane.getChildren().remove(aniLetters[index - 1].ft.getNode());
+                        index -= 1;
+                    }
+                    if (kCode == KeyCode.ENTER) {
+                        if (testword.letters.size() == 5) {
+                            try {
+                                int status;
+                                if (Word.CheckInList(testword.WordContent.toString())) {
+                                    index = 0;
+                                    line++;
+                                    testword.CheckAns(ans);
+                                    System.out.println(testword.ShowColor());
+                                    for (int i = 0; i < 5; i++) {
+                                        if (testword.letters.get(i).letterColor == LetterColor.Green) {
+                                            aniLetters[i].text.setFill(Color.GREEN);
+                                        }
+                                        if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
+                                            aniLetters[i].text.setFill(Color.YELLOW);
+                                        }
+                                        if (testword.letters.get(i).letterColor == LetterColor.Grey) {
+                                            aniLetters[i].text.setFill(Color.BLACK);
+                                        }
+                                    }
+                                    status = testword.getState();
+                                    if (status == 0) {
+                                        System.out.println("you win");
+                                    }
+                                    if (line == 6) {
+                                        System.out.println("you lose");
+                                    }
+                                    WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord, testword.getState(), testword.WordContent.toString());
+                                    GuessAlgorithm.possibilities = WordList.PossibleWord.size();
+                                    double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
+                                    double info = GuessAlgorithm.eNow - newE;
+
+                                    AniString infoString = new AniString(df.format(info) + "bits", Color.WHITE);
+                                    pane.getChildren().add(infoString.ft.getNode());
+                                    AnchorPane.setLeftAnchor(infoString.ft.getNode(), 800.0);
+                                    AnchorPane.setTopAnchor(infoString.ft.getNode(), 125.0 + leftLine * 60.0);
+                                    infoString.ft.play();
+
+                                    GuessAlgorithm.eNow = newE ;
+                                    leftLine++;
+                                    aniStrings.add(new AniString("Possibilities:", Color.WHITE));
+                                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0);
+                                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                                    aniStrings.add(new AniString("" + GuessAlgorithm.possibilities + "/", Color.WHITE));
+                                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+                                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                                    aniStrings.add(new AniString("E:", Color.SKYBLUE));
+                                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+                                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                                    // 保留小数点后两位
+                                    DecimalFormat df = new DecimalFormat("#.00");
+                                    aniStrings.add(new AniString("" + df.format(GuessAlgorithm.eNow), Color.SKYBLUE));
+                                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 120  + aniStrings.size() * 75.0);
+                                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                                    aniStrings.clear();
+
+                                    GuessAlgorithm.getWordScore(WordList.LegalWord, WordList.PossibleWord);
+                                    for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
+                                        System.out.println(GuessAlgorithm.wsList.get(i).word+" "+GuessAlgorithm.wsList.get(i).entropy + " " + GuessAlgorithm.wsList.get(i).possible + " " + GuessAlgorithm.wsList.get(i).score);
+                                    }
+
+
+                                    for (int i = 0; i < 5; i++) {
+                                        testword.RemoveLetter();
+                                    }
+
+                                } else {
+                                    System.out.println("Not in the list");
+                                }
+
+                            } catch (Exception e) {
+                                //throw new RuntimeException(e);
+                                System.out.println("Not in the list");
+                                for (int i = 0; i < 5; i++) {
+                                    testword.RemoveLetter();
+                                }
+                            }
+                        } else {
+                            System.out.println("not enough letter!");
+                        }
+                    }
+
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+
+
+            }
+        });
+    }
+
+    public static void backMainMenu() throws Exception {
         mainWindow.setScene(mainMenuScene);
         mainWindow.setTitle("WORDLE-EX");
         mainWindow.show();
     }
+
 }

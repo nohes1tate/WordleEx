@@ -3,6 +3,11 @@ import java.util.*;
 public class GuessAlgorithm {
 
     /**
+     * 记录是否为第一次计算，若是则导入本地文件
+     */
+    static boolean isFirst = true;
+
+    /**
      * 保存颜色状态的可视化信息
      */
     static ArrayList<StatusInfo> StateInfoList;
@@ -31,6 +36,11 @@ public class GuessAlgorithm {
      * 所有单词总熵
      */
     static double eNow;
+
+    /**
+     * 可能单词的总数
+     */
+    static int possibilities;
 
     /**
      * 评价每个单词猜测的分数
@@ -107,6 +117,10 @@ public class GuessAlgorithm {
         }
         tmpList.sort(Collections.reverseOrder());
         wsList=tmpList;
+        if(isFirst){
+            isFirst=false;
+            return;
+        }
     }
 
     /**
@@ -130,6 +144,7 @@ public class GuessAlgorithm {
 
     /**
      * 获得显示列表，获取每一个可能是答案的词成为答案的概率
+     * 获取的展示列表保存在PossibleWordChance中
      *
      * @param PossibleWord 可能是答案的词
      */

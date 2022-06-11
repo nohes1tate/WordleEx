@@ -23,6 +23,7 @@ public class Test {
             int cnt = 0;
             boolean got = false;
             GuessAlgorithm.eNow = GuessAlgorithm.calENow(WordList.PossibleWord);
+            GuessAlgorithm.possibilities = WordList.PossibleWord.size();
             while (!got) {
                 cnt++;
                 GuessAlgorithm.getShowList(WordList.PossibleWord);
