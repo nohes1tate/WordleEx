@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.PrintStream;
 import java.util.*;
 
 public class GuessAlgorithm {
@@ -76,6 +78,24 @@ public class GuessAlgorithm {
      * @throws Exception 异常
      */
     public static void getWordScore(Set<String> LegalWord, Set<String> PossibleWord) throws Exception{
+        if(isFirst){
+            isFirst=false;
+            String word;
+            double score;
+            double possibility;
+            double entropy;
+            File file = new File("src/Data/GuessWord.txt");
+            // 导入单词
+            Scanner in = new Scanner(file);
+            while (in.hasNext()){
+                word = in.next();
+                score = in.nextDouble();
+                possibility = in.nextDouble();
+                entropy = in.nextDouble();
+                wsList.add(new WordWithScore(word,score,entropy,possibility));
+                }
+            return;
+        }
         ArrayList<WordWithScore> tmpList = new ArrayList<>();
         //第一层循环，遍历所有合法的单词
         for (String lWord : LegalWord) {
@@ -117,10 +137,6 @@ public class GuessAlgorithm {
         }
         tmpList.sort(Collections.reverseOrder());
         wsList=tmpList;
-        if(isFirst){
-            isFirst=false;
-            return;
-        }
     }
 
     /**
@@ -270,6 +286,9 @@ class WordWithScore implements Comparable<WordWithScore>{
         double score;
         double possible;
         double entropy;
+
+
+
         WordWithScore(String w, double s, double h, double p){
         word=w;
         score=s;

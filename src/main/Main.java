@@ -244,8 +244,36 @@ public class Main extends Application {
         GuessAlgorithm.getShowList(WordList.PossibleWord);
 
         GuessAlgorithm.getWordScore(WordList.LegalWord, WordList.PossibleWord);
+
+        AniString hint = new AniString("TOP Picks    E[Info]    p(word)", Color.WHITE);
+        pane.getChildren().add(hint.ft.getNode());
+        AnchorPane.setLeftAnchor(hint.ft.getNode(), 900.0);
+        AnchorPane.setTopAnchor(hint.ft.getNode(), 120.0);
+        hint.ft.play();
+
+        AniString[] recommend = new AniString[5];
+        AniString[] recommendInfo = new AniString[5];
+        AniString[] recommendPossibility = new AniString[5];
+
+        DecimalFormat df2 = new DecimalFormat("#.00");
+        DecimalFormat df6 = new DecimalFormat("#.#####");
+
         for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
-            System.out.println(GuessAlgorithm.wsList.get(i).word+" "+GuessAlgorithm.wsList.get(i).entropy + " " + GuessAlgorithm.wsList.get(i).possible + " " + GuessAlgorithm.wsList.get(i).score);
+            recommend[i] = new AniString(GuessAlgorithm.wsList.get(i).word, Color.WHITE);
+            pane.getChildren().add(recommend[i].ft.getNode());
+            AnchorPane.setLeftAnchor(recommend[i].ft.getNode(), 900.0);
+            AnchorPane.setTopAnchor(recommend[i].ft.getNode(), 180.0 + i * 60.0);
+            recommend[i].ft.play();
+            recommendInfo[i] = new AniString(df2.format(GuessAlgorithm.wsList.get(i).entropy), Color.WHITE);
+            pane.getChildren().add(recommendInfo[i].ft.getNode());
+            AnchorPane.setLeftAnchor(recommendInfo[i].ft.getNode(), 900.0 + 150.0);
+            AnchorPane.setTopAnchor(recommendInfo[i].ft.getNode(), 180.0 + i * 60.0);
+            recommendInfo[i].ft.play();
+            recommendPossibility[i] = new AniString(df6.format(GuessAlgorithm.wsList.get(i).possible), Color.WHITE);
+            pane.getChildren().add(recommendPossibility[i].ft.getNode());
+            AnchorPane.setLeftAnchor(recommendPossibility[i].ft.getNode(), 900.0 + 240.0);
+            AnchorPane.setTopAnchor(recommendPossibility[i].ft.getNode(), 180.0 + i * 60.0);
+            recommendPossibility[i].ft.play();
         }
 
         AniLetter[] aniLetters = new AniLetter[5];
@@ -271,8 +299,8 @@ public class Main extends Application {
         aniStrings.get(aniStrings.size() - 1).ft.play();
 
         // 保留小数点后两位
-        DecimalFormat df = new DecimalFormat("#.00");
-        aniStrings.add(new AniString("" + df.format(GuessAlgorithm.eNow), Color.SKYBLUE));
+
+        aniStrings.add(new AniString("" + df2.format(GuessAlgorithm.eNow), Color.SKYBLUE));
         pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 120  + aniStrings.size() * 75.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
@@ -299,7 +327,7 @@ public class Main extends Application {
                         aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
                         pane.getChildren().add(aniLetters[index].ft.getNode());
                         AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.0);
                         aniLetters[index].ft.play();
                         index += 1;
                         System.out.println(testword.WordContent);
@@ -341,7 +369,7 @@ public class Main extends Application {
                                     double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
                                     double info = GuessAlgorithm.eNow - newE;
 
-                                    AniString infoString = new AniString(df.format(info) + "bits", Color.WHITE);
+                                    AniString infoString = new AniString(df2.format(info) + "bits", Color.WHITE);
                                     pane.getChildren().add(infoString.ft.getNode());
                                     AnchorPane.setLeftAnchor(infoString.ft.getNode(), 800.0);
                                     AnchorPane.setTopAnchor(infoString.ft.getNode(), 125.0 + leftLine * 60.0);
@@ -385,6 +413,42 @@ public class Main extends Application {
 
                                     for (int i = 0; i < 5; i++) {
                                         testword.RemoveLetter();
+                                        pane.getChildren().remove(recommend[i].ft.getNode());
+                                        pane.getChildren().remove(recommendInfo[i].ft.getNode());
+                                        pane.getChildren().remove(recommendPossibility[i].ft.getNode());
+                                        AniString fadeRecommend = new AniString(recommend[i].string.getText(), Color.WHITE);
+                                        pane.getChildren().add(fadeRecommend.ft2.getNode());
+                                        AnchorPane.setLeftAnchor(fadeRecommend.ft2.getNode(), 900.0);
+                                        AnchorPane.setTopAnchor(fadeRecommend.ft2.getNode(), 180 + i * 60.0);
+                                        fadeRecommend.ft2.play();
+                                        AniString fadeRecommendInfo = new AniString(recommendInfo[i].string.getText(), Color.WHITE);
+                                        pane.getChildren().add(fadeRecommendInfo.ft2.getNode());
+                                        AnchorPane.setLeftAnchor(fadeRecommendInfo.ft2.getNode(), 900.0 + 150);
+                                        AnchorPane.setTopAnchor(fadeRecommendInfo.ft2.getNode(), 180 + i * 60.0);
+                                        fadeRecommendInfo.ft2.play();
+                                        AniString fadeRecommendPossibility = new AniString(recommendPossibility[i].string.getText(), Color.WHITE);
+                                        pane.getChildren().add(fadeRecommendPossibility.ft2.getNode());
+                                        AnchorPane.setLeftAnchor(fadeRecommendPossibility.ft2.getNode(), 900.0 + 240);
+                                        AnchorPane.setTopAnchor(fadeRecommendPossibility.ft2.getNode(), 180 + i * 60.0);
+                                        fadeRecommendPossibility.ft2.play();
+                                    }
+
+                                    for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
+                                        recommend[i] = new AniString(GuessAlgorithm.wsList.get(i).word, Color.WHITE);
+                                        pane.getChildren().add(recommend[i].ft.getNode());
+                                        AnchorPane.setLeftAnchor(recommend[i].ft.getNode(), 900.0);
+                                        AnchorPane.setTopAnchor(recommend[i].ft.getNode(), 180.0 + i * 60.0);
+                                        recommend[i].ft.play();
+                                        recommendInfo[i] = new AniString(df2.format(GuessAlgorithm.wsList.get(i).entropy), Color.WHITE);
+                                        pane.getChildren().add(recommendInfo[i].ft.getNode());
+                                        AnchorPane.setLeftAnchor(recommendInfo[i].ft.getNode(), 900.0 + 150.0);
+                                        AnchorPane.setTopAnchor(recommendInfo[i].ft.getNode(), 180.0 + i * 60.0);
+                                        recommendInfo[i].ft.play();
+                                        recommendPossibility[i] = new AniString(df6.format(GuessAlgorithm.wsList.get(i).possible), Color.WHITE);
+                                        pane.getChildren().add(recommendPossibility[i].ft.getNode());
+                                        AnchorPane.setLeftAnchor(recommendPossibility[i].ft.getNode(), 900.0 + 240.0);
+                                        AnchorPane.setTopAnchor(recommendPossibility[i].ft.getNode(), 180.0 + i * 60.0);
+                                        recommendPossibility[i].ft.play();
                                     }
 
                                 } else {

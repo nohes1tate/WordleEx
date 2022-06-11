@@ -4,23 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="make some UI">
-      <change afterPath="$PROJECT_DIR$/src/main/AniString.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" afterDir="false" />
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="algorithm GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AniString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AniString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/WordWithScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/menuScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +60,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
+      <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -147,7 +142,7 @@
       <workItem from="1654902260019" duration="12078000" />
       <workItem from="1654916236638" duration="4025000" />
       <workItem from="1654933943696" duration="7308000" />
-      <workItem from="1654949457097" duration="10071000" />
+      <workItem from="1654949457097" duration="13351000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -226,7 +221,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654941286642</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="algorithm GUI">
+      <created>1654960134060</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1654960134060</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +263,8 @@
     <MESSAGE value="make some adjustment" />
     <MESSAGE value="finish some visible data" />
     <MESSAGE value="make some UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="make some UI" />
+    <MESSAGE value="algorithm GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="algorithm GUI" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
