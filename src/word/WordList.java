@@ -26,6 +26,11 @@ public class WordList {
     static Set<String> LegalWord = new HashSet<>();
 
     /**
+     * 答案词库
+     */
+    static Set<String> AnswerWord = new HashSet<>();
+
+    /**
      * 可能为答案的单词
      */
     static Set<String> PossibleWord = new HashSet<>();
@@ -113,5 +118,16 @@ class WordWithFreq implements Comparable<WordWithFreq>{
         else if(this.freq== w.freq)
             return 0;
         return -1;
+    }
+}
+
+class WordWithChance {
+    String word;
+    double chance;
+    double fill;
+    WordWithChance(String w, double c, double f){
+        word=w;
+        chance=c;
+        fill=f;
     }
 }

@@ -1,15 +1,30 @@
 import java.util.*;
 
 public class GuessAlgorithm {
+
+    static ArrayList<StatusInfo> StateInfoList;
+
+    static ArrayList<WordWithChance> PossibleWordChance;
+
     /**
      * 每种情况出现的加权概率
      */
     static double[] chance = new double[3*3*3*3*3];
 
     /**
+     * 每种情况出现的次数
+     */
+    static int[] times = new int[3*3*3*3*3];
+
+    /**
      * 所有可能单词的权重和
      */
     static double priorAll;
+
+    /**
+     * 所有单词总熵
+     */
+    static double eNow;
 
     /**
      * 评价每个单词猜测的分数
@@ -51,6 +66,7 @@ public class GuessAlgorithm {
             boolean show = false;
             priorAll=0;
             Arrays.fill(chance, 0);
+            Arrays.fill(times, 0);
             Word tmpWord = new Word(lWord);
 
             //遍历可能为答案的词
@@ -59,6 +75,7 @@ public class GuessAlgorithm {
                 int state;
                 state = tmpWord.getState();
                 chance[state] += WordList.WordPrior.get(pWord);
+                times[state]++;
                 if(show){
                     System.out.println("possible word:"+pWord+" result:" + tmpWord.ShowColor());
                 }
@@ -85,8 +102,129 @@ public class GuessAlgorithm {
         tmpList.sort(Collections.reverseOrder());
         wsList=tmpList;
     }
+
+    /**
+     * 计算新的熵
+     *
+     * @param PossibleWord 当前可能的单词
+     * @return double
+     */
+    public static double calENow (Set<String> PossibleWord) {
+        double pAll=0,res=0;
+        for (String pWord : PossibleWord){
+            pAll += WordList.WordPrior.get(pWord);
+        }
+        for (String pWord : PossibleWord){
+            double p = WordList.WordPrior.get(pWord);
+            p /= pAll;
+            res += p * Math.log(1/p) / Math.log(2);
+        }
+        return res;
+    }
+
+    /**
+     * 获得显示列表，获取每一个可能是答案的词成为答案的概率
+     *
+     * @param PossibleWord 可能是答案的词
+     */
+    public static void getShowList (Set<String> PossibleWord) {
+        String[] PossibleWordList =PossibleWord.toArray(new String[0]);
+        ArrayList<WordWithChance> tmpPossibleWordChance = new ArrayList<>();
+        Arrays.sort(PossibleWordList);
+        double maxChance = 0;
+        double pAll = 0;
+        for (String pWord : PossibleWordList){
+            pAll += WordList.WordPrior.get(pWord);
+        }
+        for (String pWord : PossibleWordList) {
+            double c;
+            c = WordList.WordPrior.get(pWord) / pAll;
+            if(c>maxChance){
+                maxChance=c;
+            }
+        }
+        for (String pWord : PossibleWordList) {
+            double c;
+            double f;
+            c = WordList.WordPrior.get(pWord) / pAll;
+            f = c / maxChance;
+            tmpPossibleWordChance.add(new WordWithChance(pWord, c, f));
+        }
+        PossibleWordChance = tmpPossibleWordChance;
+        System.out.println("got show list");
+    }
+
+    /**
+     * 得到当前状态的颜色
+     *
+     * @param status 状态
+     * @return {@link LetterColor[]}
+     */
+    public static LetterColor[] getStatusColor(int status){
+        LetterColor[] res = new LetterColor[5];
+        for (int i=0; i<5; i++){
+            int num;
+            num = status%3;
+            status/=3;
+            LetterColor tmpColor;
+            switch (num){
+                case 0:
+                    tmpColor = LetterColor.Green;
+                    break;
+                case 1:
+                    tmpColor = LetterColor.Yellow;
+                    break;
+                case 2:
+                    tmpColor = LetterColor.Grey;
+                    break;
+                default:
+                    tmpColor = LetterColor.Black;
+            }
+            res[4-i] = tmpColor;
+        }
+        return res;
+    }
+
+    public static void getWordStatusInfo(String guessWord, Set<String> PossibleWord) throws Exception{
+        int[] guessTimes = new int[3*3*3*3*3];
+        int sum=0;
+        Word tmpWord = new Word(guessWord);
+        for (String pWord : PossibleWord) {
+            tmpWord.CheckAns(pWord);
+            int state;
+            state = tmpWord.getState();
+            guessTimes[state]++;
+        }
+        for (int i=0; i<3*3*3*3*3; i++){
+            if(guessTimes[i]!=0) {
+                sum+=guessTimes[i];
+            }
+        }
+        ArrayList<StatusInfo> res = new ArrayList<>();
+        int index = 0;
+        for (int i=0; i<3*3*3*3*3; i++){
+            if(guessTimes[i]!=0){
+                double info;
+                double p;
+                p = (double) guessTimes[i] / (double) sum;
+                info = Math.log(1 / p) / Math.log(2);
+                StatusColor color = new StatusColor(getStatusColor(i));
+                res.add(new StatusInfo(guessTimes[i],sum,info,color));
+                index++;
+            }
+        }
+        res.sort(Collections.reverseOrder());
+        StateInfoList = res;
+    }
 }
 
+
+class StatusColor {
+    LetterColor[] color;
+    StatusColor(LetterColor[] sColor){
+        color = sColor;
+    }
+}
 
 /**
  * 单词与其对应得分
@@ -113,4 +251,29 @@ public int compareTo(WordWithScore w){
         return 0;
         return -1;
         }
+}
+
+class StatusInfo  implements Comparable<StatusInfo>{
+    int times;
+    int sum;
+    double info;
+    StatusColor statusColor;
+    StatusInfo(int t, int s, double i, StatusColor colors){
+        times = t;
+        sum = s;
+        info = i;
+        statusColor =  colors;
+    }
+    @Override
+    public int compareTo(StatusInfo s){
+        if(this.times>s.times){
+            return 1;
         }
+        else if (this.times == s.times){
+            return 0;
+        }
+        else {
+            return -1;
+        }
+    }
+}
