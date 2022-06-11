@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/word" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/algorithm" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/TestDir" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/util" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />

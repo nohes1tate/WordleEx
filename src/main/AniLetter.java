@@ -1,9 +1,6 @@
 import javafx.animation.FadeTransition;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
+import javafx.scene.text.*;
 import javafx.util.Duration;
 
 public class AniLetter {
@@ -12,6 +9,7 @@ public class AniLetter {
     AniLetter (String s){
         text = new Text(s);
         text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 60));
+        text.setTextAlignment(TextAlignment.JUSTIFY);
         text.setFill(Color.gray(0.9));
         ft.setNode(text);
         ft.setDuration(Duration.seconds(1));

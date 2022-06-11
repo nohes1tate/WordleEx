@@ -27,13 +27,90 @@ import java.util.Locale;
 import java.util.Objects;
 
 public class Main extends Application {
+
+    /**
+     * 游戏的主窗口
+     */
+    private static Stage mainWindow;
+
+    /**
+     * 主游戏体的屏幕场景
+     */
+    private static Scene mainMenuScene;
+
+    /**
+     * 主菜单布局
+     */
+    private Parent mainMenuLayout;
+
+    /**
+     * 得到主菜单布局
+     *
+     * @return {@link Parent}
+     */
+    public Parent getMainMenuLayout() {
+        return mainMenuLayout;
+    }
+
+    /**
+     * 得到主菜单场景
+     *
+     * @return {@link Scene}
+     */
+    public static Scene getMainMenuScene() {
+        return mainMenuScene;
+    }
+
+    /**
+     * 得到主窗口
+     *
+     * @return {@link Stage}
+     */
+    public static Stage getMainWindow() {
+        return mainWindow;
+    }
+
+    /**
+     * 设置主菜单布局
+     *
+     * @param mainMenuLayout 主菜单布局
+     */
+    public void setMainMenuLayout(Parent mainMenuLayout) {
+        this.mainMenuLayout = mainMenuLayout;
+    }
+
+    /**
+     * 主菜单设置场景
+     *
+     * @param mainMenuScene 主菜单场景
+     */
+    public static void setMainMenuScene(Scene mainMenuScene) {
+        Main.mainMenuScene = mainMenuScene;
+    }
+
+    public static void setMainWindow(Stage mainWindow) {
+        Main.mainWindow = mainWindow;
+    }
+
     public static void main(String[] args) {
-        Application.launch(args);
+        launch(args);
     }
 
     @Override
     public void start(Stage menuStage) throws Exception {
+        menuStage.setTitle("WORDLE-EX");
+        menuStage.setResizable(false);
+        menuStage.setAlwaysOnTop(true);
 
+        mainWindow = menuStage;
+        mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
+        mainMenuScene = new Scene(mainMenuLayout, 1280, 720);
+
+        menuStage.setScene(mainMenuScene);
+        menuStage.show();
+    }
+
+    public static void startNormalMode() throws Exception{
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
         Word testword = new Word();
@@ -76,31 +153,31 @@ public class Main extends Application {
                             try {
                                 int status;
                                 if(Word.CheckInList(testword.WordContent.toString())){
-                                index = 0;
-                                line++;
-                                testword.CheckAns(ans);
-                                System.out.println(testword.ShowColor());
-                                for (int i = 0; i < 5; i++) {
-                                    if (testword.letters.get(i).letterColor == LetterColor.Green) {
-                                        aniLetters[i].text.setFill(Color.GREEN);
+                                    index = 0;
+                                    line++;
+                                    testword.CheckAns(ans);
+                                    System.out.println(testword.ShowColor());
+                                    for (int i = 0; i < 5; i++) {
+                                        if (testword.letters.get(i).letterColor == LetterColor.Green) {
+                                            aniLetters[i].text.setFill(Color.GREEN);
+                                        }
+                                        if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
+                                            aniLetters[i].text.setFill(Color.YELLOW);
+                                        }
+                                        if (testword.letters.get(i).letterColor == LetterColor.Grey) {
+                                            aniLetters[i].text.setFill(Color.BLACK);
+                                        }
                                     }
-                                    if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
-                                        aniLetters[i].text.setFill(Color.YELLOW);
+                                    status=testword.getState();
+                                    if(status==0){
+                                        System.out.println("you win");
                                     }
-                                    if (testword.letters.get(i).letterColor == LetterColor.Grey) {
-                                        aniLetters[i].text.setFill(Color.BLACK);
+                                    if(line==6){
+                                        System.out.println("you lose");
                                     }
-                                }
-                                status=testword.getState();
-                                if(status==0){
-                                    System.out.println("you win");
-                                }
-                                if(line==6){
-                                    System.out.println("you lose");
-                                }
-                                for (int i = 0; i < 5; i++) {
-                                    testword.RemoveLetter();
-                                }
+                                    for (int i = 0; i < 5; i++) {
+                                        testword.RemoveLetter();
+                                    }
 
                                 }
                                 else {
@@ -136,8 +213,8 @@ public class Main extends Application {
 
         Scene scene = new Scene(pane, 1280, 720);
 
-        menuStage.setScene(scene);
-        menuStage.setTitle("WORDLE-EX");
-        menuStage.show();
+        mainWindow.setScene(scene);
+        mainWindow.setTitle("WORDLE-EX");
+        mainWindow.show();
     }
 }
