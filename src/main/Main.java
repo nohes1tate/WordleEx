@@ -116,6 +116,7 @@ public class Main extends Application {
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
         WordList.AnswerWord = WordList.ReadWord("src/Data/possible_words.txt");
+
         Word testword = new Word();
         ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
         int ansIdx = new Random().nextInt(list.size());
@@ -132,6 +133,16 @@ public class Main extends Application {
         line=0;
 
         Button button = new Button("²âÊÔ");
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
+        Parent mainScene = loader.load();
+        pane.getChildren().add(mainScene);
+
+
+        Scene scene = new Scene(pane, 1280, 800);
+
+        MenuScene Controller = loader.getController();
+
+        Controller.changeButtonQColor();
 
         pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
@@ -173,6 +184,7 @@ public class Main extends Application {
                                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                                             aniLetters[i].text.setFill(Color.BLACK);
                                         }
+                                      Controller.changeButtonWColor();
                                     }
                                     status = testword.getState();
                                     if (status == 0) {
@@ -209,16 +221,7 @@ public class Main extends Application {
 
 
       //  Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/mainScene.fxml")));
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
-        Parent mainScene = loader.load();
-        pane.getChildren().add(mainScene);
 
-
-        Scene scene = new Scene(pane, 1280, 800);
-
-        MenuScene Controller = loader.getController();
-
-        Controller.changeButtonQColor();
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
