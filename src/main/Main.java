@@ -161,6 +161,7 @@ public class Main extends Application {
                                     line++;
                                     testword.CheckAns(ans);
                                     System.out.println(testword.ShowColor());
+                                    MenuScene.changeButtonQColor(1);
                                     for (int i = 0; i < 5; i++) {
                                         if (testword.letters.get(i).letterColor == LetterColor.Green) {
                                             aniLetters[i].text.setFill(Color.GREEN);

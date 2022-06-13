@@ -21,7 +21,7 @@ import java.io.FileNotFoundException;
 public class MenuScene {
 
     @FXML
-    private Button ButtonQ;
+    private static Button ButtonQ;
 
     @FXML
     private Button ButtonW;
@@ -165,12 +165,13 @@ public class MenuScene {
 
 
 
-    public void changeButtonQColor(int color) throws Exception{
+    public static void changeButtonQColor(int color) throws Exception{
         if(color==1)
         {
             BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(5),new Insets(10));
             Background background = new Background(background_fill);
             ButtonQ.setBackground(background);
+            System.out.println("changeButtonQColor");
         }
 
     }
