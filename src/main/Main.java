@@ -209,11 +209,17 @@ public class Main extends Application {
         pane.getChildren().add(button);
 
 
-        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/mainScene.fxml")));
+      //  Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/mainScene.fxml")));
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
+        Parent mainScene = loader.load();
         pane.getChildren().add(mainScene);
 
 
         Scene scene = new Scene(pane, 1280, 800);
+
+        MenuScene Controller = loader.getController();
+
+        Controller.changeButtonWColor();
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");

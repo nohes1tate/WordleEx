@@ -1,0 +1,34 @@
+<changelist name="Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]" date="1655129693088" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2022/6/13 22:14 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/WordWithScore.class" />
+    <option name="AFTER_PATH" value="target/classes/WordWithScore.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/WordWithScore.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Main$1.class" />
+    <option name="AFTER_PATH" value="target/classes/Main$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/Main$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Main.class" />
+    <option name="AFTER_PATH" value="target/classes/Main.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/Main.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/GuessAlgorithm.class" />
+    <option name="AFTER_PATH" value="target/classes/GuessAlgorithm.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/GuessAlgorithm.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/LetterIOException.class" />
+    <option name="AFTER_PATH" value="target/classes/LetterIOException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/LetterIOException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/Letter.class" />
+    <option name="AFTER_PATH" value="target/classes/Letter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14_[Changes]/Letter.class" />
+  </binary>
+</changelist>
