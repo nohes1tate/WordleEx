@@ -36,12 +36,12 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q" onMouseClicked="#changeButtonQColor">
+            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1" onMouseClicked="#changeButtonWColor">
+            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#changeButtonWColor" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>

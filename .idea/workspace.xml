@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="wang‘s commmit">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_14__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_20__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_20__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/word/LetterColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/LetterColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="test-wang" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +42,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="281El5VnHKW1oxjs0dAtV1ibU0u" />
   <component name="ProjectLevelVcsManager">
@@ -106,6 +119,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.naniTest" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.HelloApplication" />
         <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>

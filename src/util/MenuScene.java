@@ -163,18 +163,567 @@ public class MenuScene {
         Main.backMainMenu();
     }
 
-
-
     public void changeButtonQColor() throws Exception{
-            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
-            Background background = new Background(background_fill);
-            ButtonQ.setBackground(background);
+        BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+        Background background = new Background(background_fill);
+        ButtonQ.setBackground(background);
     }
 
     public void changeButtonWColor() throws Exception{
-            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
-            Background background = new Background(background_fill);
-            ButtonW.setBackground(background);
+        BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+        Background background = new Background(background_fill);
+        ButtonW.setBackground(background);
     }
+
+    public void changeButtonColor(char key,int color) throws Exception{
+        System.out.print(key);
+        if(key=='q')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonQ.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonQ.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonQ.setBackground(background);
+            }
+        }
+        else if(key=='w')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonW.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonW.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonW.setBackground(background);
+            }
+        }
+        else if(key=='e')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonE.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonE.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonE.setBackground(background);
+            }
+        }
+        else if(key=='r')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonR.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonR.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonR.setBackground(background);
+            }
+        }
+        else if(key=='t')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonT.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonT.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonT.setBackground(background);
+            }
+        }
+        else if(key=='y')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonY.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonY.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonY.setBackground(background);
+            }
+        }
+        else if(key=='u')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonU.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonU.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonU.setBackground(background);
+            }
+        }
+        else if(key=='i')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonI.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonI.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonI.setBackground(background);
+            }
+        }
+        else if(key=='o')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonO.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonO.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonO.setBackground(background);
+            }
+        }
+        else if(key=='p')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonP.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonP.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonP.setBackground(background);
+            }
+        }
+        else if(key=='a')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonA.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonA.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonA.setBackground(background);
+            }
+        }
+        else if(key=='s')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonS.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonS.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonS.setBackground(background);
+            }
+        }
+        else if(key=='d')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonD.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonD.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonD.setBackground(background);
+            }
+        }
+        else if(key=='f')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonF.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonF.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonF.setBackground(background);
+            }
+        }
+        else if(key=='g')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonG.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonG.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonG.setBackground(background);
+            }
+        }
+        else if(key=='h')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonH.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonH.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonH.setBackground(background);
+            }
+        }
+        else if(key=='j')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonJ.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonJ.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonJ.setBackground(background);
+            }
+        }
+        else if(key=='k')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonK.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonK.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonK.setBackground(background);
+            }
+        }
+        else if(key=='l')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonL.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonL.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonL.setBackground(background);
+            }
+        }
+        else if(key=='z')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonZ.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonZ.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonZ.setBackground(background);
+            }
+        }
+        else if(key=='x')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonX.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonX.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonX.setBackground(background);
+            }
+        }
+        else if(key=='c')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonC.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonC.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonC.setBackground(background);
+            }
+        }
+        else if(key=='v')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonV.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonV.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonV.setBackground(background);
+            }
+        }
+        else if(key=='b')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonB.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonB.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonB.setBackground(background);
+            }
+        }
+        else if(key=='n')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonN.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonN.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonN.setBackground(background);
+            }
+        }
+        else if(key=='m')
+        {
+            if(color==1)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonM.setBackground(background);
+            }
+            else if(color==2)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#FFFF00"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonM.setBackground(background);
+            }
+            else if(color==3)
+            {
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                Background background = new Background(background_fill);
+                ButtonM.setBackground(background);
+            }
+        }
+    }
+
 
 }

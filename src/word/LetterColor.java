@@ -12,5 +12,6 @@
  * @author ËÎÒæ¿µ
  */
 public enum LetterColor {
-    Black,Green,Yellow,Grey
+    Black, Green, Grey, Yellow
+
 }

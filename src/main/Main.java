@@ -142,7 +142,7 @@ public class Main extends Application {
 
         MenuScene Controller = loader.getController();
 
-        Controller.changeButtonQColor();
+        //Controller.changeButtonQColor();
 
         pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
@@ -177,14 +177,17 @@ public class Main extends Application {
                                     for (int i = 0; i < 5; i++) {
                                         if (testword.letters.get(i).letterColor == LetterColor.Green) {
                                             aniLetters[i].text.setFill(Color.GREEN);
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,3);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
                                             aniLetters[i].text.setFill(Color.YELLOW);
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,2);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                                             aniLetters[i].text.setFill(Color.BLACK);
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,1);
                                         }
-                                      Controller.changeButtonWColor();
+
                                     }
                                     status = testword.getState();
                                     if (status == 0) {
