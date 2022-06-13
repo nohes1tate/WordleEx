@@ -87,6 +87,9 @@ public class Main extends Application {
         Main.mainMenuScene = mainMenuScene;
     }
 
+    private static int index = 0;
+    private static int  line = 0;
+
     public static void setMainWindow(Stage mainWindow) {
         Main.mainWindow = mainWindow;
     }
@@ -124,14 +127,14 @@ public class Main extends Application {
 
         AnchorPane pane = new AnchorPane();
 
+        index=0;
+
+        line=0;
 
         Button button = new Button("≤‚ ‘");
-        button.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            private int index = 0;
-            private int line = 0;
 
-            @Override
-            public void handle(KeyEvent keyEvent) {
+        
+        pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
                 char toAddLetter;
@@ -204,7 +207,7 @@ public class Main extends Application {
                 }
 
 
-            }
+
         });
         pane.getChildren().add(button);
 
@@ -219,7 +222,7 @@ public class Main extends Application {
 
         MenuScene Controller = loader.getController();
 
-        Controller.changeButtonWColor();
+        Controller.changeButtonQColor();
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
