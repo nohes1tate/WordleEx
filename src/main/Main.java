@@ -133,7 +133,6 @@ public class Main extends Application {
 
         Button button = new Button("≤‚ ‘");
 
-        
         pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
@@ -205,9 +204,6 @@ public class Main extends Application {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-
-
-
         });
         pane.getChildren().add(button);
 
@@ -230,6 +226,9 @@ public class Main extends Application {
     }
 
     public static void startAdvanceMode() throws Exception {
+        index=0;
+
+        line=0;
         Button button = new Button("≤‚ ‘");
         AnchorPane pane = new AnchorPane();
         pane.getChildren().add(button);
@@ -490,6 +489,8 @@ public class Main extends Application {
     }
 
     public static void startAIShowMode() throws Exception {
+        index=0;
+        line=0;
         System.out.println("start aishow mode");
         Button button = new Button("≤‚ ‘");
         AnchorPane pane = new AnchorPane();
