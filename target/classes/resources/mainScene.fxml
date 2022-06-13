@@ -4,7 +4,11 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
    <children>
@@ -15,5 +19,203 @@
       </ImageView>
         <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="38.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
       <Button layoutX="38.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="54.0" prefWidth="120.0" text="Button" />
+      <GridPane layoutX="244.0" layoutY="508.0" prefHeight="108.0" prefWidth="793.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <GridPane layoutX="285.0" layoutY="584.0" prefHeight="108.0" prefWidth="712.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <GridPane layoutX="363.0" layoutY="663.0" prefHeight="102.0" prefWidth="557.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </GridPane>
+      <Button layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="54.0" fitWidth="97.0" layoutX="924.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Backspace-button.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

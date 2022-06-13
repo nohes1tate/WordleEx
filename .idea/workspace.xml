@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="algorithm GUI">
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="algorithm GUI update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AniString.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AniString.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WordWithScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithScore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +138,9 @@
       <workItem from="1654902260019" duration="12078000" />
       <workItem from="1654916236638" duration="4025000" />
       <workItem from="1654933943696" duration="7308000" />
-      <workItem from="1654949457097" duration="13351000" />
+      <workItem from="1654949457097" duration="13653000" />
+      <workItem from="1654963642747" duration="26000" />
+      <workItem from="1654963736948" duration="49000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -228,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654960134060</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="algorithm GUI update">
+      <created>1654963363914</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1654963363914</updated>
+    </task>
+    <task id="LOCAL-00014" summary="algorithm GUI update">
+      <created>1654963655793</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1654963655793</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +276,8 @@
     <MESSAGE value="finish some visible data" />
     <MESSAGE value="make some UI" />
     <MESSAGE value="algorithm GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="algorithm GUI" />
+    <MESSAGE value="algorithm GUI update" />
+    <option name="LAST_COMMIT_MESSAGE" value="algorithm GUI update" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
