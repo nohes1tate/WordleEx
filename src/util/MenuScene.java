@@ -165,13 +165,16 @@ public class MenuScene {
 
 
 
-    public void changeButtonQColor(int color) throws Exception{
-        if(color==1)
-        {
-            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(5),new Insets(10));
+    public void changeButtonQColor() throws Exception{
+            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
             Background background = new Background(background_fill);
             ButtonQ.setBackground(background);
-        }
-
     }
+
+    public void changeButtonWColor() throws Exception{
+            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
+            Background background = new Background(background_fill);
+            ButtonW.setBackground(background);
+    }
+
 }
