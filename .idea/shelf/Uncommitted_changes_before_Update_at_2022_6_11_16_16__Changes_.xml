@@ -1,0 +1,14 @@
+<changelist name="Uncommitted_changes_before_Update_at_2022_6_11_16_16_[Changes]" date="1654935499378" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_11_16_16_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2022/6/11 16:16 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/GuessAlgorithm.class" />
+    <option name="AFTER_PATH" value="target/classes/GuessAlgorithm.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_11_16_16_[Changes]/GuessAlgorithm.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/WordWithScore.class" />
+    <option name="AFTER_PATH" value="target/classes/WordWithScore.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_11_16_16_[Changes]/WordWithScore.class" />
+  </binary>
+</changelist>
