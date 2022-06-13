@@ -112,8 +112,13 @@ public class Main extends Application {
     public static void startNormalMode() throws Exception {
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
+        WordList.AnswerWord = WordList.ReadWord("src/Data/possible_words.txt");
         Word testword = new Word();
-        String ans = "about";
+        ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
+        int ansIdx = new Random().nextInt(list.size());
+        String ans = list.get(ansIdx);
+
+        System.out.println(ans);
 
         AniLetter[] aniLetters = new AniLetter[5];
 
@@ -234,7 +239,9 @@ public class Main extends Application {
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
         WordList.WordPrior = WordList.ReadPrior("src/Data/freq_map.json");
         Word testword = new Word();
-        String ans = "about";
+        ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
+        int ansIdx = new Random().nextInt(list.size());
+        String ans = list.get(ansIdx);
 
         GuessAlgorithm.eNow = GuessAlgorithm.calENow(WordList.PossibleWord);
         GuessAlgorithm.possibilities = WordList.PossibleWord.size();
@@ -283,13 +290,13 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
         aniStrings.get(aniStrings.size() - 1).ft.play();
 
-        aniStrings.add(new AniString("" + GuessAlgorithm.possibilities + "/", Color.WHITE));
+        aniStrings.add(new AniString("" + GuessAlgorithm.possibilities, Color.WHITE));
         pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
         aniStrings.get(aniStrings.size() - 1).ft.play();
 
-        aniStrings.add(new AniString("E:", Color.SKYBLUE));
+        aniStrings.add(new AniString("/ E:", Color.SKYBLUE));
         pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
@@ -564,13 +571,13 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
         aniStrings.get(aniStrings.size() - 1).ft.play();
 
-        aniStrings.add(new AniString("" + GuessAlgorithm.possibilities + "/", Color.WHITE));
+        aniStrings.add(new AniString("" + GuessAlgorithm.possibilities , Color.WHITE));
         pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
         aniStrings.get(aniStrings.size() - 1).ft.play();
 
-        aniStrings.add(new AniString("E:", Color.SKYBLUE));
+        aniStrings.add(new AniString("/ E:", Color.SKYBLUE));
         pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
