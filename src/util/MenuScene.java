@@ -53,6 +53,12 @@ public class MenuScene {
         Main.startAdvanceMode();
     }
 
+    public void startAIShowButton() throws Exception {
+        Parent aiShowLayout = FXMLLoader.load(Main.class.getResource("/resources/aiShowScene.fxml"));
+        Main.setMainMenuScene(new Scene(aiShowLayout));
+        Main.startAIShowMode();
+    }
+
     /**
      * »Øµ½²Ëµ¥
      *
