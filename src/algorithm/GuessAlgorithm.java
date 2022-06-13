@@ -79,6 +79,7 @@ public class GuessAlgorithm {
      */
     public static void getWordScore(Set<String> LegalWord, Set<String> PossibleWord) throws Exception{
         if(isFirst){
+            wsList.clear();
             isFirst=false;
             String word;
             double score;

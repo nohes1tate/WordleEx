@@ -629,28 +629,13 @@ public class Main extends Application {
                 System.out.println(kCode.getName());
                 char toAddLetter;
                 try {
-                    if (kCode.isLetterKey() && index < 5) {
-                        toAddLetter = (char) (kCode.getCode() + 32);
-                        testword.AddLetter(toAddLetter);
-                        aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
-                        pane.getChildren().add(aniLetters[index].ft.getNode());
-                        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-                        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.0);
-                        aniLetters[index].ft.play();
-                        index += 1;
-                      //  System.out.println(testword.WordContent);
-                    }
-                    if (kCode == KeyCode.BACK_SPACE && index >= 1) {
-                        testword.RemoveLetter();
-                        pane.getChildren().remove(aniLetters[index - 1].ft.getNode());
-                        index -= 1;
-                    }
+
                     if (kCode == KeyCode.ENTER) {
                         if (testword.letters.size() == 5) {
                             try {
                                 int status;
                                 for (index=0;index<5;index++) {
-                                    aniLetters[index] = new AniLetter(testword.letters.get(index).letterContent+"");
+                                    aniLetters[index] = new AniLetter((char)(testword.letters.get(index).letterContent-32)+"");
                                     pane.getChildren().add(aniLetters[index].ft.getNode());
                                     AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
                                     AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.0);
