@@ -1,0 +1,1112 @@
+Index: src/main/resources/menuScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.image.*?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.text.*?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@menuScreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"WHITE\" layoutX=\"456.0\" layoutY=\"248.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Normal Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"441.0\" layoutY=\"362.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Advance Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"532.0\" layoutY=\"485.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"AI Show\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Button layoutX=\"456.0\" layoutY=\"204.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startNormalButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"369.0\" text=\"Button\" />\r\n      <Button layoutX=\"441.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAdvanceButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"397.0\" text=\"Button\" />\r\n      <Button layoutX=\"532.0\" layoutY=\"441.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAIShowButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"215.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/menuScene.fxml b/src/main/resources/menuScene.fxml
+--- a/src/main/resources/menuScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/src/main/resources/menuScene.fxml	(date 1655124187401)
+@@ -1,11 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.layout.*?>
+-<?import javafx.scene.text.*?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
++<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
+    <children>
+       <ImageView fitHeight="800.0" fitWidth="1280.0">
+          <image>
+Index: src/util/MenuScene.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import javafx.fxml.FXML;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Cursor;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.input.KeyCode;\r\nimport javafx.scene.input.KeyEvent;\r\n\r\npublic class MenuScene {\r\n\r\n    @FXML\r\n    public Button button;\r\n\r\n    /**\r\n     * 当鼠标进入按钮区域改变鼠标样式的方法。\r\n     */\r\n    public void mouseOnButton(){\r\n       // Main.getMainMenuScene().setCursor(Cursor.HAND);\r\n        Main.getMainWindow().getScene().setCursor(Cursor.HAND);\r\n    }\r\n    /**\r\n     * 当鼠标离开按钮区域改变鼠标样式的方法。\r\n     */\r\n    public void mouseLeaveButton(){\r\n        // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);\r\n        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);\r\n      }\r\n\r\n      public void testMethod(){\r\n        System.out.println(\"testMethod\");\r\n          }\r\n\r\n    /**\r\n     * 开始普通模式的方法。\r\n     *\r\n     * @throws Exception 异常\r\n     */\r\n    public void startNormalButton() throws Exception {\r\n        Parent normalLayout = FXMLLoader.load(Main.class.getResource(\"/resources/mainScene.fxml\"));\r\n        Main.setMainMenuScene(new Scene(normalLayout));\r\n        Main.startNormalMode();\r\n    }\r\n\r\n    /**\r\n     * 开始进阶模式的方法。\r\n     *\r\n     * @throws Exception 异常\r\n     */\r\n    public void startAdvanceButton() throws Exception {\r\n        Parent advanceLayout = FXMLLoader.load(Main.class.getResource(\"/resources/advanceScene.fxml\"));\r\n        Main.setMainMenuScene(new Scene(advanceLayout));\r\n        Main.startAdvanceMode();\r\n    }\r\n\r\n    public void startAIShowButton() throws Exception {\r\n        Parent aiShowLayout = FXMLLoader.load(Main.class.getResource(\"/resources/aiShowScene.fxml\"));\r\n        Main.setMainMenuScene(new Scene(aiShowLayout));\r\n        Main.startAIShowMode();\r\n    }\r\n\r\n    /**\r\n     * 回到菜单\r\n     *\r\n     * @throws Exception 异常\r\n     */\r\n    public void backToMenu() throws Exception {\r\n        GuessAlgorithm.isFirst= true;\r\n        Parent normalLayout = FXMLLoader.load(Main.class.getResource(\"/resources/menuScene.fxml\"));\r\n        Main.setMainMenuScene(new Scene(normalLayout));\r\n        Main.backMainMenu();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+diff --git a/src/util/MenuScene.java b/src/util/MenuScene.java
+--- a/src/util/MenuScene.java	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/src/util/MenuScene.java	(date 1655124187412)
+@@ -1,16 +1,108 @@
+ import javafx.fxml.FXML;
+ import javafx.fxml.FXMLLoader;
++import javafx.geometry.Insets;
+ import javafx.scene.Cursor;
+ import javafx.scene.Parent;
+ import javafx.scene.Scene;
+ import javafx.scene.control.Button;
++import javafx.scene.image.Image;
+ import javafx.scene.input.KeyCode;
+ import javafx.scene.input.KeyEvent;
++import javafx.scene.layout.Background;
++import javafx.scene.layout.BackgroundFill;
++import javafx.scene.layout.BackgroundImage;
++import javafx.scene.layout.CornerRadii;
++import javafx.scene.paint.Paint;
++
++import java.awt.*;
++import java.io.FileInputStream;
++import java.io.FileNotFoundException;
+ 
+ public class MenuScene {
+ 
+     @FXML
+-    public Button button;
++    private Button ButtonQ;
++
++    @FXML
++    private Button ButtonW;
++
++    @FXML
++    private Button ButtonE;
++
++    @FXML
++    private Button ButtonR;
++
++    @FXML
++    private Button ButtonT;
++
++    @FXML
++    private Button ButtonY;
++
++    @FXML
++    private Button ButtonU;
++
++    @FXML
++    private Button ButtonI;
++
++    @FXML
++    private Button ButtonO;
++
++    @FXML
++    private Button ButtonP;
++
++    @FXML
++    private Button ButtonA;
++
++    @FXML
++    private Button ButtonS;
++
++    @FXML
++    private Button ButtonD;
++
++    @FXML
++    private Button ButtonF;
++
++    @FXML
++    private Button ButtonG;
++
++    @FXML
++    private Button ButtonH;
++
++    @FXML
++    private Button ButtonJ;
++
++    @FXML
++    private Button ButtonK;
++
++    @FXML
++    private Button ButtonL;
++
++    @FXML
++    private Button ButtonZ;
++
++    @FXML
++    private Button ButtonX;
++
++    @FXML
++    private Button ButtonC;
++
++    @FXML
++    private Button ButtonV;
++
++    @FXML
++    private Button ButtonB;
++
++    @FXML
++    private Button ButtonN;
++
++    @FXML
++    private Button ButtonM;
++
++    @FXML
++    private Button ButtonENTER;
++
++    @FXML
++    private Button ButtonBackspace;
+ 
+     /**
+      * 当鼠标进入按钮区域改变鼠标样式的方法。
+@@ -70,4 +162,16 @@
+         Main.setMainMenuScene(new Scene(normalLayout));
+         Main.backMainMenu();
+     }
++
++
++
++    public void changeButtonQColor(int color) throws Exception{
++        if(color==1)
++        {
++            BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(5),new Insets(10));
++            Background background = new Background(background_fill);
++            ButtonQ.setBackground(background);
++        }
++
++    }
+ }
+Index: src/main/resources/mainScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.ColumnConstraints?>\r\n<?import javafx.scene.layout.GridPane?>\r\n<?import javafx.scene.layout.RowConstraints?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@normalMode.png\" />\r\n         </image>\r\n      </ImageView>\r\n        <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"54.0\" layoutX=\"38.0\" layoutY=\"35.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"120.0\" />\r\n      <Button layoutX=\"38.0\" layoutY=\"35.0\" mnemonicParsing=\"false\" onMouseClicked=\"#backToMenu\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"54.0\" prefWidth=\"120.0\" text=\"Button\" />\r\n      <GridPane layoutX=\"244.0\" layoutY=\"508.0\" prefHeight=\"108.0\" prefWidth=\"793.0\">\r\n        <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n          <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n        </columnConstraints>\r\n        <rowConstraints>\r\n          <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n        </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Q\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"W\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"E\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"R\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"T\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Y\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"U\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"I\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"O\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"799.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"P\" GridPane.columnIndex=\"9\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"285.0\" layoutY=\"584.0\" prefHeight=\"108.0\" prefWidth=\"712.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"A\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"S\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"D\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"F\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"G\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"H\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"J\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"K\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"L\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"363.0\" layoutY=\"663.0\" prefHeight=\"102.0\" prefWidth=\"557.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Z\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"X\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"C\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"V\" textAlignment=\"CENTER\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"B\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"N\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"69.0\" text=\"M\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <Button layoutX=\"241.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"114.0\" text=\"ENTER\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <Button layoutX=\"920.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"107.0\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <ImageView fitHeight=\"54.0\" fitWidth=\"97.0\" layoutX=\"924.0\" layoutY=\"691.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@Backspace-button.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/mainScene.fxml b/src/main/resources/mainScene.fxml
+--- a/src/main/resources/mainScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/src/main/resources/mainScene.fxml	(date 1655124187427)
+@@ -36,52 +36,52 @@
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
++            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
++            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
++            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
++            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
++            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
++            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
++            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
++            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
++            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -104,47 +104,47 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
++            <Button fx:id="ButtonA" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
++            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
++            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
++            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
++            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
++            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
++            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
++            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -165,57 +165,52 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
++            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
++            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
++            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
++            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
++            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
++            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
++            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+          </children>
+       </GridPane>
+-      <Button layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
++      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <Button layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0">
++      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <ImageView fitHeight="54.0" fitWidth="97.0" layoutX="924.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@Backspace-button.png" />
+-         </image>
+-      </ImageView>
+    </children>
+ </AnchorPane>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/shelved.patch	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ /dev/null	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
+@@ -1,183 +0,0 @@
+-Index: src/word/Word.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import java.util.ArrayList;\r\nimport java.util.Arrays;\r\nimport java.util.StringTokenizer;\r\n\r\n/**\r\n * 单词\r\n * 字母以单词为单位进行输入和判断\r\n * @author 宋益康\r\n */\r\npublic class Word {\r\n    /**\r\n     * 一个单词包含的字母\r\n     */\r\n    public ArrayList<Letter> letters = new ArrayList<>();\r\n\r\n    /**\r\n     * 当前单词内容\r\n     */\r\n    StringBuilder WordContent = new StringBuilder();\r\n\r\n    /**\r\n     * Word类的构造方法\r\n     *\r\n     * @param word 输入的单词\r\n     * @throws Exception 异常\r\n     */\r\n    public Word(String word) throws Exception{\r\n        for(int i=0;i<word.length();i++){\r\n            this.AddLetter(word.charAt(i));\r\n        }\r\n    }\r\n    public Word(){}\r\n    /**\r\n     * 向单词中添加字母\r\n     * 方法会判定单词字母数是否已满\r\n     * @param c c\r\n     * @throws Exception 抛出单词输入异常\r\n     */\r\n    public void AddLetter(char c) throws Exception {\r\n        if(letters.size()<5){\r\n        letters.add(new Letter(c, letters.size()));\r\n        WordContent.append(c);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 删除最后一个字母\r\n     */\r\n    public void RemoveLetter() {\r\n        if(letters.size()>0){\r\n            int idx = letters.size() -1;\r\n            letters.remove(idx);\r\n            WordContent.deleteCharAt(idx);\r\n        }\r\n    }\r\n\r\n    /**\r\n     * 获取单词当前状态，以3进制计数，绿色、黄色、灰色分别对应三进制的0、1、2，黑色返回异常值-1\r\n     *\r\n     * @return int 状态对应的数\r\n     * @throws Exception 可能的异常\r\n     */\r\n    public int getState() throws Exception{\r\n        int res=0;\r\n        for (Letter l:letters){\r\n            res*=3;\r\n            if(l.letterColor.equals(LetterColor.Black)){\r\n                throw new WordColorException(\"Found Black Letter in word \"+WordContent);\r\n            }\r\n            else if(l.letterColor.equals(LetterColor.Green)){\r\n                res+=0;\r\n            }\r\n            else if(l.letterColor.equals(LetterColor.Yellow)){\r\n                res+=1;\r\n            }\r\n            else if(l.letterColor.equals(LetterColor.Grey)){\r\n                res+=2;\r\n            }\r\n        }\r\n        return res;\r\n    }\r\n\r\n    public String ShowColor() {\r\n        StringBuilder sb = new StringBuilder();\r\n        for (Letter l:letters){\r\n            if(l.letterColor.equals(LetterColor.Green)){\r\n                sb.append(\"Green \");\r\n            }\r\n            else if(l.letterColor.equals(LetterColor.Yellow)){\r\n                sb.append(\"Yellow \");\r\n            }\r\n            else if(l.letterColor.equals(LetterColor.Grey)){\r\n                sb.append(\"Grey \");\r\n            }\r\n        }\r\n        return sb.toString();\r\n    }\r\n\r\n    /**\r\n     * 检查输入答案并对字母着色\r\n     * 字母着色规则见LetterColor\r\n     * 当前字母数不足5个时抛出字母数不足异常\r\n     * 当前单词不在可能的单词中时抛出不合法单词异常\r\n     * @param ans 正确答案\r\n     * @see LetterColor\r\n     * @throws Exception 可能的异常\r\n     */\r\n    public void CheckAns(String ans) throws Exception{\r\n        if(letters.size()<5){\r\n            throw new WordSizeException(\"Not enough letters\");\r\n        }\r\n        else {\r\n            String wordContent = this.WordContent.toString();\r\n            if(!WordList.LegalWord.contains(wordContent)){\r\n                throw new WordIllegalException(\"Not in the word list\");\r\n            }\r\n            else {\r\n                int i, j;\r\n                boolean[] PosIsJudge = new boolean[5];\r\n                Arrays.fill(PosIsJudge, false);\r\n                for (i = 0; i < 5; i++){\r\n                    PosIsJudge[i]=letters.get(i).JudgeColor(ans, i);\r\n                }\r\n                for (i = 0; i < 5; i++){\r\n                    if(!PosIsJudge[i]){\r\n                        for(j=0;j<5;j++){\r\n                            if(j!=i&&!PosIsJudge[i]){\r\n                                PosIsJudge[i]=letters.get(i).JudgeColor(ans, j);\r\n                            }\r\n                        }\r\n                    }\r\n                }\r\n                for (i = 0; i < 5; i++){\r\n                    if(!PosIsJudge[i]){\r\n                        letters.get(i).letterColor=LetterColor.Grey;\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n/**\r\n * 单词数目异常\r\n * @author 宋益康\r\n */\r\nclass WordSizeException extends Exception{\r\n    String message;\r\n    public WordSizeException(String ErrMessage){\r\n        message=ErrMessage;\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return message;\r\n    }\r\n}\r\n\r\n/**\r\n * 单词不合规异常\r\n * @author 宋益康\r\n */\r\nclass WordIllegalException extends Exception{\r\n    String message;\r\n    public WordIllegalException(String ErrMessage){\r\n        message=ErrMessage;\r\n    }\r\n\r\n    @Override\r\n    public String toString(){\r\n        return message;\r\n    }\r\n}\r\n\r\nclass WordColorException extends Exception{\r\n    String message;\r\n    public WordColorException(String ErrMessage) { message=ErrMessage; }\r\n\r\n    @Override\r\n    public String toString() { return message; }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>GBK
+-===================================================================
+-diff --git a/src/word/Word.java b/src/word/Word.java
+---- a/src/word/Word.java	(revision 1b8a5d00b6ab3d1ed171cb5a7cb76b916f225872)
+-+++ b/src/word/Word.java	(date 1653873132694)
+-@@ -117,21 +117,25 @@
+-             else {
+-                 int i, j;
+-                 boolean[] PosIsJudge = new boolean[5];
+-+                boolean[] LetterIsJudge = new boolean[5];
+-                 Arrays.fill(PosIsJudge, false);
+-+                Arrays.fill(LetterIsJudge, false);
+-                 for (i = 0; i < 5; i++){
+-                     PosIsJudge[i]=letters.get(i).JudgeColor(ans, i);
+-+                    LetterIsJudge[i]=PosIsJudge[i];
+-                 }
+-                 for (i = 0; i < 5; i++){
+--                    if(!PosIsJudge[i]){
+-+                    if(!LetterIsJudge[i]){
+-                         for(j=0;j<5;j++){
+--                            if(j!=i&&!PosIsJudge[i]){
+--                                PosIsJudge[i]=letters.get(i).JudgeColor(ans, j);
+-+                            if(j!=i&&!PosIsJudge[j]&&!LetterIsJudge[i]){
+-+                                PosIsJudge[j]=letters.get(i).JudgeColor(ans, j);
+-+                                LetterIsJudge[i]=PosIsJudge[j];
+-                             }
+-                         }
+-                     }
+-                 }
+-                 for (i = 0; i < 5; i++){
+--                    if(!PosIsJudge[i]){
+-+                    if(!LetterIsJudge[i]){
+-                         letters.get(i).letterColor=LetterColor.Grey;
+-                     }
+-                 }
+-Index: src/main/Test.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import java.util.ArrayList;\r\nimport java.util.Random;\r\nimport java.util.Scanner;\r\n\r\n/**\r\n * 测试类\r\n *\r\n * @author 宋益康\r\n */\r\npublic class Test {\r\n    /**\r\n     * @param args 命令行参数\r\n     */\r\n    public static void main(String[] args) {\r\n        try{\r\n            WordList.PossibleWord = WordList.ReadWord(\"src/Data/possible_words.txt\");\r\n            WordList.LegalWord = WordList.ReadWord(\"src/Data/allowed_words.txt\");\r\n            WordList.WordPrior = WordList.ReadPrior(\"src/Data/freq_map.json\");\r\n            ArrayList<String> list = new ArrayList<>(WordList.PossibleWord);\r\n            int ansIdx = new Random().nextInt(list.size());\r\n            String ans = list.get(ansIdx);\r\n            int cnt=0;\r\n            boolean got=false;\r\n            while (!got){\r\n                cnt++;\r\n            GuessAlgorithm.getWordScore(WordList.LegalWord,WordList.PossibleWord);\r\n            String guessWord = GuessAlgorithm.wsList.get(0).word;\r\n            Word guess = new Word(guessWord);\r\n            guess.CheckAns(ans);\r\n            System.out.println(\"guess num: \"+cnt + \" guess word: \"+guessWord);\r\n            System.out.println(\"Color: \"+ guess.ShowColor());\r\n            if(guess.getState()!=0){\r\n                WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,guess.getState(),guessWord);\r\n            }else {\r\n                got=true;\r\n                System.out.println(\"ans: \"+ans+\" guess: \"+guessWord+\" times: \"+cnt);\r\n            }\r\n            }\r\n            System.out.println(\"Finish\");\r\n        }\r\n        catch (Exception e){\r\n            System.out.println(e);\r\n        }\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>GBK
+-===================================================================
+-diff --git a/src/main/Test.java b/src/main/Test.java
+---- a/src/main/Test.java	(revision 1b8a5d00b6ab3d1ed171cb5a7cb76b916f225872)
+-+++ b/src/main/Test.java	(date 1653873398479)
+-@@ -14,28 +14,14 @@
+-     public static void main(String[] args) {
+-         try{
+-             WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
+--            WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
+-+            WordList.LegalWord = WordList.ReadWord("src/Data/possible_words.txt");
+-             WordList.WordPrior = WordList.ReadPrior("src/Data/freq_map.json");
+--            ArrayList<String> list = new ArrayList<>(WordList.PossibleWord);
+--            int ansIdx = new Random().nextInt(list.size());
+--            String ans = list.get(ansIdx);
+--            int cnt=0;
+--            boolean got=false;
+--            while (!got){
+--                cnt++;
+-+            WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,(0*1+1*3+2*9+2*27+1*81),"legal");
+-+            WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,(2*1+2*3+2*9+1*27+1*81),"taint");
+-+            WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,(0*1+0*3+1*9+0*27+2*81),"stall");
+-+            //WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,(1*1+0*3+2*9+2*27+0*81),"adult");
+-             GuessAlgorithm.getWordScore(WordList.LegalWord,WordList.PossibleWord);
+--            String guessWord = GuessAlgorithm.wsList.get(0).word;
+--            Word guess = new Word(guessWord);
+--            guess.CheckAns(ans);
+--            System.out.println("guess num: "+cnt + " guess word: "+guessWord);
+--            System.out.println("Color: "+ guess.ShowColor());
+--            if(guess.getState()!=0){
+--                WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord,guess.getState(),guessWord);
+--            }else {
+--                got=true;
+--                System.out.println("ans: "+ans+" guess: "+guessWord+" times: "+cnt);
+--            }
+--            }
+-+            System.out.println(GuessAlgorithm.wsList.get(0).word);
+-             System.out.println("Finish");
+-         }
+-         catch (Exception e){
+-Index: src/algorithm/GuessAlgorithm.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import java.util.*;\r\n\r\npublic class GuessAlgorithm {\r\n    /**\r\n     * 每种情况出现的加权概率\r\n     */\r\n    static double[] chance = new double[3*3*3*3*3];\r\n\r\n    /**\r\n     * 所有可能单词的权重和\r\n     */\r\n    static double priorAll;\r\n\r\n    /**\r\n     * 评价每个单词猜测的分数\r\n     */\r\n    static ArrayList<WordWithScore> wsList = new ArrayList<>();\r\n\r\n    /**\r\n     * 更新可能词\r\n     *\r\n     * @param preSet 先前的可能词集合\r\n     * @param state  状态\r\n     * @param guess  上次猜测的词\r\n     * @return {@link Set}<{@link String}>\r\n     * @throws Exception 异常\r\n     */\r\n    public static Set<String> updatePossibleWord (Set<String> preSet,int state,String guess) throws Exception{\r\n        Set<String> res = new HashSet<>();\r\n        Word GuessWord = new Word(guess);\r\n        for (String w : preSet){\r\n            GuessWord.CheckAns(w);\r\n            if(state==GuessWord.getState()){\r\n                res.add(w);\r\n            }\r\n        }\r\n        return res;\r\n    }\r\n\r\n    /**\r\n     * 获取单词的分数\r\n     *\r\n     * @param LegalWord    合法词\r\n     * @param PossibleWord 当前状态的可能值\r\n     * @throws Exception 异常\r\n     */\r\n    public static void getWordScore(Set<String> LegalWord, Set<String> PossibleWord) throws Exception{\r\n        ArrayList<WordWithScore> tmpList = new ArrayList<>();\r\n        //第一层循环，遍历所有合法的单词\r\n        for (String lWord : LegalWord) {\r\n            boolean show = false;\r\n            priorAll=0;\r\n            Arrays.fill(chance, 0);\r\n            Word tmpWord = new Word(lWord);\r\n\r\n            //遍历可能为答案的词\r\n            for (String pWord : PossibleWord) {\r\n                tmpWord.CheckAns(pWord);\r\n                int state;\r\n                state = tmpWord.getState();\r\n                chance[state] += WordList.WordPrior.get(pWord);\r\n                if(show){\r\n                    System.out.println(\"possible word:\"+pWord+\" result:\" + tmpWord.ShowColor());\r\n                }\r\n            }\r\n            //计算每种状态的概率之和\r\n            for (double c : chance) {\r\n                priorAll += c;\r\n            }\r\n            for (int i = 0; i < chance.length; i++) {\r\n                chance[i] /= priorAll;\r\n            }\r\n            //获取单词对应的信息熵\r\n                double p;\r\n                double h = 0;\r\n                double c;\r\n            for (double v : chance) {\r\n                p = v;\r\n                if (p != 0)\r\n                    h += p * Math.log(1 / p) / Math.log(2);\r\n            }\r\n                c=chance[0];\r\n                tmpList.add(new WordWithScore(lWord, h + c, h, c));\r\n        }\r\n        tmpList.sort(Collections.reverseOrder());\r\n        wsList=tmpList;\r\n    }\r\n}\r\n\r\n\r\n/**\r\n * 单词与其对应得分\r\n *\r\n * @author 宋益康\r\n */\r\nclass WordWithScore implements Comparable<WordWithScore>{\r\n        String word;\r\n        double score;\r\n        double possible;\r\n        double entropy;\r\n        WordWithScore(String w, double s, double h, double p){\r\n        word=w;\r\n        score=s;\r\n        entropy=h;\r\n        possible=p;\r\n        }\r\n\r\n@Override\r\npublic int compareTo(WordWithScore w){\r\n        if(this.score>w.score)\r\n        return 1;\r\n        else if(this.score == w.score)\r\n        return 0;\r\n        return -1;\r\n        }\r\n        }\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>GBK
+-===================================================================
+-diff --git a/src/algorithm/GuessAlgorithm.java b/src/algorithm/GuessAlgorithm.java
+---- a/src/algorithm/GuessAlgorithm.java	(revision 1b8a5d00b6ab3d1ed171cb5a7cb76b916f225872)
+-+++ b/src/algorithm/GuessAlgorithm.java	(date 1653793235133)
+-@@ -113,4 +113,4 @@
+-         return 0;
+-         return -1;
+-         }
+--        }
+-+}
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"basic function\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/Data/freq_map.json\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/TestDir/naniTest.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/algorithm/Utils.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/encodings.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/encodings.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/WordleEx.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/WordleEx.iml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/Test.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/Test.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/word/Letter.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/word/Letter.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/word/Word.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/word/Word.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/word/WordList.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/word/WordList.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/Letter.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/Letter.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/LetterIOException.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/LetterIOException.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/Test.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/Test.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/WordList.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/WordList.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"281El5VnHKW1oxjs0dAtV1ibU0u\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/src/Data\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Libraries\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.JavaFX\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Test\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.wordleex.HelloApplication\" />\r\n      <module name=\"WordleEx\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.wordleex.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"WordleEx\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;D:\\Java\\JavaFX\\javafx-sdk-18\\lib&quot; --add-modules javafx.controls,javafx.fxml\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"naniTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"naniTest\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.HelloApplication\" />\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.Test\" />\r\n      <item itemvalue=\"Application.naniTest\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Test\" />\r\n        <item itemvalue=\"Application.naniTest\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"\" />\r\n      <created>1650375842923</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1650375842923</updated>\r\n      <workItem from=\"1650375843003\" duration=\"1275000\" />\r\n      <workItem from=\"1653198377145\" duration=\"16052000\" />\r\n      <workItem from=\"1653449527897\" duration=\"695000\" />\r\n      <workItem from=\"1653643590526\" duration=\"2473000\" />\r\n      <workItem from=\"1653646119075\" duration=\"2032000\" />\r\n      <workItem from=\"1653650061497\" duration=\"1435000\" />\r\n      <workItem from=\"1653655065606\" duration=\"287000\" />\r\n      <workItem from=\"1653700967604\" duration=\"6596000\" />\r\n      <workItem from=\"1653782154243\" duration=\"10560000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"basic function\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"basic function\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/main/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"WordList.WordPrior\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.wsList\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 1b8a5d00b6ab3d1ed171cb5a7cb76b916f225872)
+-+++ b/.idea/workspace.xml	(date 1654351758209)
+-@@ -4,24 +4,15 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="basic function">
+--      <change afterPath="$PROJECT_DIR$/src/Data/freq_map.json" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/src/TestDir/naniTest.java" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
+--      <change afterPath="$PROJECT_DIR$/src/algorithm/Utils.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+-+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="finish basic Algorithm of guess word">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/WordleEx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/WordleEx.iml" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/algorithm/GuessAlgorithm.java" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/src/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Test.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/word/Letter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Letter.java" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/src/word/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Word.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/src/word/WordList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/Letter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Letter.class" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/LetterIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterIOException.class" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+-       <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Test.class" afterDir="false" />
+--      <change beforePath="$PROJECT_DIR$/target/classes/WordList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordList.class" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/target/classes/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Word.class" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/target/classes/WordIllegalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordIllegalException.class" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/target/classes/WordSizeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordSizeException.class" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -136,8 +127,18 @@
+-       <workItem from="1653650061497" duration="1435000" />
+-       <workItem from="1653655065606" duration="287000" />
+-       <workItem from="1653700967604" duration="6596000" />
+--      <workItem from="1653782154243" duration="10560000" />
+-+      <workItem from="1653782154243" duration="11981000" />
+-+      <workItem from="1653871597755" duration="2383000" />
+-+      <workItem from="1654348627400" duration="1221000" />
+-+    </task>
+-+    <task id="LOCAL-00001" summary="finish basic Algorithm of guess word">
+-+      <created>1653793026349</created>
+-+      <option name="number" value="00001" />
+-+      <option name="presentableId" value="LOCAL-00001" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1653793026349</updated>
+-     </task>
+-+    <option name="localTasksCounter" value="2" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -156,7 +157,8 @@
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="basic function" />
+--    <option name="LAST_COMMIT_MESSAGE" value="basic function" />
+-+    <MESSAGE value="finish basic Algorithm of guess word" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="finish basic Algorithm of guess word" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <breakpoint-manager>
+-@@ -165,6 +167,11 @@
+-           <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+-           <line>11</line>
+-           <option name="timeStamp" value="2" />
+-+        </line-breakpoint>
+-+        <line-breakpoint enabled="true" type="java-line">
+-+          <url>file://$PROJECT_DIR$/src/main/Test.java</url>
+-+          <line>24</line>
+-+          <option name="timeStamp" value="16" />
+-         </line-breakpoint>
+-       </breakpoints>
+-     </breakpoint-manager>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58__Changes_.xml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ /dev/null	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
+@@ -1,24 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]" date="1654523949737" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2022/6/6 21:58 [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/Test.class" />
+-    <option name="AFTER_PATH" value="target/classes/Test.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/Test.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/Word.class" />
+-    <option name="AFTER_PATH" value="target/classes/Word.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/Word.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/WordIllegalException.class" />
+-    <option name="AFTER_PATH" value="target/classes/WordIllegalException.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/WordIllegalException.class" />
+-  </binary>
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/WordSizeException.class" />
+-    <option name="AFTER_PATH" value="target/classes/WordSizeException.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_6_21_58_[Changes]/WordSizeException.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: target/classes/resources/mainScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.ColumnConstraints?>\r\n<?import javafx.scene.layout.GridPane?>\r\n<?import javafx.scene.layout.RowConstraints?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@normalMode.png\" />\r\n         </image>\r\n      </ImageView>\r\n        <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"54.0\" layoutX=\"38.0\" layoutY=\"35.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"120.0\" />\r\n      <Button layoutX=\"38.0\" layoutY=\"35.0\" mnemonicParsing=\"false\" onMouseClicked=\"#backToMenu\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"54.0\" prefWidth=\"120.0\" text=\"Button\" />\r\n      <GridPane layoutX=\"244.0\" layoutY=\"508.0\" prefHeight=\"108.0\" prefWidth=\"793.0\">\r\n        <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n          <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n        </columnConstraints>\r\n        <rowConstraints>\r\n          <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n        </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Q\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"W\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"E\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"R\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"T\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Y\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"U\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"I\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"O\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"799.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"P\" GridPane.columnIndex=\"9\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"285.0\" layoutY=\"584.0\" prefHeight=\"108.0\" prefWidth=\"712.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"A\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"S\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"D\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"F\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"G\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"H\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"J\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"K\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"L\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"363.0\" layoutY=\"663.0\" prefHeight=\"102.0\" prefWidth=\"557.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Z\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"X\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"C\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"V\" textAlignment=\"CENTER\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"B\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"N\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"69.0\" text=\"M\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <Button layoutX=\"241.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"114.0\" text=\"ENTER\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <Button layoutX=\"920.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"107.0\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <ImageView fitHeight=\"54.0\" fitWidth=\"97.0\" layoutX=\"924.0\" layoutY=\"691.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@Backspace-button.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/resources/mainScene.fxml b/target/classes/resources/mainScene.fxml
+--- a/target/classes/resources/mainScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/target/classes/resources/mainScene.fxml	(date 1655124187427)
+@@ -36,52 +36,52 @@
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
++            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
++            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
++            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
++            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
++            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
++            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
++            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
++            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
++            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -104,47 +104,47 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
++            <Button fx:id="ButtonA" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
++            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
++            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
++            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
++            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
++            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
++            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
++            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -165,57 +165,52 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
++            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
++            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
++            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
++            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
++            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
++            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
++            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+          </children>
+       </GridPane>
+-      <Button layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
++      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <Button layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0">
++      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <ImageView fitHeight="54.0" fitWidth="97.0" layoutX="924.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@Backspace-button.png" />
+-         </image>
+-      </ImageView>
+    </children>
+ </AnchorPane>
+Index: src/main/resources/style.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/style.css b/src/main/resources/style.css
+new file mode 100644
+--- /dev/null	(date 1655124187441)
++++ b/src/main/resources/style.css	(date 1655124187441)
+@@ -0,0 +1,4 @@
++.button{
++     -fx-background-image: url('Backspace-button.png');
++     -fx-background-size: 100% 100%;
++ }
+Index: target/classes/mainScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.layout.ColumnConstraints?>\r\n<?import javafx.scene.layout.GridPane?>\r\n<?import javafx.scene.layout.RowConstraints?>\r\n<?import javafx.scene.shape.Rectangle?>\r\n<?import javafx.scene.text.Font?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@normalMode.png\" />\r\n         </image>\r\n      </ImageView>\r\n        <Rectangle arcHeight=\"5.0\" arcWidth=\"5.0\" fill=\"DODGERBLUE\" height=\"54.0\" layoutX=\"38.0\" layoutY=\"35.0\" stroke=\"BLACK\" strokeType=\"INSIDE\" width=\"120.0\" />\r\n      <Button layoutX=\"38.0\" layoutY=\"35.0\" mnemonicParsing=\"false\" onMouseClicked=\"#backToMenu\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"54.0\" prefWidth=\"120.0\" text=\"Button\" />\r\n      <GridPane layoutX=\"244.0\" layoutY=\"508.0\" prefHeight=\"108.0\" prefWidth=\"793.0\">\r\n        <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n          <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n        </columnConstraints>\r\n        <rowConstraints>\r\n          <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n        </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Q\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"W\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"E\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"R\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"T\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Y\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"U\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"I\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"O\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"799.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"P\" GridPane.columnIndex=\"9\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"285.0\" layoutY=\"584.0\" prefHeight=\"108.0\" prefWidth=\"712.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"A\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"S\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"D\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"F\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"G\" textAlignment=\"CENTER\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"H\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"J\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"K\" GridPane.columnIndex=\"7\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"700.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"L\" GridPane.columnIndex=\"8\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <GridPane layoutX=\"363.0\" layoutY=\"663.0\" prefHeight=\"102.0\" prefWidth=\"557.0\">\r\n         <columnConstraints>\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n            <ColumnConstraints hgrow=\"SOMETIMES\" maxWidth=\"150.0\" minWidth=\"10.0\" prefWidth=\"150.0\" />\r\n         </columnConstraints>\r\n         <rowConstraints>\r\n            <RowConstraints minHeight=\"10.0\" prefHeight=\"30.0\" vgrow=\"SOMETIMES\" />\r\n         </rowConstraints>\r\n         <children>\r\n            <Button layoutX=\"10.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"Z\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"108.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"X\" GridPane.columnIndex=\"1\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"206.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"C\" GridPane.columnIndex=\"2\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"304.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"V\" textAlignment=\"CENTER\" GridPane.columnIndex=\"3\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"403.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"B\" GridPane.columnIndex=\"4\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"502.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"71.0\" text=\"N\" GridPane.columnIndex=\"5\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n            <Button layoutX=\"601.0\" layoutY=\"25.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"69.0\" text=\"M\" GridPane.columnIndex=\"6\">\r\n               <font>\r\n                  <Font size=\"20.0\" />\r\n               </font>\r\n            </Button>\r\n         </children>\r\n      </GridPane>\r\n      <Button layoutX=\"241.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"114.0\" text=\"ENTER\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <Button layoutX=\"920.0\" layoutY=\"682.0\" mnemonicParsing=\"false\" prefHeight=\"65.0\" prefWidth=\"107.0\">\r\n         <font>\r\n            <Font size=\"20.0\" />\r\n         </font>\r\n      </Button>\r\n      <ImageView fitHeight=\"54.0\" fitWidth=\"97.0\" layoutX=\"924.0\" layoutY=\"691.0\" pickOnBounds=\"true\" preserveRatio=\"true\">\r\n         <image>\r\n            <Image url=\"@Backspace-button.png\" />\r\n         </image>\r\n      </ImageView>\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/mainScene.fxml b/target/classes/mainScene.fxml
+--- a/target/classes/mainScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/target/classes/mainScene.fxml	(date 1655124187427)
+@@ -36,52 +36,52 @@
+           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
++            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
++            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
++            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
++            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
++            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
++            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
++            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
++            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
++            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -104,47 +104,47 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
++            <Button fx:id="ButtonA" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
++            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
++            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
++            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
++            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
++            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
++            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
++            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
++            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+                <font>
+                   <Font size="20.0" />
+                </font>
+@@ -165,57 +165,52 @@
+             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+          <children>
+-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
++            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
++            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
++            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
++            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
++            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
++            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
++            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+                <font>
+                   <Font size="20.0" />
+                </font>
+             </Button>
+          </children>
+       </GridPane>
+-      <Button layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
++      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <Button layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0">
++      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
+          <font>
+             <Font size="20.0" />
+          </font>
+       </Button>
+-      <ImageView fitHeight="54.0" fitWidth="97.0" layoutX="924.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
+-         <image>
+-            <Image url="@Backspace-button.png" />
+-         </image>
+-      </ImageView>
+    </children>
+ </AnchorPane>
+Index: target/classes/menuScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.image.*?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.text.*?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@menuScreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"WHITE\" layoutX=\"456.0\" layoutY=\"248.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Normal Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"441.0\" layoutY=\"362.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Advance Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"532.0\" layoutY=\"485.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"AI Show\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Button layoutX=\"456.0\" layoutY=\"204.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startNormalButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"369.0\" text=\"Button\" />\r\n      <Button layoutX=\"441.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAdvanceButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"397.0\" text=\"Button\" />\r\n      <Button layoutX=\"532.0\" layoutY=\"441.0\" mnemonicParsing=\"false\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"215.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/menuScene.fxml b/target/classes/menuScene.fxml
+--- a/target/classes/menuScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/target/classes/menuScene.fxml	(date 1655124187401)
+@@ -1,11 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.layout.*?>
+-<?import javafx.scene.text.*?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
++<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
+    <children>
+       <ImageView fitHeight="800.0" fitWidth="1280.0">
+          <image>
+@@ -26,6 +28,6 @@
+          </font></Text>
+       <Button layoutX="456.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#startNormalButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="369.0" text="Button" />
+       <Button layoutX="441.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#startAdvanceButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="397.0" text="Button" />
+-      <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
++      <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#startAIShowButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
+    </children>
+ </AnchorPane>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"algorithm GUI update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/Main.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/resources/mainScene.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/resources/mainScene.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"MIXED\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"281El5VnHKW1oxjs0dAtV1ibU0u\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"extract.method.default.visibility\" value=\"private\" />\r\n    <property name=\"last_directory_selection\" value=\"$PROJECT_DIR$/src/util\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Project\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IdeaProjects\\WordleEx\\src\\main\\resources\" />\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.wordleex.HelloApplication\" />\r\n      <module name=\"WordleEx\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.wordleex.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"WordleEx\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;D:\\Java\\JavaFX\\javafx-sdk-18\\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"naniTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"naniTest\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.HelloApplication\" />\r\n      <item itemvalue=\"Application.Test\" />\r\n      <item itemvalue=\"Application.naniTest\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Test\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"\" />\r\n      <created>1650375842923</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1650375842923</updated>\r\n      <workItem from=\"1650375843003\" duration=\"1275000\" />\r\n      <workItem from=\"1653198377145\" duration=\"16052000\" />\r\n      <workItem from=\"1653449527897\" duration=\"695000\" />\r\n      <workItem from=\"1653643590526\" duration=\"2473000\" />\r\n      <workItem from=\"1653646119075\" duration=\"2032000\" />\r\n      <workItem from=\"1653650061497\" duration=\"1435000\" />\r\n      <workItem from=\"1653655065606\" duration=\"287000\" />\r\n      <workItem from=\"1653700967604\" duration=\"6596000\" />\r\n      <workItem from=\"1653782154243\" duration=\"10560000\" />\r\n      <workItem from=\"1654502867795\" duration=\"10825000\" />\r\n      <workItem from=\"1654528669522\" duration=\"1184000\" />\r\n      <workItem from=\"1654530024195\" duration=\"729000\" />\r\n      <workItem from=\"1654709314006\" duration=\"4059000\" />\r\n      <workItem from=\"1654901364999\" duration=\"867000\" />\r\n      <workItem from=\"1654902260019\" duration=\"12078000\" />\r\n      <workItem from=\"1654916236638\" duration=\"4025000\" />\r\n      <workItem from=\"1654933943696\" duration=\"7308000\" />\r\n      <workItem from=\"1654949457097\" duration=\"13653000\" />\r\n      <workItem from=\"1654963642747\" duration=\"26000\" />\r\n      <workItem from=\"1654963736948\" duration=\"49000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"merge\">\r\n      <created>1654525263964</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654525263964</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"make some adjustment\">\r\n      <created>1654713210637</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654713210637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"make some adjustment\">\r\n      <created>1654901414811</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654901414812</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"make some adjustment\">\r\n      <created>1654901994608</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654901994608</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"make some adjustment\">\r\n      <created>1654903017507</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654903017507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"finish some visible data\">\r\n      <created>1654912069036</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654912069036</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"finish some visible data\">\r\n      <created>1654913865125</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654913865125</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"finish some visible data\">\r\n      <created>1654935276796</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654935276796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"make some UI\">\r\n      <created>1654936817179</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654936817179</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"make some UI\">\r\n      <created>1654941066954</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654941066955</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"make some UI\">\r\n      <created>1654941286642</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654941286642</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"algorithm GUI\">\r\n      <created>1654960134060</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654960134060</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"algorithm GUI update\">\r\n      <created>1654963363914</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654963363914</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"algorithm GUI update\">\r\n      <created>1654963655793</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654963655793</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"15\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"basic function\" />\r\n    <MESSAGE value=\"merge\" />\r\n    <MESSAGE value=\"make some adjustment\" />\r\n    <MESSAGE value=\"finish some visible data\" />\r\n    <MESSAGE value=\"make some UI\" />\r\n    <MESSAGE value=\"algorithm GUI\" />\r\n    <MESSAGE value=\"algorithm GUI update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"algorithm GUI update\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"WordList.WordPrior\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.wsList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.StateInfoList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.StateInfoList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.PossibleWordChance\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.eNow\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/.idea/workspace.xml	(date 1655129033214)
+@@ -4,11 +4,22 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="algorithm GUI update">
++    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="finish some visible data">
++      <change afterPath="$PROJECT_DIR$/src/main/resources/style.css" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Letter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Letter.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/LetterIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterIOException.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/WordWithScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithScore.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/menuScene.fxml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -102,8 +113,8 @@
+       </method>
+     </configuration>
+     <list>
+-      <item itemvalue="Application.Main" />
+       <item itemvalue="Application.HelloApplication" />
++      <item itemvalue="Application.Main" />
+       <item itemvalue="Application.Test" />
+       <item itemvalue="Application.naniTest" />
+     </list>
+Index: target/classes/resources/menuScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.*?>\r\n<?import javafx.scene.image.*?>\r\n<?import javafx.scene.layout.*?>\r\n<?import javafx.scene.text.*?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/16\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@menuScreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"WHITE\" layoutX=\"456.0\" layoutY=\"248.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Normal Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"441.0\" layoutY=\"362.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Advance Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"532.0\" layoutY=\"485.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"AI Show\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Button layoutX=\"456.0\" layoutY=\"204.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startNormalButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"369.0\" text=\"Button\" />\r\n      <Button layoutX=\"441.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAdvanceButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"397.0\" text=\"Button\" />\r\n      <Button layoutX=\"532.0\" layoutY=\"441.0\" mnemonicParsing=\"false\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"215.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/resources/menuScene.fxml b/target/classes/resources/menuScene.fxml
+--- a/target/classes/resources/menuScene.fxml	(revision b4a1c78cab8c6e7666dbf36518a1e656e234b34d)
++++ b/target/classes/resources/menuScene.fxml	(date 1655124187401)
+@@ -1,11 +1,13 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.*?>
+-<?import javafx.scene.image.*?>
+-<?import javafx.scene.layout.*?>
+-<?import javafx.scene.text.*?>
++<?import javafx.scene.control.Button?>
++<?import javafx.scene.image.Image?>
++<?import javafx.scene.image.ImageView?>
++<?import javafx.scene.layout.AnchorPane?>
++<?import javafx.scene.text.Font?>
++<?import javafx.scene.text.Text?>
+ 
+-<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
++<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
+    <children>
+       <ImageView fitHeight="800.0" fitWidth="1280.0">
+          <image>
+@@ -26,6 +28,6 @@
+          </font></Text>
+       <Button layoutX="456.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#startNormalButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="369.0" text="Button" />
+       <Button layoutX="441.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#startAdvanceButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="397.0" text="Button" />
+-      <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
++      <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#startAIShowButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
+    </children>
+ </AnchorPane>
