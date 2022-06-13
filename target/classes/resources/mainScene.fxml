@@ -36,52 +36,52 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
                <font>
                   <Font size="20.0" />
                </font>
@@ -104,47 +104,47 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+            <Button fx:id="ButtonA" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
                <font>
                   <Font size="20.0" />
                </font>
@@ -165,57 +165,52 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <Button layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0">
+      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <ImageView fitHeight="54.0" fitWidth="97.0" layoutX="924.0" layoutY="691.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Backspace-button.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
