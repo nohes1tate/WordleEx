@@ -87,6 +87,9 @@ public class Main extends Application {
         Main.mainMenuScene = mainMenuScene;
     }
 
+    private static int index = 0;
+    private static int  line = 0;
+
     public static void setMainWindow(Stage mainWindow) {
         Main.mainWindow = mainWindow;
     }
@@ -113,6 +116,7 @@ public class Main extends Application {
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
         WordList.LegalWord = WordList.ReadWord("src/Data/allowed_words.txt");
         WordList.AnswerWord = WordList.ReadWord("src/Data/possible_words.txt");
+
         Word testword = new Word();
         ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
         int ansIdx = new Random().nextInt(list.size());
@@ -124,14 +128,23 @@ public class Main extends Application {
 
         AnchorPane pane = new AnchorPane();
 
+        index=0;
+
+        line=0;
 
         Button button = new Button("≤‚ ‘");
-        button.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            private int index = 0;
-            private int line = 0;
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
+        Parent mainScene = loader.load();
+        pane.getChildren().add(mainScene);
 
-            @Override
-            public void handle(KeyEvent keyEvent) {
+
+        Scene scene = new Scene(pane, 1280, 800);
+
+        MenuScene Controller = loader.getController();
+
+        Controller.changeButtonQColor();
+
+        pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
                 char toAddLetter;
@@ -171,6 +184,7 @@ public class Main extends Application {
                                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                                             aniLetters[i].text.setFill(Color.BLACK);
                                         }
+                                      Controller.changeButtonWColor();
                                     }
                                     status = testword.getState();
                                     if (status == 0) {
@@ -202,24 +216,12 @@ public class Main extends Application {
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }
-
-
-            }
         });
         pane.getChildren().add(button);
 
 
       //  Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/mainScene.fxml")));
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
-        Parent mainScene = loader.load();
-        pane.getChildren().add(mainScene);
 
-
-        Scene scene = new Scene(pane, 1280, 800);
-
-        MenuScene Controller = loader.getController();
-
-        Controller.changeButtonWColor();
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
@@ -227,6 +229,9 @@ public class Main extends Application {
     }
 
     public static void startAdvanceMode() throws Exception {
+        index=0;
+
+        line=0;
         Button button = new Button("≤‚ ‘");
         AnchorPane pane = new AnchorPane();
         pane.getChildren().add(button);
@@ -487,6 +492,8 @@ public class Main extends Application {
     }
 
     public static void startAIShowMode() throws Exception {
+        index=0;
+        line=0;
         System.out.println("start aishow mode");
         Button button = new Button("≤‚ ‘");
         AnchorPane pane = new AnchorPane();
