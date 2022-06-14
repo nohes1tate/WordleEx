@@ -11,15 +11,15 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.*;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
@@ -148,7 +148,7 @@ public class Main extends Application {
                 System.out.println(kCode.getName());
                 char toAddLetter;
                 try {
-                    if (kCode.isLetterKey() && index < 5) {
+                    if (kCode.isLetterKey() && index < 5 && line < 6) {
                         toAddLetter = (char) (kCode.getCode() + 32);
                         testword.AddLetter(toAddLetter);
                         aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
@@ -191,6 +191,57 @@ public class Main extends Application {
                                     status = testword.getState();
                                     if (status == 0) {
                                         System.out.println("you win");
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("WIN!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 50));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.GREEN);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),300.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),300.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,250.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
+//                                        win.setOnFinished(finish-> {
+//                                            try {
+//                                                Thread.sleep(3000);
+//                                                Controller.backToMenu();
+//                                            } catch (Exception e) {
+//                                                throw new RuntimeException(e);
+//                                            }
+//                                        });
+
                                     }
                                     if (line == 6) {
                                         System.out.println("you lose");
@@ -205,7 +256,7 @@ public class Main extends Application {
 
                             } catch (Exception e) {
                                 //throw new RuntimeException(e);
-                                System.out.println("Not in the list");
+                                System.out.println(e.toString());
                                 for (int i = 0; i < 5; i++) {
                                     testword.RemoveLetter();
                                 }
@@ -639,8 +690,7 @@ public class Main extends Application {
             infoChance.get(i).ft.play();
         }
 
-
-        button.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
             private int index = 0;
             private int line = 0;
 
