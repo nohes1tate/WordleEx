@@ -142,8 +142,6 @@ public class Main extends Application {
 
         MenuScene Controller = loader.getController();
 
-        //Controller.changeButtonQColor();
-
         pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)->{
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
@@ -239,8 +237,11 @@ public class Main extends Application {
         AnchorPane pane = new AnchorPane();
         pane.getChildren().add(button);
         Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/advanceScene.fxml")));
-        pane.getChildren().add(mainScene);
 
+        pane.getChildren().add(mainScene);
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/advanceScene.fxml"));
+        loader.load();
+        AdvanceScene Controller = loader.getController();
         Scene scene = new Scene(pane, 1280, 800);
 
         mainWindow.setScene(scene);
@@ -367,12 +368,17 @@ public class Main extends Application {
                                     for (int i = 0; i < 5; i++) {
                                         if (testword.letters.get(i).letterColor == LetterColor.Green) {
                                             aniLetters[i].text.setFill(Color.GREEN);
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,3);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
                                             aniLetters[i].text.setFill(Color.YELLOW);
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,2);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                                             aniLetters[i].text.setFill(Color.BLACK);
+                                            System.out.println("changecolorbegin");
+                                            Controller.changeButtonColor(testword.letters.get(i).letterContent,1);
+                                            System.out.println("changecolorend");
                                         }
                                     }
                                     status = testword.getState();
@@ -475,7 +481,7 @@ public class Main extends Application {
 
                             } catch (Exception e) {
                                 //throw new RuntimeException(e);
-                                System.out.println("Not in the list");
+                                System.out.println(e);
                                 for (int i = 0; i < 5; i++) {
                                     testword.RemoveLetter();
                                 }
@@ -501,7 +507,7 @@ public class Main extends Application {
         Button button = new Button("²âÊÔ");
         AnchorPane pane = new AnchorPane();
         pane.getChildren().add(button);
-        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/advanceScene.fxml")));
+        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/aiShowScene.fxml")));
         pane.getChildren().add(mainScene);
 
         Scene scene = new Scene(pane, 1280, 800);
