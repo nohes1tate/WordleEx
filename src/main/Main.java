@@ -89,6 +89,8 @@ public class Main extends Application {
 
     private static int index = 0;
     private static int  line = 0;
+    private static int leftLine = 0;
+    private static int rightLine = 0;
 
     public static void setMainWindow(Stage mainWindow) {
         Main.mainWindow = mainWindow;
@@ -132,7 +134,6 @@ public class Main extends Application {
 
         line=0;
 
-        Button button = new Button("≤‚ ‘");
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
         Parent mainScene = loader.load();
         pane.getChildren().add(mainScene);
@@ -218,8 +219,6 @@ public class Main extends Application {
                     throw new RuntimeException(e);
                 }
         });
-        pane.getChildren().add(button);
-
 
       //  Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/mainScene.fxml")));
 
@@ -231,18 +230,23 @@ public class Main extends Application {
 
     public static void startAdvanceMode() throws Exception {
         index=0;
-
         line=0;
+        leftLine = 0;
+        rightLine = 0;
         Button button = new Button("≤‚ ‘");
         AnchorPane pane = new AnchorPane();
         pane.getChildren().add(button);
-        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/advanceScene.fxml")));
+       // Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/advanceScene.fxml")));
 
-        pane.getChildren().add(mainScene);
+
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/advanceScene.fxml"));
-        loader.load();
-        AdvanceScene Controller = loader.getController();
+        Parent mainScene = loader.load();
+        pane.getChildren().add(mainScene);
+
         Scene scene = new Scene(pane, 1280, 800);
+
+        AdvanceScene Controller = loader.getController();
+
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
@@ -327,15 +331,8 @@ public class Main extends Application {
 
         aniStrings.clear();
 
-        button.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            private int index = 0;
-            private int line = 0;
+        pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)-> {
 
-            private int leftLine = 0;
-            private int rightLine = 0;
-
-            @Override
-            public void handle(KeyEvent keyEvent) {
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
                 char toAddLetter;
@@ -495,8 +492,6 @@ public class Main extends Application {
                     throw new RuntimeException(e);
                 }
 
-
-            }
         });
     }
 
