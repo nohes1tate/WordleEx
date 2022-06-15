@@ -97,6 +97,15 @@ public class Main extends Application {
 
     private static Word testword = new Word();
 
+    private static String ans;
+
+    private static AniString[] recommend = new AniString[5];
+    private static AniString[] recommendInfo = new AniString[5];
+    private static AniString[] recommendPossibility = new AniString[5];
+    private static ArrayList<AniString> aniStrings = new ArrayList<>();
+    private static DecimalFormat df2 = new DecimalFormat("#.##");
+    private static DecimalFormat df6 = new DecimalFormat("#.#####");
+
     public static void setMainWindow(Stage mainWindow) {
         Main.mainWindow = mainWindow;
     }
@@ -127,7 +136,7 @@ public class Main extends Application {
         testword = new Word();
         ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
         int ansIdx = new Random().nextInt(list.size());
-        String ans = list.get(ansIdx);
+        ans = list.get(ansIdx);
 
         System.out.println(ans);
 
@@ -265,7 +274,7 @@ public class Main extends Application {
 
         ArrayList<String> list = new ArrayList<>(WordList.AnswerWord);
         int ansIdx = new Random().nextInt(list.size());
-        String ans = list.get(ansIdx);
+        ans = list.get(ansIdx);
 
         GuessAlgorithm.eNow = GuessAlgorithm.calENow(WordList.PossibleWord);
         GuessAlgorithm.possibilities = WordList.PossibleWord.size();
@@ -279,12 +288,12 @@ public class Main extends Application {
         AnchorPane.setTopAnchor(hint.ft.getNode(), 120.0);
         hint.ft.play();
 
-        AniString[] recommend = new AniString[5];
-        AniString[] recommendInfo = new AniString[5];
-        AniString[] recommendPossibility = new AniString[5];
+        recommend = new AniString[5];
+        recommendInfo = new AniString[5];
+        recommendPossibility = new AniString[5];
 
-        DecimalFormat df2 = new DecimalFormat("#.##");
-        DecimalFormat df6 = new DecimalFormat("#.#####");
+        df2 = new DecimalFormat("#.##");
+        df6 = new DecimalFormat("#.#####");
 
         for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
             recommend[i] = new AniString(GuessAlgorithm.wsList.get(i).word, Color.WHITE);
@@ -305,7 +314,7 @@ public class Main extends Application {
         }
 
         aniLetters = new AniLetter[5];
-        ArrayList<AniString> aniStrings = new ArrayList<>();
+        aniStrings = new ArrayList<>();
 
 
         aniStrings.add(new AniString("Possibilities:", Color.WHITE));
@@ -864,293 +873,545 @@ public class Main extends Application {
     }
 
     public static void inputQ() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'q';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("Q");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'q';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("Q");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
 
     public static void inputW() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'w';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("W");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'w';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("W");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputE() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'e';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("E");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'e';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("E");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputR() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'r';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("R");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'r';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("R");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
-    public static void inputT() throws Exception{
-        char toAddLetter;
-        toAddLetter = 't';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("T");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
-        System.out.println(index);
-        System.out.println(testword.letters.size());
-        System.out.println(testword.WordContent);
+    public static void inputT() throws Exception {
+        if (index < 5) {
+            char toAddLetter;
+            toAddLetter = 't';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("T");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+            System.out.println(index);
+            System.out.println(testword.letters.size());
+            System.out.println(testword.WordContent);
+        }
     }
     public static void inputY() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'y';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("Y");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'y';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("Y");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputU() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'u';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("U");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'u';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("U");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputI() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'i';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("I");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'i';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("I");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputO() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'o';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("O");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'o';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("O");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputP() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'p';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("P");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'p';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("P");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputA() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'a';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("A");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'a';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("A");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputS() throws Exception{
-        char toAddLetter;
-        toAddLetter = 's';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("S");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 's';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("S");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputD() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'd';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("D");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'd';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("D");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputF() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'f';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("F");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'f';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("F");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputG() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'g';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("G");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'g';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("G");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputH() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'h';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("H");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'h';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("H");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputJ() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'j';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("J");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'j';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("J");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputK() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'k';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("K");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'k';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("K");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputL() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'l';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("L");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'l';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("L");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputZ() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'z';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("Z");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'z';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("Z");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputX() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'x';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("X");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'x';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("X");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputC() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'c';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("C");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'c';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("C");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputV() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'v';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("V");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'v';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("V");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputB() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'b';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("B");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'b';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("B");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputN() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'n';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("N");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'n';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("N");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
     }
     public static void inputM() throws Exception{
-        char toAddLetter;
-        toAddLetter = 'm';
-        testword.AddLetter(toAddLetter);
-        aniLetters[index] = new AniLetter("M");
-        pane.getChildren().add(aniLetters[index].ft.getNode());
-        AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
-        AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
-        aniLetters[index].ft.play();
-        index += 1;
+        if(index<5) {
+            char toAddLetter;
+            toAddLetter = 'm';
+            testword.AddLetter(toAddLetter);
+            aniLetters[index] = new AniLetter("M");
+            pane.getChildren().add(aniLetters[index].ft.getNode());
+            AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 500.0 + index * 60.0);
+            AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 120.0 + line * 60.);
+            aniLetters[index].ft.play();
+            index += 1;
+        }
+    }
+    public static void backSpace() throws Exception{
+        if(index>=1) {
+            testword.RemoveLetter();
+            pane.getChildren().remove(aniLetters[index - 1].ft.getNode());
+            index -= 1;
+        }
+    }
+
+    public static void mainEnter() throws Exception{
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
+        Parent mainScene = loader.load();
+        MenuScene Controller = loader.getController();
+        if (testword.letters.size() == 5) {
+            try {
+                int status;
+                if (Word.CheckInList(testword.WordContent.toString())) {
+                    index = 0;
+                    line++;
+                    testword.CheckAns(ans);
+                    System.out.println(testword.ShowColor());
+                    for (int i = 0; i < 5; i++) {
+                        if (testword.letters.get(i).letterColor == LetterColor.Green) {
+                            aniLetters[i].text.setFill(Color.GREEN);
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,3);
+                        }
+                        if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
+                            aniLetters[i].text.setFill(Color.YELLOW);
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,2);
+                        }
+                        if (testword.letters.get(i).letterColor == LetterColor.Grey) {
+                            aniLetters[i].text.setFill(Color.BLACK);
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,1);
+                        }
+
+                    }
+                    status = testword.getState();
+                    if (status == 0) {
+                        System.out.println("you win");
+                    }
+                    if (line == 6) {
+                        System.out.println("you lose");
+                    }
+                    for (int i = 0; i < 5; i++) {
+                        testword.RemoveLetter();
+                    }
+
+                } else {
+                    System.out.println("Not in the list");
+                }
+
+            } catch (Exception e) {
+                //throw new RuntimeException(e);
+                System.out.println("Not in the list");
+                for (int i = 0; i < 5; i++) {
+                    testword.RemoveLetter();
+                }
+            }
+        } else {
+            System.out.println(testword.WordContent);
+            System.out.println(testword.letters.size());
+            System.out.println("not enough letter!");
+        }
+    }
+    public static void advanceEnter() throws Exception{
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
+        Parent mainScene = loader.load();
+        MenuScene Controller = loader.getController();
+        if (testword.letters.size() == 5) {
+            try {
+                int status;
+                if (Word.CheckInList(testword.WordContent.toString())) {
+                    index = 0;
+                    line++;
+                    testword.CheckAns(ans);
+                    System.out.println(testword.ShowColor());
+                    for (int i = 0; i < 5; i++) {
+                        if (testword.letters.get(i).letterColor == LetterColor.Green) {
+                            aniLetters[i].text.setFill(Color.GREEN);
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,3);
+                        }
+                        if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
+                            aniLetters[i].text.setFill(Color.YELLOW);
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,2);
+                        }
+                        if (testword.letters.get(i).letterColor == LetterColor.Grey) {
+                            aniLetters[i].text.setFill(Color.BLACK);
+                            System.out.println("changecolorbegin");
+                            Controller.changeButtonColor(testword.letters.get(i).letterContent,1);
+                            System.out.println("changecolorend");
+                        }
+                    }
+                    status = testword.getState();
+                    if (status == 0) {
+                        System.out.println("you win");
+                    }
+                    if (line == 6) {
+                        System.out.println("you lose");
+                    }
+                    WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord, testword.getState(), testword.WordContent.toString());
+                    GuessAlgorithm.possibilities = WordList.PossibleWord.size();
+                    double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
+                    double info = GuessAlgorithm.eNow - newE;
+
+                    AniString infoString = new AniString(df2.format(info) + "bits", Color.WHITE);
+                    pane.getChildren().add(infoString.ft.getNode());
+                    AnchorPane.setLeftAnchor(infoString.ft.getNode(), 800.0);
+                    AnchorPane.setTopAnchor(infoString.ft.getNode(), 125.0 + leftLine * 60.0);
+                    infoString.ft.play();
+
+                    GuessAlgorithm.eNow = newE ;
+                    leftLine++;
+                    aniStrings.add(new AniString("Possibilities:", Color.WHITE));
+                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0);
+                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                    aniStrings.add(new AniString("" + GuessAlgorithm.possibilities , Color.WHITE));
+                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                    aniStrings.add(new AniString("/ E:", Color.SKYBLUE));
+                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0  + aniStrings.size() * 75.0);
+                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                    // 保留小数点后两位
+                    DecimalFormat df = new DecimalFormat("#.00");
+                    aniStrings.add(new AniString("" + df.format(GuessAlgorithm.eNow), Color.SKYBLUE));
+                    pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+                    AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 120  + aniStrings.size() * 75.0);
+                    AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0 + leftLine * 60.0);
+                    aniStrings.get(aniStrings.size() - 1).ft.play();
+
+                    aniStrings.clear();
+
+                    GuessAlgorithm.getWordScore(WordList.LegalWord, WordList.PossibleWord);
+                    for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
+                        System.out.println(GuessAlgorithm.wsList.get(i).word+" "+GuessAlgorithm.wsList.get(i).entropy + " " + GuessAlgorithm.wsList.get(i).possible + " " + GuessAlgorithm.wsList.get(i).score);
+                    }
+
+
+                    for (int i = 0; i < 5; i++) {
+                        testword.RemoveLetter();
+                        pane.getChildren().remove(recommend[i].ft.getNode());
+                        pane.getChildren().remove(recommendInfo[i].ft.getNode());
+                        pane.getChildren().remove(recommendPossibility[i].ft.getNode());
+                        AniString fadeRecommend = new AniString(recommend[i].string.getText(), Color.WHITE);
+                        pane.getChildren().add(fadeRecommend.ft2.getNode());
+                        AnchorPane.setLeftAnchor(fadeRecommend.ft2.getNode(), 900.0);
+                        AnchorPane.setTopAnchor(fadeRecommend.ft2.getNode(), 180 + i * 60.0);
+                        fadeRecommend.ft2.play();
+                        AniString fadeRecommendInfo = new AniString(recommendInfo[i].string.getText(), Color.WHITE);
+                        pane.getChildren().add(fadeRecommendInfo.ft2.getNode());
+                        AnchorPane.setLeftAnchor(fadeRecommendInfo.ft2.getNode(), 900.0 + 150);
+                        AnchorPane.setTopAnchor(fadeRecommendInfo.ft2.getNode(), 180 + i * 60.0);
+                        fadeRecommendInfo.ft2.play();
+                        AniString fadeRecommendPossibility = new AniString(recommendPossibility[i].string.getText(), Color.WHITE);
+                        pane.getChildren().add(fadeRecommendPossibility.ft2.getNode());
+                        AnchorPane.setLeftAnchor(fadeRecommendPossibility.ft2.getNode(), 900.0 + 240);
+                        AnchorPane.setTopAnchor(fadeRecommendPossibility.ft2.getNode(), 180 + i * 60.0);
+                        fadeRecommendPossibility.ft2.play();
+                    }
+
+                    for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
+                        recommend[i] = new AniString(GuessAlgorithm.wsList.get(i).word, Color.WHITE);
+                        pane.getChildren().add(recommend[i].ft.getNode());
+                        AnchorPane.setLeftAnchor(recommend[i].ft.getNode(), 900.0);
+                        AnchorPane.setTopAnchor(recommend[i].ft.getNode(), 180.0 + i * 60.0);
+                        recommend[i].ft.play();
+                        recommendInfo[i] = new AniString(df2.format(GuessAlgorithm.wsList.get(i).entropy), Color.WHITE);
+                        pane.getChildren().add(recommendInfo[i].ft.getNode());
+                        AnchorPane.setLeftAnchor(recommendInfo[i].ft.getNode(), 900.0 + 150.0);
+                        AnchorPane.setTopAnchor(recommendInfo[i].ft.getNode(), 180.0 + i * 60.0);
+                        recommendInfo[i].ft.play();
+                        recommendPossibility[i] = new AniString(df6.format(GuessAlgorithm.wsList.get(i).possible), Color.WHITE);
+                        pane.getChildren().add(recommendPossibility[i].ft.getNode());
+                        AnchorPane.setLeftAnchor(recommendPossibility[i].ft.getNode(), 900.0 + 240.0);
+                        AnchorPane.setTopAnchor(recommendPossibility[i].ft.getNode(), 180.0 + i * 60.0);
+                        recommendPossibility[i].ft.play();
+                    }
+
+                } else {
+                    System.out.println("Not in the list");
+                }
+
+            } catch (Exception e) {
+                //throw new RuntimeException(e);
+                System.out.println(e);
+                for (int i = 0; i < 5; i++) {
+                    testword.RemoveLetter();
+                }
+            }
+        } else {
+            System.out.println("not enough letter!");
+        }
     }
 }

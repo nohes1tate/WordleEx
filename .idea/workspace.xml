@@ -4,17 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="wang‘s commmit">
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="Wang's commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/AdvanceScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/AdvanceScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/advanceScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/advanceScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -281,7 +280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655193743343</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Wang's commit">
+      <created>1655303852427</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1655303852428</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +325,8 @@
     <MESSAGE value="algorithm GUI" />
     <MESSAGE value="algorithm GUI update" />
     <MESSAGE value="wang‘s commmit" />
-    <option name="LAST_COMMIT_MESSAGE" value="wang‘s commmit" />
+    <MESSAGE value="Wang's commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wang's commit" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

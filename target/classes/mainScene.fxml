@@ -202,12 +202,12 @@
             </Button>
          </children>
       </GridPane>
-      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+      <Button fx:id="ButtonENTER" layoutX="241.0" layoutY="682.0" mnemonicParsing="false" onMouseClicked="#mainEnter" prefHeight="65.0" prefWidth="114.0" text="ENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
+      <Button fx:id="ButtonBackspace" layoutX="920.0" layoutY="682.0" mnemonicParsing="false" onMouseClicked="#backSpace" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
          <font>
             <Font size="20.0" />
          </font>

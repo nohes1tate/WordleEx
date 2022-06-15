@@ -769,5 +769,10 @@ public class AdvanceScene {
     public void inputM() throws Exception{
         Main.inputM();
     }
-
+    public void backSpace() throws Exception{
+        Main.backSpace();
+    }
+    public void advanceEnter() throws Exception{
+        Main.advanceEnter();
+    }
 }

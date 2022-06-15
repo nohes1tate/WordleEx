@@ -803,4 +803,10 @@ public class MenuScene {
     public void inputM() throws Exception{
         Main.inputM();
     }
+    public void backSpace() throws Exception{
+        Main.backSpace();
+    }
+    public void mainEnter() throws Exception{
+        Main.mainEnter();
+    }
 }
