@@ -121,7 +121,7 @@ public class Main extends Application {
     public void start(Stage menuStage) throws Exception {
         menuStage.setTitle("WORDLE-EX");
         menuStage.setResizable(false);
-        menuStage.setAlwaysOnTop(true);
+        menuStage.setAlwaysOnTop(false);
 
         mainWindow = menuStage;
         mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
@@ -974,15 +974,14 @@ public class Main extends Application {
             infoChance.get(i).ft.play();
         }
 
-        pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            private int index = 0;
-            private int line = 0;
+        index = 0;
+       line = 0;
+        leftLine = 0;
+        rightLine = 0;
 
-            private int leftLine = 0;
-            private int rightLine = 0;
+        pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)-> {
 
-            @Override
-            public void handle(KeyEvent keyEvent) {
+
                 KeyCode kCode = keyEvent.getCode();
                 System.out.println(kCode.getName());
                 char toAddLetter;
@@ -1182,7 +1181,7 @@ public class Main extends Application {
                 }
 
 
-            }
+
         });
     }
 
