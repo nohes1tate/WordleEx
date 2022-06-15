@@ -193,7 +193,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonQ.setBackground(background);
             }
@@ -214,7 +214,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonW.setBackground(background);
             }
@@ -235,7 +235,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonE.setBackground(background);
             }
@@ -256,7 +256,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonR.setBackground(background);
             }
@@ -277,7 +277,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonT.setBackground(background);
             }
@@ -298,7 +298,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonY.setBackground(background);
             }
@@ -319,7 +319,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonU.setBackground(background);
             }
@@ -340,7 +340,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonI.setBackground(background);
             }
@@ -361,7 +361,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonO.setBackground(background);
             }
@@ -382,7 +382,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonP.setBackground(background);
             }
@@ -403,7 +403,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonA.setBackground(background);
             }
@@ -424,7 +424,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonS.setBackground(background);
             }
@@ -445,7 +445,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonD.setBackground(background);
             }
@@ -466,7 +466,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonF.setBackground(background);
             }
@@ -487,7 +487,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonG.setBackground(background);
             }
@@ -508,7 +508,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonH.setBackground(background);
             }
@@ -529,7 +529,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonJ.setBackground(background);
             }
@@ -550,7 +550,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonK.setBackground(background);
             }
@@ -571,7 +571,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonL.setBackground(background);
             }
@@ -592,7 +592,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonZ.setBackground(background);
             }
@@ -613,7 +613,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonX.setBackground(background);
             }
@@ -634,7 +634,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonC.setBackground(background);
             }
@@ -655,7 +655,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonV.setBackground(background);
             }
@@ -676,7 +676,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonB.setBackground(background);
             }
@@ -697,7 +697,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonN.setBackground(background);
             }
@@ -718,7 +718,7 @@ public class MenuScene {
             }
             else if(color==3)
             {
-                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#90EE90"),new CornerRadii(1),new Insets(1));
+                BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#008000"),new CornerRadii(1),new Insets(1));
                 Background background = new Background(background_fill);
                 ButtonM.setBackground(background);
             }
