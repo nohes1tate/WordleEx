@@ -691,5 +691,83 @@ public class AdvanceScene {
         System.out.println("printkeydone");
     }
 
+    public void inputQ() throws Exception{
+        Main.inputQ();
+    }
+    public void inputW() throws Exception{
+        Main.inputW();
+    }
+    public void inputE() throws Exception{
+        Main.inputE();
+    }
+    public void inputR() throws Exception{
+        Main.inputR();
+    }
+    public void inputT() throws Exception{
+        Main.inputT();
+    }
+    public void inputY() throws Exception{
+        Main.inputY();
+    }
+    public void inputU() throws Exception{
+        Main.inputU();
+    }
+    public void inputI() throws Exception{
+        Main.inputI();
+    }
+    public void inputO() throws Exception{
+        Main.inputO();
+    }
+    public void inputP() throws Exception{
+        Main.inputP();
+    }
+    public void inputA() throws Exception{
+        Main.inputA();
+    }
+    public void inputS() throws Exception{
+        Main.inputS();
+    }
+    public void inputD() throws Exception{
+        Main.inputD();
+    }
+    public void inputF() throws Exception{
+        Main.inputF();
+    }
+    public void inputG() throws Exception{
+        Main.inputG();
+    }
+    public void inputH() throws Exception{
+        Main.inputH();
+    }
+    public void inputJ() throws Exception{
+        Main.inputJ();
+    }
+    public void inputK() throws Exception{
+        Main.inputK();
+    }
+    public void inputL() throws Exception{
+        Main.inputL();
+    }
+    public void inputZ() throws Exception{
+        Main.inputZ();
+    }
+    public void inputX() throws Exception{
+        Main.inputX();
+    }
+    public void inputC() throws Exception{
+        Main.inputC();
+    }
+    public void inputV() throws Exception{
+        Main.inputV();
+    }
+    public void inputB() throws Exception{
+        Main.inputB();
+    }
+    public void inputN() throws Exception{
+        Main.inputN();
+    }
+    public void inputM() throws Exception{
+        Main.inputM();
+    }
 
 }
