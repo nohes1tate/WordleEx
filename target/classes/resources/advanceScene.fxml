@@ -36,52 +36,52 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="ButtonQ" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Q">
+            <Button fx:id="ButtonQ" mnemonicParsing="false" onMouseClicked="#inputQ" prefHeight="65.0" prefWidth="71.0" text="Q">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
+            <Button fx:id="ButtonW" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputW" prefHeight="65.0" prefWidth="71.0" text="W" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
+            <Button fx:id="ButtonE" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputE" prefHeight="65.0" prefWidth="71.0" text="E" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
+            <Button fx:id="ButtonR" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputR" prefHeight="65.0" prefWidth="71.0" text="R" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
+            <Button fx:id="ButtonT" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputT" prefHeight="65.0" prefWidth="71.0" text="T" textAlignment="CENTER" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
+            <Button fx:id="ButtonY" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputY" prefHeight="65.0" prefWidth="71.0" text="Y" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
+            <Button fx:id="ButtonU" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputU" prefHeight="65.0" prefWidth="71.0" text="U" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
+            <Button fx:id="ButtonI" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputI" prefHeight="65.0" prefWidth="71.0" text="I" GridPane.columnIndex="7">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
+            <Button fx:id="ButtonO" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputO" prefHeight="65.0" prefWidth="71.0" text="O" GridPane.columnIndex="8">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
+            <Button fx:id="ButtonP" layoutX="799.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputP" prefHeight="65.0" prefWidth="71.0" text="P" GridPane.columnIndex="9">
                <font>
                   <Font size="20.0" />
                </font>
@@ -104,47 +104,47 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="ButtonA" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="A">
+            <Button fx:id="ButtonA" mnemonicParsing="false" onMouseClicked="#inputA" prefHeight="65.0" prefWidth="71.0" text="A">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
+            <Button fx:id="ButtonS" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputS" prefHeight="65.0" prefWidth="71.0" text="S" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
+            <Button fx:id="ButtonD" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputD" prefHeight="65.0" prefWidth="71.0" text="D" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
+            <Button fx:id="ButtonF" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputF" prefHeight="65.0" prefWidth="71.0" text="F" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
+            <Button fx:id="ButtonG" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputG" prefHeight="65.0" prefWidth="71.0" text="G" textAlignment="CENTER" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
+            <Button fx:id="ButtonH" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputH" prefHeight="65.0" prefWidth="71.0" text="H" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
+            <Button fx:id="ButtonJ" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputJ" prefHeight="65.0" prefWidth="71.0" text="J" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
+            <Button fx:id="ButtonK" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputK" prefHeight="65.0" prefWidth="71.0" text="K" GridPane.columnIndex="7">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
+            <Button fx:id="ButtonL" layoutX="700.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputL" prefHeight="65.0" prefWidth="71.0" text="L" GridPane.columnIndex="8">
                <font>
                   <Font size="20.0" />
                </font>
@@ -165,49 +165,49 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="Z">
+            <Button fx:id="ButtonZ" layoutX="10.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputZ" prefHeight="65.0" prefWidth="71.0" text="Z">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
+            <Button fx:id="ButtonX" layoutX="108.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputX" prefHeight="65.0" prefWidth="71.0" text="X" GridPane.columnIndex="1">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
+            <Button fx:id="ButtonC" layoutX="206.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputC" prefHeight="65.0" prefWidth="71.0" text="C" GridPane.columnIndex="2">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
+            <Button fx:id="ButtonV" layoutX="304.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputV" prefHeight="65.0" prefWidth="71.0" text="V" textAlignment="CENTER" GridPane.columnIndex="3">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
+            <Button fx:id="ButtonB" layoutX="403.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputB" prefHeight="65.0" prefWidth="71.0" text="B" GridPane.columnIndex="4">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
+            <Button fx:id="ButtonN" layoutX="502.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputN" prefHeight="65.0" prefWidth="71.0" text="N" GridPane.columnIndex="5">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
+            <Button fx:id="ButtonM" layoutX="601.0" layoutY="25.0" mnemonicParsing="false" onMouseClicked="#inputM" prefHeight="65.0" prefWidth="69.0" text="M" GridPane.columnIndex="6">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
          </children>
       </GridPane>
-      <Button fx:id="ButtonENTER" layoutX="251.0" layoutY="692.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="114.0" text="ENTER">
+      <Button fx:id="ButtonENTER" layoutX="251.0" layoutY="692.0" mnemonicParsing="false" onMouseClicked="#advanceEnter" prefHeight="65.0" prefWidth="114.0" text="ENTER">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="ButtonBackspace" layoutX="930.0" layoutY="692.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
+      <Button fx:id="ButtonBackspace" layoutX="930.0" layoutY="692.0" mnemonicParsing="false" onMouseClicked="#backSpace" prefHeight="65.0" prefWidth="107.0" stylesheets="@style.css">
          <font>
             <Font size="20.0" />
          </font>
