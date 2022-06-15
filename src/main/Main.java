@@ -731,7 +731,7 @@ public class Main extends Application {
                                         pane.getChildren().add(b);
                                         b.setOnMouseClicked(finish -> {
                                             try {
-                                                Controller.backToMenu();
+                                                advanceController.backToMenu();
                                             } catch (Exception e) {
                                                 throw new RuntimeException(e);
                                             }
