@@ -836,11 +836,14 @@ public class Main extends Application {
         System.out.println("start aishow mode");
         Button button = new Button("²âÊÔ");
         AnchorPane pane = new AnchorPane();
-        pane.getChildren().add(button);
-        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource("resources/aiShowScene.fxml")));
+
+        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/aiShowScene.fxml"));
+        Parent mainScene = loader.load();
         pane.getChildren().add(mainScene);
 
         Scene scene = new Scene(pane, 1280, 800);
+
+        MenuScene Controller = loader.getController();
 
         mainWindow.setScene(scene);
         mainWindow.setTitle("WORDLE-EX");
@@ -975,9 +978,11 @@ public class Main extends Application {
         }
 
         index = 0;
-       line = 0;
+        line = 0;
         leftLine = 0;
         rightLine = 0;
+
+
 
         pane.addEventFilter(KeyEvent.KEY_PRESSED,(KeyEvent keyEvent)-> {
 
@@ -988,7 +993,7 @@ public class Main extends Application {
                 try {
 
                     if (kCode == KeyCode.ENTER) {
-                        if (testword.letters.size() == 5) {
+                        if (testword.letters.size() == 5 && line < 6) {
                             try {
                                 int status;
                                 for (index=0;index<5;index++) {
@@ -1015,12 +1020,7 @@ public class Main extends Application {
                                         }
                                     }
                                     status = testword.getState();
-                                    if (status == 0) {
-                                        System.out.println("you win");
-                                    }
-                                    if (line == 6) {
-                                        System.out.println("you lose");
-                                    }
+
                                     WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord, testword.getState(), testword.WordContent.toString());
                                     GuessAlgorithm.possibilities = WordList.PossibleWord.size();
                                     double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
@@ -1159,7 +1159,167 @@ public class Main extends Application {
                                         AnchorPane.setTopAnchor(infoChance.get(i).ft.getNode(), 500 +(i%5) * 60.0);
                                         infoChance.get(i).ft.play();
                                     }
+                                    if (status == 0) {
+                                        System.out.println("you win");
 
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.5);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("WIN!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.GREEN);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,530.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
+                                    }
+                                    if (line == 6) {
+                                        System.out.println("you lose");
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.8);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("LOSE!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.RED);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,530.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
+                                    }
                                 } else {
                                     System.out.println("Not in the list");
                                 }
