@@ -108,7 +108,8 @@ public class Main extends Application {
     private static ArrayList<AniString> aniStrings = new ArrayList<>();
     private static DecimalFormat df2 = new DecimalFormat("#.##");
     private static DecimalFormat df6 = new DecimalFormat("#.#####");
-
+    private static MenuScene Controller;
+    private static AdvanceScene advanceController;
     private static boolean gameIsOver = false;
 
     public static void setMainWindow(Stage mainWindow) {
@@ -159,7 +160,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(pane, 1280, 800);
 
-        MenuScene Controller = loader.getController();
+        Controller = loader.getController();
 
         pane.addEventFilter(KeyEvent.KEY_PRESSED, (KeyEvent keyEvent) -> {
             KeyCode kCode = keyEvent.getCode();
@@ -433,7 +434,7 @@ public class Main extends Application {
 
         Scene scene = new Scene(pane, 1280, 800);
 
-        AdvanceScene Controller = loader.getController();
+        advanceController = loader.getController();
 
 
         mainWindow.setScene(scene);
@@ -554,16 +555,16 @@ public class Main extends Application {
                                     for (int i = 0; i < 5; i++) {
                                         if (testword.letters.get(i).letterColor == LetterColor.Green) {
                                             aniLetters[i].text.setFill(Color.GREEN);
-                                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 3);
+                                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 3);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
                                             aniLetters[i].text.setFill(Color.YELLOW);
-                                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 2);
+                                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 2);
                                         }
                                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                                             aniLetters[i].text.setFill(Color.BLACK);
                                             System.out.println("changecolorbegin");
-                                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 1);
+                                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 1);
                                             System.out.println("changecolorend");
                                         }
                                     }
@@ -1740,9 +1741,6 @@ public class Main extends Application {
     }
 
     public static void mainEnter() throws Exception {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
-        Parent mainScene = loader.load();
-        MenuScene Controller = loader.getController();
         if (testword.letters.size() == 5) {
             try {
                 int status;
@@ -1950,9 +1948,6 @@ public class Main extends Application {
     }
 
     public static void advanceEnter() throws Exception {
-        FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/mainScene.fxml"));
-        Parent mainScene = loader.load();
-        MenuScene Controller = loader.getController();
         if (testword.letters.size() == 5) {
             try {
                 int status;
@@ -1964,16 +1959,16 @@ public class Main extends Application {
                     for (int i = 0; i < 5; i++) {
                         if (testword.letters.get(i).letterColor == LetterColor.Green) {
                             aniLetters[i].text.setFill(Color.GREEN);
-                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 3);
+                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 3);
                         }
                         if (testword.letters.get(i).letterColor == LetterColor.Yellow) {
                             aniLetters[i].text.setFill(Color.YELLOW);
-                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 2);
+                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 2);
                         }
                         if (testword.letters.get(i).letterColor == LetterColor.Grey) {
                             aniLetters[i].text.setFill(Color.BLACK);
                             System.out.println("changecolorbegin");
-                            Controller.changeButtonColor(testword.letters.get(i).letterContent, 1);
+                            advanceController.changeButtonColor(testword.letters.get(i).letterContent, 1);
                             System.out.println("changecolorend");
                         }
                     }
