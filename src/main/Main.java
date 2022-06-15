@@ -6,9 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
@@ -202,10 +205,24 @@ public class Main extends Application {
                                     status = testword.getState();
                                     if (status == 0) {
                                         System.out.println("you win");
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.8);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
 
                                         FadeTransition win = new FadeTransition();
                                         Text text = new Text("WIN!!");
-                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 50));
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
                                         text.setTextAlignment(TextAlignment.JUSTIFY);
                                         text.setFill(Color.GREEN);
                                         win.setNode(text);
@@ -213,8 +230,8 @@ public class Main extends Application {
                                         win.setToValue(1);
                                         win.setDuration(Duration.seconds(1));
                                         pane.getChildren().add(win.getNode());
-                                        AnchorPane.setTopAnchor(win.getNode(),300.0);
-                                        AnchorPane.setLeftAnchor(win.getNode(),300.0);
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
                                         win.play();
 
                                         Button b = new Button();
@@ -223,19 +240,38 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
+                                        //µ±Êó±ê½øÈë°´Å¥Ê±Ìí¼ÓÒõÓ°ÌØÐ§
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
                                                         "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
                                                         "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
                                                         "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
                                                         "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
-//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
-//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
-//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
                                                         +"-fx-font-size: 20"
                                         );
                                         AnchorPane.setTopAnchor(b,400.);
-                                        AnchorPane.setLeftAnchor(b,250.);
+                                        AnchorPane.setLeftAnchor(b,530.);
                                         pane.getChildren().add(b);
                                         b.setOnMouseClicked(finish-> {
                                             try {
@@ -256,6 +292,84 @@ public class Main extends Application {
                                     }
                                     if (line == 6) {
                                         System.out.println("you lose");
+                                        System.out.println("you win");
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.8);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("LOSE!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.RED);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,530.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
                                     }
                                     for (int i = 0; i < 5; i++) {
                                         testword.RemoveLetter();
@@ -402,7 +516,7 @@ public class Main extends Application {
                 System.out.println(kCode.getName());
                 char toAddLetter;
                 try {
-                    if (kCode.isLetterKey() && index < 5) {
+                    if (kCode.isLetterKey() && index < 5 && line<6) {
                         toAddLetter = (char) (kCode.getCode() + 32);
                         testword.AddLetter(toAddLetter);
                         aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
@@ -444,12 +558,7 @@ public class Main extends Application {
                                         }
                                     }
                                     status = testword.getState();
-                                    if (status == 0) {
-                                        System.out.println("you win");
-                                    }
-                                    if (line == 6) {
-                                        System.out.println("you lose");
-                                    }
+
                                     WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord, testword.getState(), testword.WordContent.toString());
                                     GuessAlgorithm.possibilities = WordList.PossibleWord.size();
                                     double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
@@ -535,6 +644,167 @@ public class Main extends Application {
                                         AnchorPane.setLeftAnchor(recommendPossibility[i].ft.getNode(), 900.0 + 240.0);
                                         AnchorPane.setTopAnchor(recommendPossibility[i].ft.getNode(), 180.0 + i * 60.0);
                                         recommendPossibility[i].ft.play();
+                                    }
+                                    if (status == 0) {
+                                        System.out.println("you win");
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.8);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("WIN!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.GREEN);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,530.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
+                                    }
+                                    if (line == 6) {
+                                        System.out.println("you lose");
+                                        
+                                        Rectangle recB = new Rectangle();
+                                        recB.setFill(Color.BLACK);
+                                        recB.setWidth(1280);
+                                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                        FadeTransition black = new FadeTransition();
+                                        black.setNode(recB);
+                                        black.setFromValue(0);
+                                        black.setToValue(0.8);
+                                        black.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(black.getNode());
+                                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                                        black.play();
+
+                                        FadeTransition win = new FadeTransition();
+                                        Text text = new Text("LOSE!!");
+                                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                                        text.setFill(Color.RED);
+                                        win.setNode(text);
+                                        win.setFromValue(0);
+                                        win.setToValue(1);
+                                        win.setDuration(Duration.seconds(1));
+                                        pane.getChildren().add(win.getNode());
+                                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                                        win.play();
+
+                                        Button b = new Button();
+                                        b.setText("Back to Menu");
+                                        b.setLayoutX(200);
+                                        b.setLayoutY(50);
+                                        b.setPrefWidth(200);
+                                        b.setPrefHeight(50);
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                                            b.setStyle(
+                                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                                            +"-fx-font-size: 20"
+                                            );
+                                        });
+                                        b.setStyle(
+                                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+//                                                        "-fx-border-style:dashed;"+      //ÉèÖÃ±ß¿òÑùÊ½
+//                                                        "-fx-border-width:5;"+           //ÉèÖÃ±ß¿ò¿í¶È
+//                                                        "-fx-border-insets:-5"           //ÉèÖÃ±ß¿ò²åÈëÖµ
+                                                        +"-fx-font-size: 20"
+                                        );
+                                        AnchorPane.setTopAnchor(b,400.);
+                                        AnchorPane.setLeftAnchor(b,530.);
+                                        pane.getChildren().add(b);
+                                        b.setOnMouseClicked(finish-> {
+                                            try {
+                                                Controller.backToMenu();
+                                            } catch (Exception e) {
+                                                throw new RuntimeException(e);
+                                            }
+                                        });
                                     }
 
                                 } else {
@@ -1302,9 +1572,161 @@ public class Main extends Application {
                     status = testword.getState();
                     if (status == 0) {
                         System.out.println("you win");
+
+                        Rectangle recB = new Rectangle();
+                        recB.setFill(Color.BLACK);
+                        recB.setWidth(1280);
+                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                        FadeTransition black = new FadeTransition();
+                        black.setNode(recB);
+                        black.setFromValue(0);
+                        black.setToValue(0.8);
+                        black.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(black.getNode());
+                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                        black.play();
+
+                        FadeTransition win = new FadeTransition();
+                        Text text = new Text("WIN!!");
+                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                        text.setFill(Color.GREEN);
+                        win.setNode(text);
+                        win.setFromValue(0);
+                        win.setToValue(1);
+                        win.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(win.getNode());
+                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                        win.play();
+
+                        Button b = new Button();
+                        b.setText("Back to Menu");
+                        b.setLayoutX(200);
+                        b.setLayoutY(50);
+                        b.setPrefWidth(200);
+                        b.setPrefHeight(50);
+                        //µ±Êó±ê½øÈë°´Å¥Ê±Ìí¼ÓÒõÓ°ÌØÐ§
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        b.setStyle(
+                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                        +"-fx-font-size: 20"
+                        );
+                        AnchorPane.setTopAnchor(b,400.);
+                        AnchorPane.setLeftAnchor(b,530.);
+                        pane.getChildren().add(b);
+                        b.setOnMouseClicked(finish-> {
+                            try {
+                                Controller.backToMenu();
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
                     }
                     if (line == 6) {
                         System.out.println("you lose");
+
+                        Rectangle recB = new Rectangle();
+                        recB.setFill(Color.BLACK);
+                        recB.setWidth(1280);
+                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                        FadeTransition black = new FadeTransition();
+                        black.setNode(recB);
+                        black.setFromValue(0);
+                        black.setToValue(0.8);
+                        black.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(black.getNode());
+                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                        black.play();
+
+                        FadeTransition win = new FadeTransition();
+                        Text text = new Text("LOSE!!");
+                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                        text.setFill(Color.RED);
+                        win.setNode(text);
+                        win.setFromValue(0);
+                        win.setToValue(1);
+                        win.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(win.getNode());
+                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                        win.play();
+
+                        Button b = new Button();
+                        b.setText("Back to Menu");
+                        b.setLayoutX(200);
+                        b.setLayoutY(50);
+                        b.setPrefWidth(200);
+                        b.setPrefHeight(50);
+                        //µ±Êó±ê½øÈë°´Å¥Ê±Ìí¼ÓÒõÓ°ÌØÐ§
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        b.setStyle(
+                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                        +"-fx-font-size: 20"
+                        );
+                        AnchorPane.setTopAnchor(b,400.);
+                        AnchorPane.setLeftAnchor(b,530.);
+                        pane.getChildren().add(b);
+                        b.setOnMouseClicked(finish-> {
+                            try {
+                                Controller.backToMenu();
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
                     }
                     for (int i = 0; i < 5; i++) {
                         testword.RemoveLetter();
@@ -1356,12 +1778,7 @@ public class Main extends Application {
                         }
                     }
                     status = testword.getState();
-                    if (status == 0) {
-                        System.out.println("you win");
-                    }
-                    if (line == 6) {
-                        System.out.println("you lose");
-                    }
+
                     WordList.PossibleWord=GuessAlgorithm.updatePossibleWord(WordList.PossibleWord, testword.getState(), testword.WordContent.toString());
                     GuessAlgorithm.possibilities = WordList.PossibleWord.size();
                     double newE = GuessAlgorithm.calENow(WordList.PossibleWord);
@@ -1447,6 +1864,165 @@ public class Main extends Application {
                         AnchorPane.setLeftAnchor(recommendPossibility[i].ft.getNode(), 900.0 + 240.0);
                         AnchorPane.setTopAnchor(recommendPossibility[i].ft.getNode(), 180.0 + i * 60.0);
                         recommendPossibility[i].ft.play();
+                    }
+
+                    if (status == 0) {
+                        System.out.println("you win");
+
+                        Rectangle recB = new Rectangle();
+                        recB.setFill(Color.BLACK);
+                        recB.setWidth(1280);
+                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                        FadeTransition black = new FadeTransition();
+                        black.setNode(recB);
+                        black.setFromValue(0);
+                        black.setToValue(0.8);
+                        black.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(black.getNode());
+                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                        black.play();
+
+                        FadeTransition win = new FadeTransition();
+                        Text text = new Text("WIN!!");
+                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                        text.setFill(Color.GREEN);
+                        win.setNode(text);
+                        win.setFromValue(0);
+                        win.setToValue(1);
+                        win.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(win.getNode());
+                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                        win.play();
+
+                        Button b = new Button();
+                        b.setText("Back to Menu");
+                        b.setLayoutX(200);
+                        b.setLayoutY(50);
+                        b.setPrefWidth(200);
+                        b.setPrefHeight(50);
+                        //µ±Êó±ê½øÈë°´Å¥Ê±Ìí¼ÓÒõÓ°ÌØÐ§
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        b.setStyle(
+                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                        +"-fx-font-size: 20"
+                        );
+                        AnchorPane.setTopAnchor(b,400.);
+                        AnchorPane.setLeftAnchor(b,530.);
+                        pane.getChildren().add(b);
+                        b.setOnMouseClicked(finish-> {
+                            try {
+                                Controller.backToMenu();
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+                    }
+                    if (line == 6) {
+                        System.out.println("you lose");
+
+                        Rectangle recB = new Rectangle();
+                        recB.setFill(Color.BLACK);
+                        recB.setWidth(1280);
+                        recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                        FadeTransition black = new FadeTransition();
+                        black.setNode(recB);
+                        black.setFromValue(0);
+                        black.setToValue(0.8);
+                        black.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(black.getNode());
+                        AnchorPane.setTopAnchor(black.getNode(),0.);
+                        AnchorPane.setLeftAnchor(black.getNode(),0.);
+                        black.play();
+
+                        FadeTransition win = new FadeTransition();
+                        Text text = new Text("LOSE!!");
+                        text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 100));
+                        text.setTextAlignment(TextAlignment.JUSTIFY);
+                        text.setFill(Color.RED);
+                        win.setNode(text);
+                        win.setFromValue(0);
+                        win.setToValue(1);
+                        win.setDuration(Duration.seconds(1));
+                        pane.getChildren().add(win.getNode());
+                        AnchorPane.setTopAnchor(win.getNode(),280.0);
+                        AnchorPane.setLeftAnchor(win.getNode(),500.0);
+                        win.play();
+
+                        Button b = new Button();
+                        b.setText("Back to Menu");
+                        b.setLayoutX(200);
+                        b.setLayoutY(50);
+                        b.setPrefWidth(200);
+                        b.setPrefHeight(50);
+                        //µ±Êó±ê½øÈë°´Å¥Ê±Ìí¼ÓÒõÓ°ÌØÐ§
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#a8a8a8;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        //µ±Êó±êÀë¿ª°´Å¥Ê±ÒÆ³ýÒõÓ°Ð§¹û
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
+                            b.setStyle(
+                                    "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                            "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                            "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                            "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                            "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                            +"-fx-font-size: 20"
+                            );
+                        });
+                        b.setStyle(
+                                "-fx-background-color:#7a7a7a;"+         //ÉèÖÃ±³¾°ÑÕÉ«
+                                        "-fx-background-radius:5;"+     //ÉèÖÃ±³¾°Ô²½Ç
+                                        "-fx-text-fill:#ffffff;"+        //ÉèÖÃ×ÖÌåÑÕÉ«
+                                        "-fx-border-radius:5;"+         //ÉèÖÃ±ß¿òÔ²½Ç
+                                        "-fx-border-color:#838383;"     //ÉèÖÃ±ß¿òÑÕÉ«
+                                        +"-fx-font-size: 20"
+                        );
+                        AnchorPane.setTopAnchor(b,400.);
+                        AnchorPane.setLeftAnchor(b,530.);
+                        pane.getChildren().add(b);
+                        b.setOnMouseClicked(finish-> {
+                            try {
+                                Controller.backToMenu();
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
                     }
 
                 } else {
