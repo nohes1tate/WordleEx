@@ -13,8 +13,11 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
+import javafx.scene.text.Text;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -108,20 +111,82 @@ public class MenuScene {
     @FXML
     private Button ButtonBackspace;
 
+    @FXML
+    private Text normalMode;
+
+    @FXML
+    private Text advanceMode;
+
+    @FXML
+    private Text AIShow;
+
+    @FXML
+    private Text quit;
+
     /**
      * 当鼠标进入按钮区域改变鼠标样式的方法。
      */
-    public void mouseOnButton(){
+    public void mouseOnNormalButton(){
        // Main.getMainMenuScene().setCursor(Cursor.HAND);
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        normalMode.setFont(Font.font("Lucida Fax", FontWeight.BOLD,65));
+        normalMode.setX(-20);
     }
     /**
      * 当鼠标离开按钮区域改变鼠标样式的方法。
      */
-    public void mouseLeaveButton(){
+    public void mouseLeaveNormalButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        normalMode.setFont(Font.font("Lucida Fax", FontWeight.BOLD,55));
+        normalMode.setX(5);
       }
+
+    public void mouseOnAdvanceButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.HAND);
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        advanceMode.setFont(Font.font("Lucida Fax", FontWeight.BOLD,65));
+        advanceMode.setX(-20);
+    }
+    /**
+     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     */
+    public void mouseLeaveAdvanceButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        advanceMode.setFont(Font.font("Lucida Fax", FontWeight.BOLD,55));
+        advanceMode.setX(5);
+    }
+    public void mouseOnAIButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.HAND);
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        AIShow.setFont(Font.font("Lucida Fax", FontWeight.BOLD,65));
+        AIShow.setX(-20);
+    }
+    /**
+     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     */
+    public void mouseLeaveAIButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        AIShow.setFont(Font.font("Lucida Fax", FontWeight.BOLD,55));
+        AIShow.setX(5);
+    }
+    public void mouseOnQuitButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.HAND);
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        quit.setFont(Font.font("Lucida Fax", FontWeight.BOLD,65));
+        quit.setX(-10);
+    }
+    /**
+     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     */
+    public void mouseLeaveQuitButton(){
+        // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        quit.setFont(Font.font("Lucida Fax", FontWeight.BOLD,55));
+        quit.setX(5);
+    }
 
     public void mouseOnBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
