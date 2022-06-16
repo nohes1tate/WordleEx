@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="anime">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/WordleEx_jar.xml" afterDir="false" />
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="Wang's commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/AdvanceScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/AdvanceScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/menuScene.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/menuScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,13 +48,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/util" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -108,6 +111,14 @@
       <item itemvalue="Application.Test" />
       <item itemvalue="Application.naniTest" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.naniTest" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.HelloApplication" />
+        <item itemvalue="Application.Test" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -137,7 +148,6 @@
       <workItem from="1654949457097" duration="13653000" />
       <workItem from="1654963642747" duration="26000" />
       <workItem from="1654963736948" duration="49000" />
-      <workItem from="1655341051449" duration="1808000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -300,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655309695359</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Wang's commit">
+      <created>1655310152049</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1655310152049</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
