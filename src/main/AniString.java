@@ -4,11 +4,8 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 
 /**
- * ani字符串
  * 字符串动画
- *
- * @author 86153
- * @date 2022/06/16
+ * 该类用来播放字符串的动画，包含字符串内容和其渐变动画
  */
 public class AniString {
     /**
@@ -16,19 +13,19 @@ public class AniString {
      */
     Text string;
     /**
-     * 英国《金融时报》
+     * 渐变动画
      */
     FadeTransition ft;
     /**
-     * ft2
+     * 渐变动画2
      */
     FadeTransition ft2;
 
     /**
-     * ani字符串
+     * 字符串的动画
      *
-     * @param s 年代
-     * @param c c
+     * @param s 字符串
+     * @param c 字符串的颜色
      */
     AniString(String s, Color c){
         string = new Text(s);

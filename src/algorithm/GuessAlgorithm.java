@@ -3,7 +3,7 @@ import java.io.PrintStream;
 import java.util.*;
 
 /**
- * 猜词算法
+ * 猜词算法类，该类包含AI猜测词语相关字段与方法
  */
 public class GuessAlgorithm {
 
@@ -254,7 +254,7 @@ public class GuessAlgorithm {
 
 
 /**
- * 状态的颜色
+ * 状态的颜色，改类用于存储状态的颜色
  */
 class StatusColor {
     LetterColor[] color;
@@ -264,7 +264,7 @@ class StatusColor {
 }
 
 /**
- * 单词与其对应得分
+ * 该类记录单词与其对应得分
  */
 class WordWithScore implements Comparable<WordWithScore>{
         String word;

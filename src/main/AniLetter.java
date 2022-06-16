@@ -5,6 +5,7 @@ import javafx.util.Duration;
 
 /**
  * 字母动画
+ * 该类用来播放字母的动画，包含字母内容和其渐变动画
  */
 public class AniLetter {
     /**

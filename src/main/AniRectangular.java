@@ -4,11 +4,8 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
 /**
- * ani矩形
  * 矩形动画
- *
- * @author 86153
- * @date 2022/06/16
+ * 该类用来播放矩形的动画，包含矩形与其长宽和其渐变动画
  */
 public class AniRectangular {
     /**
@@ -16,7 +13,7 @@ public class AniRectangular {
      */
     Rectangle rectangle;
     /**
-     * 英国《金融时报》
+     * 渐变动画
      */
     FadeTransition ft = new FadeTransition();
     /**
@@ -29,10 +26,10 @@ public class AniRectangular {
     double height;
 
     /**
-     * ani矩形
+     * 构造矩形动画
      *
-     * @param w w
-     * @param h h
+     * @param w 矩形的宽
+     * @param h 矩形的高
      */
     AniRectangular(double w, double h){
         width = w;

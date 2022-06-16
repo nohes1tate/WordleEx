@@ -8,14 +8,11 @@ import javafx.scene.image.ImageView;
 
 /**
  * 规则场景
- *
- * @author 86153
- * @date 2022/06/16
  */
 public class RuleScene {
 
     /**
-     * img回来
+     * 回到主菜单的图片
      */
     @FXML
     private ImageView backImg;
@@ -27,7 +24,7 @@ public class RuleScene {
     private ImageView leftArrow;
 
     /**
-     * 右箭头
+     * 右箭头键
      */
     @FXML
     private ImageView rightArrow;
@@ -45,7 +42,7 @@ public class RuleScene {
     }
 
     /**
-     * 基本规则
+     * 进入基本规则介绍页面
      *
      * @throws Exception 异常
      */
@@ -56,7 +53,7 @@ public class RuleScene {
     }
 
     /**
-     * 正常规则
+     * 进入正常规则介绍页面
      *
      * @throws Exception 异常
      */
@@ -67,7 +64,7 @@ public class RuleScene {
     }
 
     /**
-     * 推进规则
+     * 进入高阶模式规则页面
      *
      * @throws Exception 异常
      */
@@ -78,7 +75,7 @@ public class RuleScene {
     }
 
     /**
-     * 对airule
+     * 进入AI模式规则页面
      *
      * @throws Exception 异常
      */
@@ -89,7 +86,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标在后退按钮
+     * 鼠标进入回到菜单按钮时改变样式
      */
     public void mouseOnBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -97,7 +94,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标离开后退按钮
+     * 鼠标离开回到菜单按钮时改变样式
      */
     public void mouseLeaveBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
@@ -105,7 +102,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标左箭头
+     * 鼠标进入左箭头键时改变样式
      */
     public void mouseOnLeftArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -113,7 +110,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标离开左箭头键
+     * 鼠标离开左箭头键时改变样式
      */
     public void mouseLeaveLeftArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
@@ -121,7 +118,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标在右箭头
+     * 鼠标进入右箭头键时改变样式
      */
     public void mouseOnRightArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -129,7 +126,7 @@ public class RuleScene {
     }
 
     /**
-     * 鼠标离开右箭头
+     * 鼠标离开右箭头键时改变样式
      */
     public void mouseLeaveRightArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
