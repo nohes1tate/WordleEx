@@ -39,7 +39,7 @@ public class WordList {
      * 从文件中获取单词
      *
      * @param fileName 输入文件的名字
-     * @return {@link Set}<{@link String}>
+     * @return String集合
      * @throws IOException 抛出IO异常
      */
     public static Set<String> ReadWord(String fileName) throws IOException {
@@ -57,7 +57,7 @@ public class WordList {
      * 读入单词对应的词频
      *
      * @param fileName 文件名称
-     * @return {@link HashMap}<{@link String}, {@link Double}>
+     * @return 单词与其词频对应的HashMap
      * @throws IOException 抛出IO异常
      */
     public static HashMap<String,Double> ReadPrior(String fileName) throws IOException {

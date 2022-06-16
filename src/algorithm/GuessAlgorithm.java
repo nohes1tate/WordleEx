@@ -58,7 +58,7 @@ public class GuessAlgorithm {
      * @param preSet 先前的可能词集合
      * @param state  状态
      * @param guess  上次猜测的词
-     * @return {@link Set}<{@link String}>
+     * @return String集合
      * @throws Exception 异常
      */
     public static Set<String> updatePossibleWord (Set<String> preSet,int state,String guess) throws Exception{

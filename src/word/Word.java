@@ -28,6 +28,10 @@ public class Word {
             this.AddLetter(word.charAt(i));
         }
     }
+
+    /**
+     * 新Word构造
+     */
     public Word(){}
     /**
      * 向单词中添加字母
