@@ -297,7 +297,7 @@ public class Main extends Application {
 //                                        });
 
                                     }
-                                    if (line == 6) {
+                                    if (line == 6 && !gameIsOver) {
                                         System.out.println("you lose");
                                         System.out.println("you win");
                                         Rectangle recB = new Rectangle();
@@ -737,7 +737,7 @@ public class Main extends Application {
                                             }
                                         });
                                     }
-                                    if (line == 6) {
+                                    if (line == 6 && !gameIsOver) {
                                         System.out.println("you lose");
 
                                         Rectangle recB = new Rectangle();
@@ -1256,7 +1256,7 @@ public class Main extends Application {
                                             }
                                         });
                                     }
-                                    if (line == 6) {
+                                    if (line == 6 && !gameIsOver) {
                                         System.out.println("you lose");
                                         Rectangle recB = new Rectangle();
                                         recB.setFill(Color.BLACK);
@@ -1847,7 +1847,7 @@ public class Main extends Application {
                             }
                         });
                     }
-                    if (line == 6) {
+                    if (line == 6 && !gameIsOver) {
                         System.out.println("you lose");
 
                         Rectangle recB = new Rectangle();
@@ -2143,7 +2143,7 @@ public class Main extends Application {
                             }
                         });
                     }
-                    if (line == 6) {
+                    if (line == 6 && !gameIsOver) {
                         System.out.println("you lose");
 
                         Rectangle recB = new Rectangle();
