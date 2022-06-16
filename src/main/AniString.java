@@ -4,12 +4,32 @@ import javafx.scene.text.*;
 import javafx.util.Duration;
 
 /**
+ * ani×Ö·û´®
  * ×Ö·û´®¶¯»­
+ *
+ * @author 86153
+ * @date 2022/06/16
  */
 public class AniString {
+    /**
+     * ×Ö·û´®
+     */
     Text string;
+    /**
+     * Ó¢¹ú¡¶½ðÈÚÊ±±¨¡·
+     */
     FadeTransition ft;
+    /**
+     * ft2
+     */
     FadeTransition ft2;
+
+    /**
+     * ani×Ö·û´®
+     *
+     * @param s Äê´ú
+     * @param c c
+     */
     AniString(String s, Color c){
         string = new Text(s);
         string.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 25));

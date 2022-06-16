@@ -237,32 +237,6 @@ public class AdvanceScene {
      *
      * @param key     ¹Ø¼ü
      * @param color   ÑÕÉ«
-     * @param buttonQ buttonq
-     * @param buttonW buttonw
-     * @param buttonE buttone
-     * @param buttonR buttonr
-     * @param buttonT buttont
-     * @param buttonY Å¥¿Û×´
-     * @param buttonU buttonu
-     * @param buttonI buttoni
-     * @param buttonO buttono
-     * @param buttonP buttonp
-     * @param buttonA buttona
-     * @param buttonS °´Å¥
-     * @param buttonD buttond
-     * @param buttonF buttonf
-     * @param buttonG buttong
-     * @param buttonH buttonh
-     * @param buttonJ buttonj
-     * @param buttonK buttonk
-     * @param buttonL buttonl
-     * @param buttonZ buttonz
-     * @param buttonX buttonx
-     * @param buttonC buttonc
-     * @param buttonV buttonv
-     * @param buttonB buttonb
-     * @param buttonN buttonn
-     * @param buttonM buttonm
      */
     static void changeButtonColor(char key, int color, Button buttonQ, Button buttonW, Button buttonE, Button buttonR, Button buttonT, Button buttonY, Button buttonU, Button buttonI, Button buttonO, Button buttonP, Button buttonA, Button buttonS, Button buttonD, Button buttonF, Button buttonG, Button buttonH, Button buttonJ, Button buttonK, Button buttonL, Button buttonZ, Button buttonX, Button buttonC, Button buttonV, Button buttonB, Button buttonN, Button buttonM) {
         System.out.print(key);
