@@ -17,8 +17,12 @@
             <Image url="@normalMode.png" />
          </image>
       </ImageView>
-        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="54.0" layoutX="38.0" layoutY="35.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
-      <Button layoutX="38.0" layoutY="35.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="54.0" prefWidth="120.0" text="Button" />
+      <ImageView fitHeight="71.0" fitWidth="81.0" layoutX="51.0" layoutY="41.0">
+         <image>
+            <Image url="@arrow.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
       <GridPane layoutX="244.0" layoutY="508.0" prefHeight="108.0" prefWidth="793.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
