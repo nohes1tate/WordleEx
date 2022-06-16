@@ -1188,6 +1188,7 @@ public class Main extends Application {
                                         pane.getChildren().add(black.getNode());
                                         AnchorPane.setTopAnchor(black.getNode(), 0.);
                                         AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                                        black.setDelay(Duration.seconds(2));
                                         black.play();
 
                                         FadeTransition win = new FadeTransition();
@@ -1203,6 +1204,7 @@ public class Main extends Application {
                                         pane.getChildren().add(win.getNode());
                                         AnchorPane.setTopAnchor(win.getNode(), 280.0);
                                         AnchorPane.setLeftAnchor(win.getNode(), 500.0);
+                                        win.setDelay(Duration.seconds(2));
                                         win.play();
 
                                         Button b = new Button();
