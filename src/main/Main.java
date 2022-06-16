@@ -385,6 +385,48 @@ public class Main extends Application {
 
                                 } else {
                                     System.out.println("Not in the list");
+
+                                    Rectangle recB = new Rectangle();
+                                    recB.setFill(Color.BLACK);
+                                    recB.setWidth(1280);
+                                    recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                    FadeTransition black = new FadeTransition();
+                                    black.setNode(recB);
+                                    black.setFromValue(0);
+                                    black.setToValue(0.2);
+                                    black.setCycleCount(2);
+                                    black.setAutoReverse(true);
+                                    black.setDuration(Duration.seconds(1));
+
+
+                                    pane.getChildren().add(black.getNode());
+                                    AnchorPane.setTopAnchor(black.getNode(), 0.);
+                                    AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                                    black.play();
+                                    black.setOnFinished(finish->{
+                                        pane.getChildren().remove(black.getNode());
+                                    });
+
+                                    FadeTransition win = new FadeTransition();
+                                    Text text = new Text("Not in Word List!!");
+                                    text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 80));
+                                    text.setTextAlignment(TextAlignment.JUSTIFY);
+                                    text.setFill(Color.YELLOW);
+                                    win.setNode(text);
+                                    win.setFromValue(0);
+                                    win.setToValue(1);
+                                    win.setDuration(Duration.seconds(1));
+                                    win.setAutoReverse(true);
+                                    win.setCycleCount(2);
+                                    pane.getChildren().add(win.getNode());
+                                    AnchorPane.setTopAnchor(win.getNode(), 300.0);
+                                    AnchorPane.setLeftAnchor(win.getNode(), 350.0);
+                                    win.play();
+                                    win.setOnFinished(finish->{
+                                        pane.getChildren().remove(win.getNode());
+                                        System.out.println("YES");
+                                    });
                                 }
 
                             } catch (Exception e) {
@@ -822,6 +864,48 @@ public class Main extends Application {
 
                                 } else {
                                     System.out.println("Not in the list");
+
+                                    Rectangle recB = new Rectangle();
+                                    recB.setFill(Color.BLACK);
+                                    recB.setWidth(1280);
+                                    recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                    FadeTransition black = new FadeTransition();
+                                    black.setNode(recB);
+                                    black.setFromValue(0);
+                                    black.setToValue(0.2);
+                                    black.setCycleCount(2);
+                                    black.setAutoReverse(true);
+                                    black.setDuration(Duration.seconds(1));
+
+
+                                    pane.getChildren().add(black.getNode());
+                                    AnchorPane.setTopAnchor(black.getNode(), 0.);
+                                    AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                                    black.play();
+                                    black.setOnFinished(finish->{
+                                        pane.getChildren().remove(black.getNode());
+                                    });
+
+                                    FadeTransition win = new FadeTransition();
+                                    Text text = new Text("Not in Word List!!");
+                                    text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 80));
+                                    text.setTextAlignment(TextAlignment.JUSTIFY);
+                                    text.setFill(Color.YELLOW);
+                                    win.setNode(text);
+                                    win.setFromValue(0);
+                                    win.setToValue(1);
+                                    win.setDuration(Duration.seconds(1));
+                                    win.setAutoReverse(true);
+                                    win.setCycleCount(2);
+                                    pane.getChildren().add(win.getNode());
+                                    AnchorPane.setTopAnchor(win.getNode(), 300.0);
+                                    AnchorPane.setLeftAnchor(win.getNode(), 350.0);
+                                    win.play();
+                                    win.setOnFinished(finish->{
+                                        pane.getChildren().remove(win.getNode());
+                                        System.out.println("YES");
+                                    });
                                 }
 
                             } catch (Exception e) {
@@ -1188,7 +1272,6 @@ public class Main extends Application {
                                         pane.getChildren().add(black.getNode());
                                         AnchorPane.setTopAnchor(black.getNode(), 0.);
                                         AnchorPane.setLeftAnchor(black.getNode(), 0.);
-                                        black.setDelay(Duration.seconds(2));
                                         black.play();
 
                                         FadeTransition win = new FadeTransition();
@@ -1204,7 +1287,6 @@ public class Main extends Application {
                                         pane.getChildren().add(win.getNode());
                                         AnchorPane.setTopAnchor(win.getNode(), 280.0);
                                         AnchorPane.setLeftAnchor(win.getNode(), 500.0);
-                                        win.setDelay(Duration.seconds(2));
                                         win.play();
 
                                         Button b = new Button();
@@ -1339,6 +1421,48 @@ public class Main extends Application {
                                     }
                                 } else {
                                     System.out.println("Not in the list");
+
+                                    Rectangle recB = new Rectangle();
+                                    recB.setFill(Color.BLACK);
+                                    recB.setWidth(1280);
+                                    recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                                    FadeTransition black = new FadeTransition();
+                                    black.setNode(recB);
+                                    black.setFromValue(0);
+                                    black.setToValue(0.2);
+                                    black.setCycleCount(2);
+                                    black.setAutoReverse(true);
+                                    black.setDuration(Duration.seconds(1));
+
+
+                                    pane.getChildren().add(black.getNode());
+                                    AnchorPane.setTopAnchor(black.getNode(), 0.);
+                                    AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                                    black.play();
+                                    black.setOnFinished(finish->{
+                                        pane.getChildren().remove(black.getNode());
+                                    });
+
+                                    FadeTransition win = new FadeTransition();
+                                    Text text = new Text("Not in Word List!!");
+                                    text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 80));
+                                    text.setTextAlignment(TextAlignment.JUSTIFY);
+                                    text.setFill(Color.YELLOW);
+                                    win.setNode(text);
+                                    win.setFromValue(0);
+                                    win.setToValue(1);
+                                    win.setDuration(Duration.seconds(1));
+                                    win.setAutoReverse(true);
+                                    win.setCycleCount(2);
+                                    pane.getChildren().add(win.getNode());
+                                    AnchorPane.setTopAnchor(win.getNode(), 300.0);
+                                    AnchorPane.setLeftAnchor(win.getNode(), 350.0);
+                                    win.play();
+                                    win.setOnFinished(finish->{
+                                        pane.getChildren().remove(win.getNode());
+                                        System.out.println("YES");
+                                    });
                                 }
 
                             } catch (Exception e) {
@@ -1933,6 +2057,48 @@ public class Main extends Application {
 
                 } else {
                     System.out.println("Not in the list");
+
+                    Rectangle recB = new Rectangle();
+                    recB.setFill(Color.BLACK);
+                    recB.setWidth(1280);
+                    recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                    FadeTransition black = new FadeTransition();
+                    black.setNode(recB);
+                    black.setFromValue(0);
+                    black.setToValue(0.2);
+                    black.setCycleCount(2);
+                    black.setAutoReverse(true);
+                    black.setDuration(Duration.seconds(1));
+
+
+                    pane.getChildren().add(black.getNode());
+                    AnchorPane.setTopAnchor(black.getNode(), 0.);
+                    AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                    black.play();
+                    black.setOnFinished(finish->{
+                        pane.getChildren().remove(black.getNode());
+                    });
+
+                    FadeTransition win = new FadeTransition();
+                    Text text = new Text("Not in Word List!!");
+                    text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 80));
+                    text.setTextAlignment(TextAlignment.JUSTIFY);
+                    text.setFill(Color.YELLOW);
+                    win.setNode(text);
+                    win.setFromValue(0);
+                    win.setToValue(1);
+                    win.setDuration(Duration.seconds(1));
+                    win.setAutoReverse(true);
+                    win.setCycleCount(2);
+                    pane.getChildren().add(win.getNode());
+                    AnchorPane.setTopAnchor(win.getNode(), 300.0);
+                    AnchorPane.setLeftAnchor(win.getNode(), 350.0);
+                    win.play();
+                    win.setOnFinished(finish->{
+                        pane.getChildren().remove(win.getNode());
+                        System.out.println("YES");
+                    });
                 }
 
             } catch (Exception e) {
@@ -2226,6 +2392,49 @@ public class Main extends Application {
 
                 } else {
                     System.out.println("Not in the list");
+
+
+                    Rectangle recB = new Rectangle();
+                    recB.setFill(Color.BLACK);
+                    recB.setWidth(1280);
+                    recB.setHeight(800);
+//                                        pane.getChildren().add(recB);
+                    FadeTransition black = new FadeTransition();
+                    black.setNode(recB);
+                    black.setFromValue(0);
+                    black.setToValue(0.2);
+                    black.setCycleCount(2);
+                    black.setAutoReverse(true);
+                    black.setDuration(Duration.seconds(1));
+
+
+                    pane.getChildren().add(black.getNode());
+                    AnchorPane.setTopAnchor(black.getNode(), 0.);
+                    AnchorPane.setLeftAnchor(black.getNode(), 0.);
+                    black.play();
+                    black.setOnFinished(finish->{
+                        pane.getChildren().remove(black.getNode());
+                    });
+
+                    FadeTransition win = new FadeTransition();
+                    Text text = new Text("Not in Word List!!");
+                    text.setFont(Font.font("times new roman", FontWeight.MEDIUM, FontPosture.REGULAR, 80));
+                    text.setTextAlignment(TextAlignment.JUSTIFY);
+                    text.setFill(Color.YELLOW);
+                    win.setNode(text);
+                    win.setFromValue(0);
+                    win.setToValue(1);
+                    win.setDuration(Duration.seconds(1));
+                    win.setAutoReverse(true);
+                    win.setCycleCount(2);
+                    pane.getChildren().add(win.getNode());
+                    AnchorPane.setTopAnchor(win.getNode(), 300.0);
+                    AnchorPane.setLeftAnchor(win.getNode(), 350.0);
+                    win.play();
+                    win.setOnFinished(finish->{
+                        pane.getChildren().remove(win.getNode());
+                        System.out.println("YES");
+                    });
                 }
 
             } catch (Exception e) {
