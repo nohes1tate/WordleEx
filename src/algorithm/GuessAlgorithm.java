@@ -143,7 +143,7 @@ public class GuessAlgorithm {
      * 计算新的熵
      *
      * @param PossibleWord 当前可能的单词
-     * @return double
+     * @return double 新的熵
      */
     public static double calENow (Set<String> PossibleWord) {
         double pAll=0,res=0;
@@ -195,7 +195,7 @@ public class GuessAlgorithm {
      * 得到当前状态的颜色
      *
      * @param status 状态
-     * @return {@link LetterColor[]}
+     * @return {@link LetterColor[]} 该状态对应的颜色
      */
     public static LetterColor[] getStatusColor(int status){
         LetterColor[] res = new LetterColor[5];
