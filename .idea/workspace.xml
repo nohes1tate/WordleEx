@@ -5,10 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="rule view">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/Word.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/word/WordList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/word/WordList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/RuleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/RuleScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/AdvanceScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/AdvanceScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/MenuScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/MenuScene.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AniLetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AniLetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/GuessAlgorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Letter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Letter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LetterColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterColor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LetterIOException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LetterIOException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Utils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Word.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Word.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordColorException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordColorException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordIllegalException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordIllegalException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordSizeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordSizeException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordWithFreq.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithFreq.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/WordWithScore.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/WordWithScore.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/naniTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -137,6 +154,7 @@
       <workItem from="1654949457097" duration="13653000" />
       <workItem from="1654963642747" duration="26000" />
       <workItem from="1654963736948" duration="49000" />
+      <workItem from="1655358736600" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -355,7 +373,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655357602993</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="rule view">
+      <created>1655358586494</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1655358586494</updated>
+    </task>
+    <task id="LOCAL-00033" summary="rule view">
+      <created>1655358873735</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1655358873735</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,7 +404,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/main" />
+                        <option value="origin/doc" />
                       </list>
                     </value>
                   </entry>
