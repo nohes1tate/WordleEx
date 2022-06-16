@@ -1,0 +1,270 @@
+Index: target/classes/menuScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@menuScreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"WHITE\" layoutX=\"456.0\" layoutY=\"248.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Normal Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"441.0\" layoutY=\"362.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Advance Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"532.0\" layoutY=\"485.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"AI Show\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Button layoutX=\"456.0\" layoutY=\"204.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startNormalButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"369.0\" text=\"Button\" />\r\n      <Button layoutX=\"441.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAdvanceButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"397.0\" text=\"Button\" />\r\n      <Button layoutX=\"532.0\" layoutY=\"441.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAIShowButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"215.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/menuScene.fxml b/target/classes/menuScene.fxml
+--- a/target/classes/menuScene.fxml	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
++++ b/target/classes/menuScene.fxml	(date 1655342609895)
+@@ -1,13 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
+ 
+-<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
++<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
+    <children>
+       <ImageView fitHeight="800.0" fitWidth="1280.0">
+          <image>
+@@ -26,8 +24,14 @@
+          <font>
+             <Font size="55.0" />
+          </font></Text>
++      <Text fill="WHITE" layoutX="574.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIT">
++         <font>
++            <Font size="55.0" />
++         </font>
++      </Text>
+       <Button layoutX="456.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#startNormalButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="369.0" text="Button" />
+       <Button layoutX="441.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#startAdvanceButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="397.0" text="Button" />
+       <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#startAIShowButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
++      <Button layoutX="577.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#quitButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="134.0" text="Button" />
+    </children>
+ </AnchorPane>
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
++++ /dev/null	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
+@@ -1,9 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]" date="1654709384094" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2022/6/9 1:29 [Changes]" />
+-  <binary>
+-    <option name="BEFORE_PATH" value="target/classes/Main.class" />
+-    <option name="AFTER_PATH" value="target/classes/Main.class" />
+-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/Main.class" />
+-  </binary>
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
++++ /dev/null	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
+@@ -1,117 +0,0 @@
+-Index: src/main/Main.java
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>import javafx.animation.FadeTransition;\r\nimport javafx.application.Application;\r\nimport javafx.event.EventHandler;\r\nimport javafx.fxml.FXMLLoader;\r\nimport javafx.scene.Parent;\r\nimport javafx.scene.Scene;\r\nimport javafx.scene.control.Button;\r\nimport javafx.scene.control.Label;\r\nimport javafx.scene.image.Image;\r\nimport javafx.scene.input.KeyEvent;\r\nimport javafx.scene.layout.AnchorPane;\r\nimport javafx.scene.layout.BorderPane;\r\nimport javafx.scene.paint.Color;\r\nimport javafx.scene.shape.Rectangle;\r\nimport javafx.scene.text.Font;\r\nimport javafx.scene.text.FontPosture;\r\nimport javafx.scene.text.FontWeight;\r\nimport javafx.scene.text.Text;\r\nimport javafx.stage.Stage;\r\nimport javafx.util.Duration;\r\n\r\nimport java.io.IOException;\r\nimport java.nio.charset.StandardCharsets;\r\nimport java.util.List;\r\nimport java.util.Objects;\r\n\r\npublic class Main extends Application {\r\n    public static void main(String[] args) {\r\n        Application.launch(args);\r\n    }\r\n\r\n    @Override\r\n    public void start(Stage menuStage) throws Exception {\r\n\r\n        WordList.PossibleWord = WordList.ReadWord(\"src/Data/possible_words.txt\");\r\n        WordList.LegalWord = WordList.ReadWord(\"src/Data/allowed_words.txt\");\r\n        Word testword = new Word();\r\n        String ans = \"about\";\r\n\r\n        AniLetter[] aniLetters = new AniLetter[5];\r\n\r\n        AnchorPane pane = new AnchorPane();\r\n\r\n\r\n        Button button = new Button(\"测试\");\r\n        button.setOnKeyPressed(new EventHandler<KeyEvent>() {\r\n            private int index = 0;\r\n            private int line = 0;\r\n\r\n            @Override\r\n            public void handle(KeyEvent keyEvent) {\r\n                System.out.println(keyEvent.getText());\r\n                char toAddLetter;\r\n                try {\r\n                    toAddLetter = keyEvent.getText().toCharArray()[0];\r\n                    testword.AddLetter(toAddLetter);\r\n                } catch (Exception e) {\r\n                    throw new RuntimeException(e);\r\n                }\r\n\r\n                aniLetters[index] = new AniLetter(keyEvent.getText());\r\n                pane.getChildren().add(aniLetters[index].ft.getNode());\r\n                AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 100.0 + index * 100.0);\r\n                AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 100.0 + line * 100);\r\n                aniLetters[index].ft.play();\r\n                index += 1;\r\n                System.out.println(testword.WordContent);\r\n\r\n                if (testword.letters.size() == 5) {\r\n                    try {\r\n                        index = 0;\r\n                        line ++;\r\n                        testword.CheckAns(ans);\r\n                        System.out.println(testword.ShowColor());\r\n                        for(int i=0;i<5;i++){\r\n                            if(testword.letters.get(i).letterColor==LetterColor.Green){\r\n                                aniLetters[i].text.setFill(Color.GREEN);\r\n                            }\r\n                            if(testword.letters.get(i).letterColor==LetterColor.Yellow){\r\n                                aniLetters[i].text.setFill(Color.YELLOW);\r\n                            }\r\n                        }\r\n                        for(int i=0;i<5;i++){\r\n                            testword.RemoveLetter();\r\n                        }\r\n\r\n                    } catch (Exception e) {\r\n                        //throw new RuntimeException(e);\r\n                        System.out.println(\"Not in the list\");\r\n                        for(int i=0;i<5;i++){\r\n                            testword.RemoveLetter();\r\n                        }\r\n                    }\r\n                }\r\n            }\r\n        });\r\n        pane.getChildren().add(button);\r\n\r\n\r\n        Parent mainScene = FXMLLoader.load(Objects.requireNonNull(Main.class.getResource(\"resources/mainScene.fxml\")));\r\n        pane.getChildren().add(mainScene);\r\n\r\n\r\n        Scene scene = new Scene(pane, 800, 600);\r\n\r\n        menuStage.setScene(scene);\r\n        menuStage.setTitle(\"WORDLE-EX\");\r\n        menuStage.show();\r\n    }\r\n}\r\n
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>GBK
+-===================================================================
+-diff --git a/src/main/Main.java b/src/main/Main.java
+---- a/src/main/Main.java	(revision 978d310fcd151d9ac3b052b2bee24ccb4cb03274)
+-+++ b/src/main/Main.java	(date 1654527549127)
+-@@ -22,6 +22,7 @@
+- import java.io.IOException;
+- import java.nio.charset.StandardCharsets;
+- import java.util.List;
+-+import java.util.Locale;
+- import java.util.Objects;
+- 
+- public class Main extends Application {
+-@@ -58,7 +59,7 @@
+-                     throw new RuntimeException(e);
+-                 }
+- 
+--                aniLetters[index] = new AniLetter(keyEvent.getText());
+-+                aniLetters[index] = new AniLetter(keyEvent.getText().toUpperCase(Locale.ROOT));
+-                 pane.getChildren().add(aniLetters[index].ft.getNode());
+-                 AnchorPane.setLeftAnchor(aniLetters[index].ft.getNode(), 100.0 + index * 100.0);
+-                 AnchorPane.setTopAnchor(aniLetters[index].ft.getNode(), 100.0 + line * 100);
+-Index: .idea/workspace.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"finish basic Algorithm of guess word\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"281El5VnHKW1oxjs0dAtV1ibU0u\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IdeaProjects\\WordleEx\\src\\main\\resources\" />\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.wordleex.HelloApplication\" />\r\n      <module name=\"WordleEx\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.wordleex.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"WordleEx\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;D:\\Java\\JavaFX\\javafx-sdk-18\\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"naniTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"naniTest\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.HelloApplication\" />\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.Test\" />\r\n      <item itemvalue=\"Application.naniTest\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"\" />\r\n      <created>1650375842923</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1650375842923</updated>\r\n      <workItem from=\"1650375843003\" duration=\"1275000\" />\r\n      <workItem from=\"1653198377145\" duration=\"16052000\" />\r\n      <workItem from=\"1653449527897\" duration=\"695000\" />\r\n      <workItem from=\"1653643590526\" duration=\"2473000\" />\r\n      <workItem from=\"1653646119075\" duration=\"2032000\" />\r\n      <workItem from=\"1653650061497\" duration=\"1435000\" />\r\n      <workItem from=\"1653655065606\" duration=\"287000\" />\r\n      <workItem from=\"1653700967604\" duration=\"6596000\" />\r\n      <workItem from=\"1653782154243\" duration=\"10560000\" />\r\n      <workItem from=\"1654502867795\" duration=\"10825000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"basic function\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"basic function\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"WordList.WordPrior\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.wsList\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+---- a/.idea/workspace.xml	(revision 978d310fcd151d9ac3b052b2bee24ccb4cb03274)
+-+++ b/.idea/workspace.xml	(date 1654531840462)
+-@@ -4,8 +4,10 @@
+-     <option name="autoReloadType" value="SELECTIVE" />
+-   </component>
+-   <component name="ChangeListManager">
+--    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="finish basic Algorithm of guess word">
+-+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="merge">
+-       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+-+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+-     </list>
+-     <option name="SHOW_DIALOG" value="false" />
+-     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+-@@ -39,6 +41,12 @@
+-   <component name="ProjectViewState">
+-     <option name="hideEmptyMiddlePackages" value="true" />
+-     <option name="showLibraryContents" value="true" />
+-+  </component>
+-+  <component name="PropertiesComponent">
+-+    <property name="WebServerToolWindowFactoryState" value="false" />
+-+    <property name="project.structure.last.edited" value="Project" />
+-+    <property name="project.structure.proportion" value="0.0" />
+-+    <property name="project.structure.side.proportion" value="0.0" />
+-   </component>
+-   <component name="RecentsManager">
+-     <key name="CopyFile.RECENT_KEYS">
+-@@ -63,7 +71,7 @@
+-         <option name="Make" enabled="true" />
+-       </method>
+-     </configuration>
+--    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+-       <option name="MAIN_CLASS_NAME" value="Main" />
+-       <module name="WordleEx" />
+-       <option name="VM_PARAMETERS" value="--module-path &quot;D:\Java\JavaFX\javafx-sdk-18\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web" />
+-@@ -86,16 +94,11 @@
+-       </method>
+-     </configuration>
+-     <list>
+--      <item itemvalue="Application.HelloApplication" />
+-       <item itemvalue="Application.Main" />
+-+      <item itemvalue="Application.HelloApplication" />
+-       <item itemvalue="Application.Test" />
+-       <item itemvalue="Application.naniTest" />
+-     </list>
+--    <recent_temporary>
+--      <list>
+--        <item itemvalue="Application.Main" />
+--      </list>
+--    </recent_temporary>
+-   </component>
+-   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+-   <component name="TaskManager">
+-@@ -115,7 +118,17 @@
+-       <workItem from="1653700967604" duration="6596000" />
+-       <workItem from="1653782154243" duration="10560000" />
+-       <workItem from="1654502867795" duration="10825000" />
+-+      <workItem from="1654528669522" duration="1184000" />
+-+      <workItem from="1654530024195" duration="729000" />
+-     </task>
+-+    <task id="LOCAL-00001" summary="merge">
+-+      <created>1654525263964</created>
+-+      <option name="number" value="00001" />
+-+      <option name="presentableId" value="LOCAL-00001" />
+-+      <option name="project" value="LOCAL" />
+-+      <updated>1654525263964</updated>
+-+    </task>
+-+    <option name="localTasksCounter" value="2" />
+-     <servers />
+-   </component>
+-   <component name="TypeScriptGeneratedFilesManager">
+-@@ -134,7 +147,8 @@
+-   </component>
+-   <component name="VcsManagerConfiguration">
+-     <MESSAGE value="basic function" />
+--    <option name="LAST_COMMIT_MESSAGE" value="basic function" />
+-+    <MESSAGE value="merge" />
+-+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+-   </component>
+-   <component name="XDebuggerManager">
+-     <watches-manager>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"Wang's commit\">\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/Main.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/target/classes/Main.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/target/classes/Main.class\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"FxmlFile\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"test-wang\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n    <option name=\"RESET_MODE\" value=\"MIXED\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"281El5VnHKW1oxjs0dAtV1ibU0u\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"extract.method.default.visibility\" value=\"private\" />\r\n    <property name=\"last_directory_selection\" value=\"$PROJECT_DIR$/src/util\" />\r\n    <property name=\"project.structure.last.edited\" value=\"Project\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\IdeaProjects\\WordleEx\\src\\main\\resources\" />\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\Season4\\OO_Project\\WordleEx\\src\\Data\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"HelloApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.example.wordleex.HelloApplication\" />\r\n      <module name=\"WordleEx\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"com.example.wordleex.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"WordleEx\" />\r\n      <option name=\"VM_PARAMETERS\" value=\"--module-path &quot;D:\\Java\\JavaFX\\javafx-sdk-18\\lib&quot; --add-modules=javafx.base,javafx.controls,javafx.fxml,javafx.graphics,javafx.media,javafx.swing,javafx.web\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Test\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Test\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"naniTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"naniTest\" />\r\n      <module name=\"WordleEx\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <list>\r\n      <item itemvalue=\"Application.Main\" />\r\n      <item itemvalue=\"Application.HelloApplication\" />\r\n      <item itemvalue=\"Application.Test\" />\r\n      <item itemvalue=\"Application.naniTest\" />\r\n    </list>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.naniTest\" />\r\n        <item itemvalue=\"Application.Test\" />\r\n        <item itemvalue=\"Application.HelloApplication\" />\r\n        <item itemvalue=\"Application.Test\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"28e52107-b900-4ce7-bff4-f740d1529555\" name=\"Changes\" comment=\"\" />\r\n      <created>1650375842923</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1650375842923</updated>\r\n      <workItem from=\"1650375843003\" duration=\"1275000\" />\r\n      <workItem from=\"1653198377145\" duration=\"16052000\" />\r\n      <workItem from=\"1653449527897\" duration=\"695000\" />\r\n      <workItem from=\"1653643590526\" duration=\"2473000\" />\r\n      <workItem from=\"1653646119075\" duration=\"2032000\" />\r\n      <workItem from=\"1653650061497\" duration=\"1435000\" />\r\n      <workItem from=\"1653655065606\" duration=\"287000\" />\r\n      <workItem from=\"1653700967604\" duration=\"6596000\" />\r\n      <workItem from=\"1653782154243\" duration=\"10560000\" />\r\n      <workItem from=\"1654502867795\" duration=\"10825000\" />\r\n      <workItem from=\"1654528669522\" duration=\"1184000\" />\r\n      <workItem from=\"1654530024195\" duration=\"729000\" />\r\n      <workItem from=\"1654709314006\" duration=\"4059000\" />\r\n      <workItem from=\"1654901364999\" duration=\"867000\" />\r\n      <workItem from=\"1654902260019\" duration=\"12078000\" />\r\n      <workItem from=\"1654916236638\" duration=\"4025000\" />\r\n      <workItem from=\"1654933943696\" duration=\"7308000\" />\r\n      <workItem from=\"1654949457097\" duration=\"13653000\" />\r\n      <workItem from=\"1654963642747\" duration=\"26000\" />\r\n      <workItem from=\"1654963736948\" duration=\"49000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"merge\">\r\n      <created>1654525263964</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654525263964</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"make some adjustment\">\r\n      <created>1654713210637</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654713210637</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"make some adjustment\">\r\n      <created>1654901414811</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654901414812</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"make some adjustment\">\r\n      <created>1654901994608</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654901994608</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"make some adjustment\">\r\n      <created>1654903017507</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654903017507</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"finish some visible data\">\r\n      <created>1654912069036</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654912069036</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"finish some visible data\">\r\n      <created>1654913865125</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654913865125</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"finish some visible data\">\r\n      <created>1654935276796</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654935276796</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"make some UI\">\r\n      <created>1654936817179</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654936817179</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"make some UI\">\r\n      <created>1654941066954</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654941066955</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00011\" summary=\"make some UI\">\r\n      <created>1654941286642</created>\r\n      <option name=\"number\" value=\"00011\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00011\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654941286642</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00012\" summary=\"algorithm GUI\">\r\n      <created>1654960134060</created>\r\n      <option name=\"number\" value=\"00012\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00012\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654960134060</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00013\" summary=\"algorithm GUI update\">\r\n      <created>1654963363914</created>\r\n      <option name=\"number\" value=\"00013\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00013\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654963363914</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00014\" summary=\"algorithm GUI update\">\r\n      <created>1654963655793</created>\r\n      <option name=\"number\" value=\"00014\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00014\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1654963655793</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00015\" summary=\"wang‘s commmit\">\r\n      <created>1655129093479</created>\r\n      <option name=\"number\" value=\"00015\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00015\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655129093479</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00016\" summary=\"wang‘s commmit\">\r\n      <created>1655138662186</created>\r\n      <option name=\"number\" value=\"00016\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00016\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655138662186</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00017\" summary=\"wang‘s commmit\">\r\n      <created>1655191391793</created>\r\n      <option name=\"number\" value=\"00017\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00017\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655191391793</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00018\" summary=\"wang‘s commmit\">\r\n      <created>1655193743343</created>\r\n      <option name=\"number\" value=\"00018\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00018\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655193743343</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00019\" summary=\"Wang's commit\">\r\n      <created>1655303852427</created>\r\n      <option name=\"number\" value=\"00019\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00019\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655303852428</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00020\" summary=\"Wang's commit\">\r\n      <created>1655305728975</created>\r\n      <option name=\"number\" value=\"00020\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00020\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655305728975</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00021\" summary=\"Wang's commit\">\r\n      <created>1655308565359</created>\r\n      <option name=\"number\" value=\"00021\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00021\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655308565359</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00022\" summary=\"Wang's commit\">\r\n      <created>1655309322533</created>\r\n      <option name=\"number\" value=\"00022\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00022\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655309322533</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00023\" summary=\"Wang's commit\">\r\n      <created>1655309695359</created>\r\n      <option name=\"number\" value=\"00023\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00023\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1655309695359</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"24\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State>\r\n              <option name=\"FILTERS\">\r\n                <map>\r\n                  <entry key=\"branch\">\r\n                    <value>\r\n                      <list>\r\n                        <option value=\"origin/main\" />\r\n                      </list>\r\n                    </value>\r\n                  </entry>\r\n                </map>\r\n              </option>\r\n            </State>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"basic function\" />\r\n    <MESSAGE value=\"merge\" />\r\n    <MESSAGE value=\"make some adjustment\" />\r\n    <MESSAGE value=\"finish some visible data\" />\r\n    <MESSAGE value=\"make some UI\" />\r\n    <MESSAGE value=\"algorithm GUI\" />\r\n    <MESSAGE value=\"algorithm GUI update\" />\r\n    <MESSAGE value=\"wang‘s commmit\" />\r\n    <MESSAGE value=\"Wang's commit\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Wang's commit\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"WordList.WordPrior\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.wsList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.StateInfoList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.StateInfoList\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.PossibleWordChance\" language=\"JAVA\" />\r\n        <watch expression=\"GuessAlgorithm.eNow\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n  <component name=\"XSLT-Support.FileAssociations.UIState\">\r\n    <expand />\r\n    <select />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
++++ b/.idea/workspace.xml	(date 1655342893429)
+@@ -5,8 +5,12 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="Wang's commit">
+-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/Main.class" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/menuScene.fxml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/menuScene.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -307,7 +311,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1655309695359</updated>
+     </task>
+-    <option name="localTasksCounter" value="24" />
++    <task id="LOCAL-00024" summary="Wang's commit">
++      <created>1655310152049</created>
++      <option name="number" value="00024" />
++      <option name="presentableId" value="LOCAL-00024" />
++      <option name="project" value="LOCAL" />
++      <updated>1655310152049</updated>
++    </task>
++    <option name="localTasksCounter" value="25" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+Index: target/classes/resources/menuScene.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n\r\n<?import javafx.scene.control.Button?>\r\n<?import javafx.scene.image.Image?>\r\n<?import javafx.scene.image.ImageView?>\r\n<?import javafx.scene.layout.AnchorPane?>\r\n<?import javafx.scene.text.Font?>\r\n<?import javafx.scene.text.Text?>\r\n\r\n<AnchorPane prefHeight=\"800.0\" prefWidth=\"1280.0\" xmlns=\"http://javafx.com/javafx/8.0.171\" xmlns:fx=\"http://javafx.com/fxml/1\" fx:controller=\"MenuScene\">\r\n   <children>\r\n      <ImageView fitHeight=\"800.0\" fitWidth=\"1280.0\">\r\n         <image>\r\n            <Image url=\"@menuScreen.png\" />\r\n         </image>\r\n      </ImageView>\r\n      <Text fill=\"WHITE\" layoutX=\"456.0\" layoutY=\"248.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Normal Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"441.0\" layoutY=\"362.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"Advance Mode\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Text fill=\"WHITE\" layoutX=\"532.0\" layoutY=\"485.0\" strokeType=\"OUTSIDE\" strokeWidth=\"0.0\" text=\"AI Show\">\r\n         <font>\r\n            <Font size=\"55.0\" />\r\n         </font></Text>\r\n      <Button layoutX=\"456.0\" layoutY=\"204.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startNormalButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"369.0\" text=\"Button\" />\r\n      <Button layoutX=\"441.0\" layoutY=\"318.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAdvanceButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"397.0\" text=\"Button\" />\r\n      <Button layoutX=\"532.0\" layoutY=\"441.0\" mnemonicParsing=\"false\" onMouseClicked=\"#startAIShowButton\" onMouseEntered=\"#mouseOnButton\" onMouseExited=\"#mouseLeaveButton\" opacity=\"0.0\" prefHeight=\"48.0\" prefWidth=\"215.0\" text=\"Button\" />\r\n   </children>\r\n</AnchorPane>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/target/classes/resources/menuScene.fxml b/target/classes/resources/menuScene.fxml
+--- a/target/classes/resources/menuScene.fxml	(revision f549ab9434ecf02cb94fae24118cdd4e5c8d3955)
++++ b/target/classes/resources/menuScene.fxml	(date 1655342609895)
+@@ -1,13 +1,11 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ 
+-<?import javafx.scene.control.Button?>
+-<?import javafx.scene.image.Image?>
+-<?import javafx.scene.image.ImageView?>
+-<?import javafx.scene.layout.AnchorPane?>
+-<?import javafx.scene.text.Font?>
+-<?import javafx.scene.text.Text?>
++<?import javafx.scene.control.*?>
++<?import javafx.scene.image.*?>
++<?import javafx.scene.layout.*?>
++<?import javafx.scene.text.*?>
+ 
+-<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
++<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MenuScene">
+    <children>
+       <ImageView fitHeight="800.0" fitWidth="1280.0">
+          <image>
+@@ -26,8 +24,14 @@
+          <font>
+             <Font size="55.0" />
+          </font></Text>
++      <Text fill="WHITE" layoutX="574.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIT">
++         <font>
++            <Font size="55.0" />
++         </font>
++      </Text>
+       <Button layoutX="456.0" layoutY="204.0" mnemonicParsing="false" onMouseClicked="#startNormalButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="369.0" text="Button" />
+       <Button layoutX="441.0" layoutY="318.0" mnemonicParsing="false" onMouseClicked="#startAdvanceButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="397.0" text="Button" />
+       <Button layoutX="532.0" layoutY="441.0" mnemonicParsing="false" onMouseClicked="#startAIShowButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="215.0" text="Button" />
++      <Button layoutX="577.0" layoutY="557.0" mnemonicParsing="false" onMouseClicked="#quitButton" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="48.0" prefWidth="134.0" text="Button" />
+    </children>
+ </AnchorPane>
