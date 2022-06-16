@@ -580,12 +580,12 @@ public class Main extends Application {
                         index += 1;
                         System.out.println(testword.WordContent);
                     }
-                    if (kCode == KeyCode.BACK_SPACE && index >= 1) {
+                    else if (kCode == KeyCode.BACK_SPACE && index >= 1) {
                         testword.RemoveLetter();
                         pane.getChildren().remove(aniLetters[index - 1].ft.getNode());
                         index -= 1;
                     }
-                    if (kCode == KeyCode.ENTER) {
+                    else if (kCode == KeyCode.ENTER) {
                         if (testword.letters.size() == 5) {
                             try {
                                 int status;
