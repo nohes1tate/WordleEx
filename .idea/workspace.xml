@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="framework of scene">
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="Wang's commit">
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_13_22_22__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_14_15_24__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_14_15_24__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_14_15_27__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_14_15_27__Changes_.xml" afterDir="false" />
@@ -20,8 +20,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_16_9_38__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_16_9_38__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_16_9_49__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_16_9_49__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/util/AdvanceScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/AdvanceScene.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/RuleScene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/RuleScene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test-wang" />
+        <entry key="$PROJECT_DIR$" value="doc" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,11 +59,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "node.js.selected.package.tslint": "(autodetect)"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\RDJ.IRON\Desktop\面向对象\OOPproj\WordleEx\src\main\resources" />
@@ -79,7 +78,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.wordleex.HelloApplication" />
       <module name="WordleEx" />
@@ -116,10 +115,10 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="应用程序.Main" />
-      <item itemvalue="应用程序.HelloApplication" />
-      <item itemvalue="应用程序.Test" />
-      <item itemvalue="应用程序.naniTest" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.HelloApplication" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.naniTest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -150,7 +149,6 @@
       <workItem from="1654949457097" duration="13653000" />
       <workItem from="1654963642747" duration="26000" />
       <workItem from="1654963736948" duration="49000" />
-      <workItem from="1655358736600" duration="807000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>
@@ -362,35 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655356798629</updated>
     </task>
-    <task id="LOCAL-00031" summary="rule view">
-      <created>1655357602993</created>
+    <task id="LOCAL-00031" summary="Wang's commit">
+      <created>1655360931730</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1655357602993</updated>
+      <updated>1655360931730</updated>
     </task>
-    <task id="LOCAL-00032" summary="rule view">
-      <created>1655358586494</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1655358586494</updated>
-    </task>
-    <task id="LOCAL-00033" summary="rule view">
-      <created>1655358873735</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1655358873735</updated>
-    </task>
-    <task id="LOCAL-00034" summary="framework of scene">
-      <created>1655359183123</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1655359183123</updated>
-    </task>
-    <option name="localTasksCounter" value="35" />
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +384,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/doc" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
@@ -429,11 +406,10 @@
     <MESSAGE value="algorithm GUI" />
     <MESSAGE value="algorithm GUI update" />
     <MESSAGE value="wang‘s commmit" />
-    <MESSAGE value="Wang's commit" />
     <MESSAGE value="optimize end logic" />
     <MESSAGE value="rule view" />
-    <MESSAGE value="framework of scene" />
-    <option name="LAST_COMMIT_MESSAGE" value="framework of scene" />
+    <MESSAGE value="Wang's commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wang's commit" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
