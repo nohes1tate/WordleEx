@@ -151,6 +151,10 @@ public class MenuScene {
         Main.startAIShowMode();
     }
 
+    public void quitButton() throws Exception {
+        System.exit(0);
+    }
+
     /**
      * »Øµ½²Ëµ¥
      *
