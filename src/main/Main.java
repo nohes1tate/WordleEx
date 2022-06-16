@@ -125,7 +125,7 @@ public class Main extends Application {
 
         menuStage.setTitle("WORDLE-EX");
         menuStage.setResizable(false);
-        menuStage.setAlwaysOnTop(false);
+        menuStage.setAlwaysOnTop(true);
 
         mainWindow = menuStage;
         mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
@@ -133,6 +133,50 @@ public class Main extends Application {
 
         menuStage.setScene(mainMenuScene);
         menuStage.show();
+    }
+
+    public static void toRuleView() {
+        try {
+            Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/basicRule.fxml"));
+            Scene ruleScene = new Scene(ruleLayout, 1280, 800);
+            mainWindow.setScene(ruleScene);
+            mainWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void toNormalRule(){
+        try {
+            Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/NormalMode.fxml"));
+            Scene ruleScene = new Scene(ruleLayout, 1280, 800);
+            mainWindow.setScene(ruleScene);
+            mainWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void toAdvanceRule(){
+        try {
+            Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/AdvanceMode.fxml"));
+            Scene ruleScene = new Scene(ruleLayout, 1280, 800);
+            mainWindow.setScene(ruleScene);
+            mainWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void toAIRule() {
+        try {
+            Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/AIMode.fxml"));
+            Scene ruleScene = new Scene(ruleLayout, 1280, 800);
+            mainWindow.setScene(ruleScene);
+            mainWindow.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void startNormalMode() throws Exception {

@@ -6,10 +6,16 @@
     <file url="file://$PROJECT_DIR$/src/main/Test.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/AIRule.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/advanceRule.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/arrow.jpeg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/arrow.jpg" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/arrow.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/arrow1.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/arrowL.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/arrowR.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/basicRule.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/normalRule.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/rule.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/resources/rule1.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/word/Letter.java" charset="GBK" />

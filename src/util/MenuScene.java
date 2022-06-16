@@ -225,6 +225,12 @@ public class MenuScene {
         Main.startNormalMode();
     }
 
+    public void toRule() throws Exception{
+        Parent ruleLayout = FXMLLoader.load(Main.class.getResource("/resources/basicRule.fxml"));
+        Main.setMainMenuScene(new Scene(ruleLayout));
+        Main.toRuleView();
+    }
+
     /**
      * 开始进阶模式的方法。
      *
