@@ -5,12 +5,18 @@ import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Paint;
 
 public class AdvanceScene {
+
+    @FXML
+    private ImageView backImg;
+
     @FXML
     private Button ButtonQ;
 
@@ -108,6 +114,15 @@ public class AdvanceScene {
     public void mouseLeaveButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+    }
+
+    public void mouseOnBackButton(){
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        backImg.setImage(new Image("arrow1.png"));
+    }
+    public void mouseLeaveBackButton(){
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        backImg.setImage(new Image("arrow.png"));
     }
 
     public void testMethod(){

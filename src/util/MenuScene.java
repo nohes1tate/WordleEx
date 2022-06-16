@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
@@ -19,6 +20,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class MenuScene {
+
+    @FXML
+    private ImageView backImg;
 
     @FXML
     private Button ButtonQ;
@@ -118,6 +122,15 @@ public class MenuScene {
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
       }
+
+    public void mouseOnBackButton(){
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        backImg.setImage(new Image("arrow1.png"));
+    }
+    public void mouseLeaveBackButton(){
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        backImg.setImage(new Image("arrow.png"));
+    }
 
       public void testMethod(){
         System.out.println("testMethod");

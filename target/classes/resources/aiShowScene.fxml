@@ -13,11 +13,11 @@
                 <Image url="@normalMode.png" />
             </image>
         </ImageView>
-        <ImageView fitHeight="71.0" fitWidth="81.0" layoutX="51.0" layoutY="41.0">
+        <ImageView fx:id="backImg"  fitHeight="71.0" fitWidth="81.0" layoutX="51.0" layoutY="41.0">
             <image>
                 <Image url="@arrow.png" />
             </image>
         </ImageView>
-        <Button fx:id="ButtonQ" layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
+        <Button fx:id="ButtonQ" layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnBackButton" onMouseExited="#mouseLeaveBackButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
     </children>
 </AnchorPane>
