@@ -133,6 +133,8 @@ public class Main extends Application {
      * 记录游戏是否结束
      */
     private static boolean gameIsOver = false;
+    private static int gameTime=0;
+    private static int winTime=0;
 
     /**
      * 游戏进入主方法
@@ -277,6 +279,7 @@ public class Main extends Application {
                     if (kCode == KeyCode.ENTER) {
                         if (testword.letters.size() == 5) {
                             try {
+                                gameTime++;
                                 int status;
                                 if (Word.CheckInList(testword.WordContent.toString())) {
                                     index = 0;
@@ -300,6 +303,7 @@ public class Main extends Application {
                                     }
                                     status = testword.getState();
                                     if (status == 0) {
+                                        winTime++;
                                         System.out.println("you win");
                                         Rectangle recB = new Rectangle();
                                         recB.setFill(Color.BLACK);
