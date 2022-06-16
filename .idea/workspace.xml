@@ -66,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.wordleex.HelloApplication" />
       <module name="WordleEx" />
@@ -103,19 +103,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.naniTest" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.HelloApplication" />
+      <item itemvalue="应用程序.Test" />
+      <item itemvalue="应用程序.naniTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.naniTest" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
