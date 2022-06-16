@@ -123,6 +123,12 @@ public class MenuScene {
     @FXML
     private Text quit;
 
+    @FXML
+    private ImageView helpImg;
+
+    @FXML
+    private Button helpButton;
+
     /**
      * 当鼠标进入按钮区域改变鼠标样式的方法。
      */
@@ -196,7 +202,14 @@ public class MenuScene {
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
         backImg.setImage(new Image("arrow.png"));
     }
-
+    public void mouseOnHelpImg(){
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        helpImg.setImage(new Image("rule1.png"));
+    }
+    public void mouseLeaveHelpImg(){
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        helpImg.setImage(new Image("rule.png"));
+    }
       public void testMethod(){
         System.out.println("testMethod");
           }
