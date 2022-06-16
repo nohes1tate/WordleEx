@@ -26,7 +26,6 @@ import java.util.Random;
  * @author ËÎÒæ¿µ
  * @author ÍõÌíÒİ
  * @author ÍõØ·³Î
- * @date 2022/06/16
  */
 public class Main extends Application {
 

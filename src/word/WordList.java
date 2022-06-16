@@ -6,17 +6,11 @@ import java.util.*;
 /**
  * 单词列表
  * 包含合法输入单词和可以成为答案的单词
- *
- * @author 宋益康
  */
 public class WordList {
-    /**
-     * 仅需要一个WordList，采用单例模式构造
-     */
-    private static WordList singalton;
 
     /**
-     * 单例的实现
+     * 阻止WordList的构造
      */
     private WordList(){}
 
@@ -100,8 +94,6 @@ public class WordList {
 
 /**
  * 保存单词及其频率
- *
- * @author 宋益康
  */
 class WordWithFreq implements Comparable<WordWithFreq>{
     String word;
@@ -121,6 +113,9 @@ class WordWithFreq implements Comparable<WordWithFreq>{
     }
 }
 
+/**
+ * 保存单词与它的概率
+ */
 class WordWithChance {
     String word;
     double chance;

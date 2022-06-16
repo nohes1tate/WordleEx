@@ -9,7 +9,6 @@
  * 对于不在正确位置的字母，从左往右依次判定，对于数目多出答案的字母会标记为灰色
  * 如：谜底为equal，猜测为speed，此时第一个E会被标记为黄色，第二个会被标记为灰色
  *
- * @author 宋益康
  */
 public enum LetterColor {
     Black, Green, Grey, Yellow

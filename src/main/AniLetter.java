@@ -5,9 +5,6 @@ import javafx.util.Duration;
 
 /**
  * ×ÖÄ¸¶¯»­
- *
- * @author ÍõÌíÒİ
- * @date 2022/06/16
  */
 public class AniLetter {
     /**

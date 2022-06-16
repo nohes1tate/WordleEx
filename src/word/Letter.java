@@ -1,7 +1,6 @@
 /**
  * 输入的字母
  * Letter类是玩家操作的原子单位
- * @author 宋益康
  */
 public class Letter {
     /**
@@ -66,8 +65,6 @@ public class Letter {
 /**
  * LetterIOException
  * 字母输入异常报错
- * @author 宋益康
- * @date 2022/05/22
  */
 class LetterIOException extends Exception{
     String message;

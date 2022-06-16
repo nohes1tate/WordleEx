@@ -5,7 +5,6 @@ import java.util.StringTokenizer;
 /**
  * 单词
  * 字母以单词为单位进行输入和判断
- * @author 宋益康
  */
 public class Word {
     /**
@@ -80,6 +79,11 @@ public class Word {
         return res;
     }
 
+    /**
+     * 显示单词颜色
+     *
+     * @return {@link String}
+     */
     public String ShowColor() {
         StringBuilder sb = new StringBuilder();
         for (Letter l:letters){
@@ -96,6 +100,12 @@ public class Word {
         return sb.toString();
     }
 
+    /**
+     * 检查是否在列表里
+     *
+     * @param content 内容
+     * @return boolean
+     */
     public static boolean CheckInList(String content) {
         return WordList.LegalWord.contains(content);
     }
@@ -145,8 +155,7 @@ public class Word {
 }
 
 /**
- * 单词数目异常
- * @author 宋益康
+ * 单词大小异常
  */
 class WordSizeException extends Exception{
     String message;
@@ -162,7 +171,6 @@ class WordSizeException extends Exception{
 
 /**
  * 单词不合规异常
- * @author 宋益康
  */
 class WordIllegalException extends Exception{
     String message;
@@ -176,6 +184,9 @@ class WordIllegalException extends Exception{
     }
 }
 
+/**
+ * 单词颜色异常
+ */
 class WordColorException extends Exception{
     String message;
     public WordColorException(String ErrMessage) { message=ErrMessage; }

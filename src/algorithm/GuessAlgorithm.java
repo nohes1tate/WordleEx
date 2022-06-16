@@ -4,9 +4,6 @@ import java.util.*;
 
 /**
  * 猜词算法
- *
- * @author 宋益康
- * @date 2022/06/16
  */
 public class GuessAlgorithm {
 
@@ -106,7 +103,6 @@ public class GuessAlgorithm {
         ArrayList<WordWithScore> tmpList = new ArrayList<>();
         //第一层循环，遍历所有合法的单词
         for (String lWord : LegalWord) {
-            boolean show = false;
             priorAll=0;
             Arrays.fill(chance, 0);
             Arrays.fill(times, 0);
@@ -119,9 +115,6 @@ public class GuessAlgorithm {
                 state = tmpWord.getState();
                 chance[state] += WordList.WordPrior.get(pWord);
                 times[state]++;
-                if(show){
-                    System.out.println("possible word:"+pWord+" result:" + tmpWord.ShowColor());
-                }
             }
             //计算每种状态的概率之和
             for (double c : chance) {
@@ -210,20 +203,12 @@ public class GuessAlgorithm {
             int num;
             num = status%3;
             status/=3;
-            LetterColor tmpColor;
-            switch (num){
-                case 0:
-                    tmpColor = LetterColor.Green;
-                    break;
-                case 1:
-                    tmpColor = LetterColor.Yellow;
-                    break;
-                case 2:
-                    tmpColor = LetterColor.Grey;
-                    break;
-                default:
-                    tmpColor = LetterColor.Black;
-            }
+            LetterColor tmpColor = switch (num) {
+                case 0 -> LetterColor.Green;
+                case 1 -> LetterColor.Yellow;
+                case 2 -> LetterColor.Grey;
+                default -> LetterColor.Black;
+            };
             res[4-i] = tmpColor;
         }
         return res;
@@ -252,7 +237,6 @@ public class GuessAlgorithm {
             }
         }
         ArrayList<StatusInfo> res = new ArrayList<>();
-        int index = 0;
         for (int i=0; i<3*3*3*3*3; i++){
             if(guessTimes[i]!=0){
                 double info;
@@ -261,7 +245,6 @@ public class GuessAlgorithm {
                 info = Math.log(1 / p) / Math.log(2);
                 StatusColor color = new StatusColor(getStatusColor(i));
                 res.add(new StatusInfo(guessTimes[i],sum,info,color));
-                index++;
             }
         }
         res.sort(Collections.reverseOrder());
@@ -272,8 +255,6 @@ public class GuessAlgorithm {
 
 /**
  * 状态的颜色
- *
- * @author 宋益康
  */
 class StatusColor {
     LetterColor[] color;
@@ -284,8 +265,6 @@ class StatusColor {
 
 /**
  * 单词与其对应得分
- *
- * @author 宋益康
  */
 class WordWithScore implements Comparable<WordWithScore>{
         String word;
@@ -314,8 +293,6 @@ public int compareTo(WordWithScore w){
 
 /**
  * 状态信息
- *
- * @author 宋益康
  */
 class StatusInfo  implements Comparable<StatusInfo>{
     int times;
@@ -330,14 +307,6 @@ class StatusInfo  implements Comparable<StatusInfo>{
     }
     @Override
     public int compareTo(StatusInfo s){
-        if(this.times>s.times){
-            return 1;
-        }
-        else if (this.times == s.times){
-            return 0;
-        }
-        else {
-            return -1;
-        }
+        return Integer.compare(this.times, s.times);
     }
 }

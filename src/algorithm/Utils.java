@@ -1,7 +1,5 @@
 /**
  * 工具类，记录一些算法函数
- *
- * @author 宋益康
  */
 public class Utils {
     /**
