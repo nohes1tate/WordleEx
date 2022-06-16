@@ -1,33 +1,33 @@
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.*;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.*;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Random;
 
+/**
+ * 启动游戏主方法
+ *
+ * @author 宋益康
+ * @author 王添逸
+ * @author 王胤澄
+ * @date 2022/06/16
+ */
 public class Main extends Application {
 
     /**
@@ -41,44 +41,12 @@ public class Main extends Application {
     private static Scene mainMenuScene;
 
     /**
-     * 主菜单布局
-     */
-    private Parent mainMenuLayout;
-
-    /**
-     * 得到主菜单布局
-     *
-     * @return {@link Parent}
-     */
-    public Parent getMainMenuLayout() {
-        return mainMenuLayout;
-    }
-
-    /**
-     * 得到主菜单场景
-     *
-     * @return {@link Scene}
-     */
-    public static Scene getMainMenuScene() {
-        return mainMenuScene;
-    }
-
-    /**
-     * 得到主窗口
+     * 获取游戏主窗口
      *
      * @return {@link Stage}
      */
     public static Stage getMainWindow() {
         return mainWindow;
-    }
-
-    /**
-     * 设置主菜单布局
-     *
-     * @param mainMenuLayout 主菜单布局
-     */
-    public void setMainMenuLayout(Parent mainMenuLayout) {
-        this.mainMenuLayout = mainMenuLayout;
     }
 
     /**
@@ -90,36 +58,98 @@ public class Main extends Application {
         Main.mainMenuScene = mainMenuScene;
     }
 
+    /**
+     * 用于循环的变量
+     */
     private static int index = 0;
-    private static int line = 0;
-    private static int leftLine = 0;
-    private static int rightLine = 0;
 
+    /**
+     * 记录单词行数
+     */
+    private static int line = 0;
+
+    /**
+     * 用于显示左侧信息
+     */
+    private static int leftLine = 0;
+
+    /**
+     * 窗格
+     */
     private static AnchorPane pane = new AnchorPane();
+
+    /**
+     * 动画字母数组
+     */
     private static AniLetter[] aniLetters = new AniLetter[5];
 
+    /**
+     * 当前单词
+     */
     private static Word testword = new Word();
 
+    /**
+     * 题目答案
+     */
     private static String ans;
 
+    /**
+     * 推荐单词
+     */
     private static AniString[] recommend = new AniString[5];
+
+    /**
+     * 推荐单词的期望提供信息
+     */
     private static AniString[] recommendInfo = new AniString[5];
+
+    /**
+     * 推荐单词为正确答案的可能性
+     */
     private static AniString[] recommendPossibility = new AniString[5];
+
+    /**
+     * 字符串动画
+     */
     private static ArrayList<AniString> aniStrings = new ArrayList<>();
+
+    /**
+     * 格式化小数
+     */
     private static DecimalFormat df2 = new DecimalFormat("#.##");
+    /**
+     * 格式化小数
+     */
     private static DecimalFormat df6 = new DecimalFormat("#.#####");
+
+    /**
+     * 页面控制器
+     */
     private static MenuScene Controller;
+    /**
+     * 页面控制器
+     */
     private static AdvanceScene advanceController;
+    /**
+     * 记录游戏是否结束
+     */
     private static boolean gameIsOver = false;
 
-    public static void setMainWindow(Stage mainWindow) {
-        Main.mainWindow = mainWindow;
-    }
-
+    /**
+     * 游戏进入主方法
+     *
+     * @param args arg游戏
+     */
     public static void main(String[] args) {
         launch(args);
     }
 
+    /**
+     * 游戏
+     *
+     * @param menuStage 游戏主窗口
+     * @throws Exception 异常
+     */
     @Override
     public void start(Stage menuStage) throws Exception {
 
@@ -128,13 +158,16 @@ public class Main extends Application {
         menuStage.setAlwaysOnTop(true);
 
         mainWindow = menuStage;
-        mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
+        Parent mainMenuLayout = FXMLLoader.load(getClass().getResource("resources/menuScene.fxml"));
         mainMenuScene = new Scene(mainMenuLayout, 1280, 800);
 
         menuStage.setScene(mainMenuScene);
         menuStage.show();
     }
 
+    /**
+     * 进入规则页面
+     */
     public static void toRuleView() {
         try {
             Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/basicRule.fxml"));
@@ -146,6 +179,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 进入NormalMode规则
+     */
     public static void toNormalRule(){
         try {
             Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/NormalMode.fxml"));
@@ -157,6 +193,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 进入AdvancdMode规则页面
+     */
     public static void toAdvanceRule(){
         try {
             Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/AdvanceMode.fxml"));
@@ -168,6 +207,9 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 进入AIRule规则页面
+     */
     public static void toAIRule() {
         try {
             Parent ruleLayout = FXMLLoader.load(Main.class.getResource("resources/AIMode.fxml"));
@@ -179,6 +221,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 进入NormalMode的方法
+     *
+     * @throws Exception 异常
+     */
     public static void startNormalMode() throws Exception {
         gameIsOver = false;
         WordList.PossibleWord = WordList.ReadWord("src/Data/possible_words.txt");
@@ -292,27 +339,23 @@ public class Main extends Application {
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
                                         //当鼠标进入按钮时添加阴影特效
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -331,14 +374,6 @@ public class Main extends Application {
                                                 throw new RuntimeException(e);
                                             }
                                         });
-//                                        win.setOnFinished(finish-> {
-//                                            try {
-//                                                Thread.sleep(3000);
-//                                                Controller.backToMenu();
-//                                            } catch (Exception e) {
-//                                                throw new RuntimeException(e);
-//                                            }
-//                                        });
 
                                     }
                                     if (line == 6 && !gameIsOver) {
@@ -380,27 +415,23 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -448,9 +479,7 @@ public class Main extends Application {
                                     AnchorPane.setTopAnchor(black.getNode(), 0.);
                                     AnchorPane.setLeftAnchor(black.getNode(), 0.);
                                     black.play();
-                                    black.setOnFinished(finish->{
-                                        pane.getChildren().remove(black.getNode());
-                                    });
+                                    black.setOnFinished(finish-> pane.getChildren().remove(black.getNode()));
 
                                     FadeTransition win = new FadeTransition();
                                     Text text = new Text("Not in Word List!!");
@@ -475,7 +504,7 @@ public class Main extends Application {
 
                             } catch (Exception e) {
                                 //throw new RuntimeException(e);
-                                System.out.println(e.toString());
+                                System.out.println(e);
                                 for (int i = 0; i < 5; i++) {
                                     testword.RemoveLetter();
                                 }
@@ -501,12 +530,16 @@ public class Main extends Application {
         mainWindow.show();
     }
 
+    /**
+     * 进入AdvanceMode的方法
+     *
+     * @throws Exception 异常
+     */
     public static void startAdvanceMode() throws Exception {
         gameIsOver = false;
         index = 0;
         line = 0;
         leftLine = 0;
-        rightLine = 0;
         Button button = new Button("测试");
         testword = new Word();
         pane = new AnchorPane();
@@ -780,27 +813,23 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -862,27 +891,23 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -927,9 +952,7 @@ public class Main extends Application {
                                     AnchorPane.setTopAnchor(black.getNode(), 0.);
                                     AnchorPane.setLeftAnchor(black.getNode(), 0.);
                                     black.play();
-                                    black.setOnFinished(finish->{
-                                        pane.getChildren().remove(black.getNode());
-                                    });
+                                    black.setOnFinished(finish-> pane.getChildren().remove(black.getNode()));
 
                                     FadeTransition win = new FadeTransition();
                                     Text text = new Text("Not in Word List!!");
@@ -971,12 +994,16 @@ public class Main extends Application {
         });
     }
 
+    /**
+     * 进入AIShow模式的方法
+     *
+     * @throws Exception 异常
+     */
     public static void startAIShowMode() throws Exception {
         gameIsOver = false;
         index = 0;
         line = 0;
         System.out.println("start aishow mode");
-        Button button = new Button("测试");
         AnchorPane pane = new AnchorPane();
 
         FXMLLoader loader = new FXMLLoader(Main.class.getResource("resources/aiShowScene.fxml"));
@@ -1063,7 +1090,7 @@ public class Main extends Application {
         tipString2.ft.play();
 
         aniStrings.add(new AniString("Possibilities:", Color.WHITE));
-        pane.getChildren().add(aniStrings.get(aniStrings.size() - 1).ft.getNode());
+        pane.getChildren().add(aniStrings.get(0).ft.getNode());
         AnchorPane.setLeftAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 150.0);
         AnchorPane.setTopAnchor(aniStrings.get(aniStrings.size() - 1).ft.getNode(), 125.0);
         aniStrings.get(aniStrings.size() - 1).ft.play();
@@ -1122,7 +1149,6 @@ public class Main extends Application {
         index = 0;
         line = 0;
         leftLine = 0;
-        rightLine = 0;
 
 
         pane.addEventFilter(KeyEvent.KEY_PRESSED, (KeyEvent keyEvent) -> {
@@ -1130,7 +1156,6 @@ public class Main extends Application {
 
             KeyCode kCode = keyEvent.getCode();
             System.out.println(kCode.getName());
-            char toAddLetter;
             try {
                 if (!gameIsOver) {
                     if (kCode == KeyCode.ENTER) {
@@ -1204,9 +1229,6 @@ public class Main extends Application {
                                     aniStrings.clear();
 
                                     GuessAlgorithm.getWordScore(WordList.LegalWord, WordList.PossibleWord);
-                                  /*  for(int i=0; i<5&&i<GuessAlgorithm.wsList.size(); i++){
-                                        System.out.println(GuessAlgorithm.wsList.get(i).word+" "+GuessAlgorithm.wsList.get(i).entropy + " " + GuessAlgorithm.wsList.get(i).possible + " " + GuessAlgorithm.wsList.get(i).score);
-                                    }*/
 
                                     for (int i = 0; i < 5; i++) {
                                         testword.RemoveLetter();
@@ -1253,13 +1275,13 @@ public class Main extends Application {
 
                                     System.out.println("chancesize" + infoChance.size());
 
-                                    for (int i = 0; i < infoChance.size(); i++) {
-                                        pane.getChildren().remove(infoChance.get(i).ft.getNode());
+                                    for (AniRectangular aniRectangular : infoChance) {
+                                        pane.getChildren().remove(aniRectangular.ft.getNode());
                                     }
 
                                     System.out.println("wordsize" + infoWord.size());
-                                    for (int i = 0; i < infoWord.size(); i++) {
-                                        pane.getChildren().remove(infoWord.get(i).ft.getNode());
+                                    for (AniString aniString : infoWord) {
+                                        pane.getChildren().remove(aniString.ft.getNode());
                                     }
 
                                     System.out.println("clear");
@@ -1339,27 +1361,23 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -1420,27 +1438,23 @@ public class Main extends Application {
                                         b.setLayoutY(50);
                                         b.setPrefWidth(200);
                                         b.setPrefHeight(50);
-                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         //当鼠标离开按钮时移除阴影效果
-                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                                            b.setStyle(
-                                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                                            + "-fx-font-size: 20"
-                                            );
-                                        });
+                                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                                        + "-fx-font-size: 20"
+                                        ));
                                         b.setStyle(
                                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -1484,9 +1498,7 @@ public class Main extends Application {
                                     AnchorPane.setTopAnchor(black.getNode(), 0.);
                                     AnchorPane.setLeftAnchor(black.getNode(), 0.);
                                     black.play();
-                                    black.setOnFinished(finish->{
-                                        pane.getChildren().remove(black.getNode());
-                                    });
+                                    black.setOnFinished(finish-> pane.getChildren().remove(black.getNode()));
 
                                     FadeTransition win = new FadeTransition();
                                     Text text = new Text("Not in Word List!!");
@@ -1529,7 +1541,10 @@ public class Main extends Application {
         });
     }
 
-    public static void backMainMenu() throws Exception {
+    /**
+     * 返回主菜单
+     */
+    public static void backMainMenu() {
         mainWindow.setScene(mainMenuScene);
         mainWindow.setTitle("WORDLE-EX");
         mainWindow.show();
@@ -1549,6 +1564,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入W
+     *
+     * @throws Exception 异常
+     */
     public static void inputW() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1563,6 +1583,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入E
+     *
+     * @throws Exception 异常
+     */
     public static void inputE() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1576,7 +1601,11 @@ public class Main extends Application {
             index += 1;
         }
     }
-
+    /**
+     * 输入R
+     *
+     * @throws Exception 异常
+     */
     public static void inputR() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1591,6 +1620,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入T
+     *
+     * @throws Exception 异常
+     */
     public static void inputT() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1608,6 +1642,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入Y
+     *
+     * @throws Exception 异常
+     */
     public static void inputY() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1622,6 +1661,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入U
+     *
+     * @throws Exception 异常
+     */
     public static void inputU() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1636,6 +1680,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入I
+     *
+     * @throws Exception 异常
+     */
     public static void inputI() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1650,6 +1699,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入O
+     *
+     * @throws Exception 异常
+     */
     public static void inputO() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1664,6 +1718,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入P
+     *
+     * @throws Exception 异常
+     */
     public static void inputP() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1678,6 +1737,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入A
+     *
+     * @throws Exception 异常
+     */
     public static void inputA() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1692,6 +1756,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入S
+     *
+     * @throws Exception 异常
+     */
     public static void inputS() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1706,6 +1775,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入D
+     *
+     * @throws Exception 异常
+     */
     public static void inputD() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1720,6 +1794,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入F
+     *
+     * @throws Exception 异常
+     */
     public static void inputF() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1734,6 +1813,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入G
+     *
+     * @throws Exception 异常
+     */
     public static void inputG() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1748,6 +1832,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入H
+     *
+     * @throws Exception 异常
+     */
     public static void inputH() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1762,6 +1851,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入J
+     *
+     * @throws Exception 异常
+     */
     public static void inputJ() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1776,6 +1870,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入K
+     *
+     * @throws Exception 异常
+     */
     public static void inputK() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1790,6 +1889,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入L
+     *
+     * @throws Exception 异常
+     */
     public static void inputL() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1804,6 +1908,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入Z
+     *
+     * @throws Exception 异常
+     */
     public static void inputZ() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1818,6 +1927,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入X
+     *
+     * @throws Exception 异常
+     */
     public static void inputX() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1832,6 +1946,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入C
+     *
+     * @throws Exception 异常
+     */
     public static void inputC() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1846,6 +1965,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入V
+     *
+     * @throws Exception 异常
+     */
     public static void inputV() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1860,6 +1984,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入B
+     *
+     * @throws Exception 异常
+     */
     public static void inputB() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1874,6 +2003,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入N
+     *
+     * @throws Exception 异常
+     */
     public static void inputN() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1888,6 +2022,11 @@ public class Main extends Application {
         }
     }
 
+    /**
+     * 输入M
+     *
+     * @throws Exception 异常
+     */
     public static void inputM() throws Exception {
         if (index < 5) {
             char toAddLetter;
@@ -1902,7 +2041,11 @@ public class Main extends Application {
         }
     }
 
-    public static void backSpace() throws Exception {
+    /**
+     * 输入退格
+
+     */
+    public static void backSpace() {
         if (index >= 1) {
             testword.RemoveLetter();
             pane.getChildren().remove(aniLetters[index - 1].ft.getNode());
@@ -1910,7 +2053,11 @@ public class Main extends Application {
         }
     }
 
-    public static void mainEnter() throws Exception {
+    /**
+     * normal模式回车输入
+
+     */
+    public static void mainEnter() {
         if (testword.letters.size() == 5) {
             try {
                 int status;
@@ -1975,27 +2122,23 @@ public class Main extends Application {
                         b.setPrefWidth(200);
                         b.setPrefHeight(50);
                         //当鼠标进入按钮时添加阴影特效
-                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         //当鼠标离开按钮时移除阴影效果
-                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         b.setStyle(
                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -2055,27 +2198,23 @@ public class Main extends Application {
                         b.setPrefWidth(200);
                         b.setPrefHeight(50);
                         //当鼠标进入按钮时添加阴影特效
-                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         //当鼠标离开按钮时移除阴影效果
-                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         b.setStyle(
                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -2120,9 +2259,7 @@ public class Main extends Application {
                     AnchorPane.setTopAnchor(black.getNode(), 0.);
                     AnchorPane.setLeftAnchor(black.getNode(), 0.);
                     black.play();
-                    black.setOnFinished(finish->{
-                        pane.getChildren().remove(black.getNode());
-                    });
+                    black.setOnFinished(finish-> pane.getChildren().remove(black.getNode()));
 
                     FadeTransition win = new FadeTransition();
                     Text text = new Text("Not in Word List!!");
@@ -2159,7 +2296,10 @@ public class Main extends Application {
         }
     }
 
-    public static void advanceEnter() throws Exception {
+    /**
+     * advance模式回车输入
+     */
+    public static void advanceEnter() {
         if (testword.letters.size() == 5) {
             try {
                 int status;
@@ -2313,27 +2453,23 @@ public class Main extends Application {
                         b.setPrefWidth(200);
                         b.setPrefHeight(50);
                         //当鼠标进入按钮时添加阴影特效
-                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         //当鼠标离开按钮时移除阴影效果
-                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         b.setStyle(
                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -2393,27 +2529,23 @@ public class Main extends Application {
                         b.setPrefWidth(200);
                         b.setPrefHeight(50);
                         //当鼠标进入按钮时添加阴影特效
-                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#a8a8a8;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_ENTERED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#a8a8a8;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         //当鼠标离开按钮时移除阴影效果
-                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> {
-                            b.setStyle(
-                                    "-fx-background-color:#7a7a7a;" +         //设置背景颜色
-                                            "-fx-background-radius:5;" +     //设置背景圆角
-                                            "-fx-text-fill:#ffffff;" +        //设置字体颜色
-                                            "-fx-border-radius:5;" +         //设置边框圆角
-                                            "-fx-border-color:#838383;"     //设置边框颜色
-                                            + "-fx-font-size: 20"
-                            );
-                        });
+                        b.addEventHandler(MouseEvent.MOUSE_EXITED, (MouseEvent e) -> b.setStyle(
+                                "-fx-background-color:#7a7a7a;" +         //设置背景颜色
+                                        "-fx-background-radius:5;" +     //设置背景圆角
+                                        "-fx-text-fill:#ffffff;" +        //设置字体颜色
+                                        "-fx-border-radius:5;" +         //设置边框圆角
+                                        "-fx-border-color:#838383;"     //设置边框颜色
+                                        + "-fx-font-size: 20"
+                        ));
                         b.setStyle(
                                 "-fx-background-color:#7a7a7a;" +         //设置背景颜色
                                         "-fx-background-radius:5;" +     //设置背景圆角
@@ -2456,9 +2588,7 @@ public class Main extends Application {
                     AnchorPane.setTopAnchor(black.getNode(), 0.);
                     AnchorPane.setLeftAnchor(black.getNode(), 0.);
                     black.play();
-                    black.setOnFinished(finish->{
-                        pane.getChildren().remove(black.getNode());
-                    });
+                    black.setOnFinished(finish-> pane.getChildren().remove(black.getNode()));
 
                     FadeTransition win = new FadeTransition();
                     Text text = new Text("Not in Word List!!");

@@ -2,6 +2,12 @@ import java.io.File;
 import java.io.PrintStream;
 import java.util.*;
 
+/**
+ * 猜词算法
+ *
+ * @author 宋益康
+ * @date 2022/06/16
+ */
 public class GuessAlgorithm {
 
     /**
@@ -267,8 +273,7 @@ public class GuessAlgorithm {
 /**
  * 状态的颜色
  *
- * @author 86153
- * @date 2022/06/11
+ * @author 宋益康
  */
 class StatusColor {
     LetterColor[] color;
@@ -310,8 +315,7 @@ public int compareTo(WordWithScore w){
 /**
  * 状态信息
  *
- * @author 86153
- * @date 2022/06/11
+ * @author 宋益康
  */
 class StatusInfo  implements Comparable<StatusInfo>{
     int times;

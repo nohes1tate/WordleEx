@@ -3,6 +3,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
+/**
+ * ¾ØĞÎ¶¯»­
+ *
+ * @author ÍõÌíÒİ
+ * @date 2022/06/16
+ */
 public class AniRectangular {
     Rectangle rectangle;
     FadeTransition ft = new FadeTransition();

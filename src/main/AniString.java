@@ -3,6 +3,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 
+/**
+ * ×Ö·û´®¶¯»­
+ *
+ * @author ÍõÌíÒİ
+ * @date 2022/06/16
+ */
 public class AniString {
     Text string;
     FadeTransition ft;

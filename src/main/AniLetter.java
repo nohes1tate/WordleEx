@@ -3,8 +3,20 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 import javafx.util.Duration;
 
+/**
+ * 字母动画
+ *
+ * @author 王添逸
+ * @date 2022/06/16
+ */
 public class AniLetter {
+    /**
+     * 文本
+     */
     Text text;
+    /**
+     * 渐变动画
+     */
     FadeTransition ft = new FadeTransition();
     AniLetter (String s){
         text = new Text(s);
