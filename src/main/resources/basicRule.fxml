@@ -17,13 +17,13 @@
         </image>
     </ImageView>
     <Button layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnBackButton" onMouseExited="#mouseLeaveBackButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
-    <ImageView fitHeight="91.0" fitWidth="140.0" layoutX="1154.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
+    <ImageView fx:id="rightArrow" fitHeight="91.0" fitWidth="140.0" layoutX="1154.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
         <image>
             <Image url="@arrowR.png" />
         </image>
     </ImageView>
     <Button layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnBackButton" onMouseExited="#mouseLeaveBackButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
-    <Button layoutX="1148.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#toNormalRule" onMouseEntered="#mouseOnButton" onMouseExited="#mouseLeaveButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
+    <Button layoutX="1148.0" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#toNormalRule" onMouseEntered="#mouseOnRightArrow" onMouseExited="#mouseLeaveRightArrow" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
    <Text fill="WHITE" layoutX="640.0" layoutY="780.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1/4">
       <font>
          <Font size="30.0" />

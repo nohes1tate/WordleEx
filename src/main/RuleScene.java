@@ -11,6 +11,12 @@ public class RuleScene {
     @FXML
     private ImageView backImg;
 
+    @FXML
+    private ImageView leftArrow;
+
+    @FXML
+    private ImageView rightArrow;
+
     public void backToMenu() throws Exception {
         GuessAlgorithm.isFirst= true;
         Parent normalLayout = FXMLLoader.load(Main.class.getResource("/resources/menuScene.fxml"));
@@ -46,10 +52,20 @@ public class RuleScene {
         backImg.setImage(new Image("arrow.png"));
     }
 
-    public void mouseOnButton() {
+    public void mouseOnLeftArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        leftArrow.setImage(new Image("arrowL1.png"));
     }
-    public void mouseLeaveButton() {
+    public void mouseLeaveLeftArrow() {
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        leftArrow.setImage(new Image("arrowL.png"));
+    }
+    public void mouseOnRightArrow() {
+        Main.getMainWindow().getScene().setCursor(Cursor.HAND);
+        rightArrow.setImage(new Image("arrowR1.png"));
+    }
+    public void mouseLeaveRightArrow() {
+        Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
+        rightArrow.setImage(new Image("arrowR.png"));
     }
 }
