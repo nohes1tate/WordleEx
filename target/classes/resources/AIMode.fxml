@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="RuleScene"
+            prefHeight="800.0" prefWidth="1280.0">
+    <ImageView fitHeight="800.0" fitWidth="1280.0">
+        <image>
+            <Image url="@AIRule.png" />
+        </image>
+    </ImageView>
+    <ImageView fx:id="backImg" fitHeight="71.0" fitWidth="81.0" layoutX="51.0" layoutY="41.0">
+        <image>
+            <Image url="@arrow.png" />
+        </image>
+    </ImageView>
+    <Button layoutX="40.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#backToMenu" onMouseEntered="#mouseOnBackButton" onMouseExited="#mouseLeaveBackButton" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
+    <ImageView fx:id="leftArrow" fitHeight="91.0" fitWidth="140.0" layoutX="50" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@arrowL.png" />
+        </image>
+    </ImageView>
+    <Button layoutX="50" layoutY="695.0" mnemonicParsing="false" onMouseClicked="#toAdvanceRule" onMouseEntered="#mouseOnLeftArrow" onMouseExited="#mouseLeaveLeftArrow" opacity="0.0" prefHeight="91.0" prefWidth="104.0" text="Button" />
+    <Text fill="WHITE" layoutX="640.0" layoutY="780.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4/4">
+        <font>
+            <Font size="30.0" />
+        </font>
+    </Text>
+</AnchorPane>
