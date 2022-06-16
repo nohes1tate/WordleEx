@@ -4,9 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="Wang's commit">
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+    <list default="true" id="28e52107-b900-4ce7-bff4-f740d1529555" name="Changes" comment="anime">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/arrow.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2022_6_9_1_29__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/advanceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/aiShowScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/aiShowScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/advanceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aiShowScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/aiShowScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/advanceScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/advanceScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/aiShowScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/aiShowScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/resources/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,28 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="extract.method.default.visibility" value="private" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/util" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\WordleEx\src\main\resources" />
       <recent name="D:\Season4\OO_Project\WordleEx\src\Data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="应用程序.Main">
     <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.wordleex.HelloApplication" />
       <module name="WordleEx" />
@@ -103,19 +118,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Application.HelloApplication" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="Application.naniTest" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.HelloApplication" />
+      <item itemvalue="应用程序.Test" />
+      <item itemvalue="应用程序.naniTest" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.naniTest" />
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.Test" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -145,6 +152,7 @@
       <workItem from="1654949457097" duration="13653000" />
       <workItem from="1654963642747" duration="26000" />
       <workItem from="1654963736948" duration="49000" />
+      <workItem from="1655341051449" duration="1808000" />
     </task>
     <task id="LOCAL-00001" summary="merge">
       <created>1654525263964</created>

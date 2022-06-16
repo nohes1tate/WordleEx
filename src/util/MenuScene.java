@@ -167,6 +167,13 @@ public class MenuScene {
         Main.backMainMenu();
     }
 
+    public void exit() throws Exception {
+        GuessAlgorithm.isFirst= true;
+        Parent normalLayout = FXMLLoader.load(Main.class.getResource("/resources/menuScene.fxml"));
+        Main.setMainMenuScene(new Scene(normalLayout));
+        Main.backMainMenu();
+    }
+
     public void changeButtonQColor() throws Exception{
         BackgroundFill background_fill = new BackgroundFill(Paint.valueOf("#808080"),new CornerRadii(1),new Insets(1));
         Background background = new Background(background_fill);
