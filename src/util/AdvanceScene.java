@@ -21,181 +21,181 @@ import javafx.scene.paint.Paint;
 public class AdvanceScene {
 
     /**
-     * img回来
+     * 返回按钮图像
      */
     @FXML
     private ImageView backImg;
 
     /**
-     * buttonq
+     * 屏幕键盘按钮Q
      */
     @FXML
     private Button ButtonQ;
 
     /**
-     * buttonw
+     * 屏幕键盘按钮W
      */
     @FXML
     private Button ButtonW;
 
     /**
-     * buttone
+     * 屏幕键盘按钮E
      */
     @FXML
     private Button ButtonE;
 
     /**
-     * buttonr
+     * 屏幕键盘按钮R
      */
     @FXML
     private Button ButtonR;
 
     /**
-     * buttont
+     * 屏幕键盘按钮T
      */
     @FXML
     private Button ButtonT;
 
     /**
-     * 钮扣状
+     * 屏幕键盘按钮Y
      */
     @FXML
     private Button ButtonY;
 
     /**
-     * buttonu
+     * 屏幕键盘按钮U
      */
     @FXML
     private Button ButtonU;
 
     /**
-     * buttoni
+     * 屏幕键盘按钮I
      */
     @FXML
     private Button ButtonI;
 
     /**
-     * buttono
+     * 屏幕键盘按钮O
      */
     @FXML
     private Button ButtonO;
 
     /**
-     * buttonp
+     * 屏幕键盘按钮P
      */
     @FXML
     private Button ButtonP;
 
     /**
-     * buttona
+     * 屏幕键盘按钮A
      */
     @FXML
     private Button ButtonA;
 
     /**
-     * 按钮
+     * 屏幕键盘按钮S
      */
     @FXML
     private Button ButtonS;
 
     /**
-     * buttond
+     * 屏幕键盘按钮D
      */
     @FXML
     private Button ButtonD;
 
     /**
-     * buttonf
+     * 屏幕键盘按钮F
      */
     @FXML
     private Button ButtonF;
 
     /**
-     * buttong
+     * 屏幕键盘按钮G
      */
     @FXML
     private Button ButtonG;
 
     /**
-     * buttonh
+     * 屏幕键盘按钮H
      */
     @FXML
     private Button ButtonH;
 
     /**
-     * buttonj
+     * 屏幕键盘按钮J
      */
     @FXML
     private Button ButtonJ;
 
     /**
-     * buttonk
+     * 屏幕键盘按钮K
      */
     @FXML
     private Button ButtonK;
 
     /**
-     * buttonl
+     * 屏幕键盘按钮L
      */
     @FXML
     private Button ButtonL;
 
     /**
-     * buttonz
+     * 屏幕键盘按钮Z
      */
     @FXML
     private Button ButtonZ;
 
     /**
-     * buttonx
+     * 屏幕键盘按钮X
      */
     @FXML
     private Button ButtonX;
 
     /**
-     * buttonc
+     * 屏幕键盘按钮C
      */
     @FXML
     private Button ButtonC;
 
     /**
-     * buttonv
+     * 屏幕键盘按钮V
      */
     @FXML
     private Button ButtonV;
 
     /**
-     * buttonb
+     * 屏幕键盘按钮B
      */
     @FXML
     private Button ButtonB;
 
     /**
-     * buttonn
+     * 屏幕键盘按钮N
      */
     @FXML
     private Button ButtonN;
 
     /**
-     * buttonm
+     * 屏幕键盘按钮M
      */
     @FXML
     private Button ButtonM;
 
     /**
-     * 按钮进入
+     * 屏幕键盘按钮Enter
      */
     @FXML
     private Button ButtonENTER;
 
     /**
-     * 按钮退格
+     * 屏幕键盘按钮Backspace
      */
     @FXML
     private Button ButtonBackspace;
 
     /**
-     * 鼠标在后退按钮
+     * 当鼠标在返回按钮上时改变鼠标指针且按钮变色
      */
     public void mouseOnBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -203,7 +203,7 @@ public class AdvanceScene {
     }
 
     /**
-     * 鼠标离开后退按钮
+     * 当鼠标离开按钮时改变鼠标指针且按钮变色
      */
     public void mouseLeaveBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
@@ -211,7 +211,7 @@ public class AdvanceScene {
     }
 
     /**
-     * 回到菜单
+     * 回到菜单页面
      *
      * @throws Exception 异常
      */
@@ -233,7 +233,7 @@ public class AdvanceScene {
     }
 
     /**
-     * 改变按钮颜色
+     * 处理改变按钮颜色
      *
      * @param key     关键
      * @param color   颜色
@@ -347,7 +347,7 @@ public class AdvanceScene {
     }
 
     /**
-     * 按钮颜色
+     * 改变某个按钮颜色
      *
      * @param color  颜色
      * @param button 按钮
@@ -376,7 +376,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputq
+     * 响应屏幕键盘按钮Q输入
      *
      * @throws Exception 异常
      */
@@ -385,7 +385,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputw
+     * 响应屏幕键盘按钮W输入
      *
      * @throws Exception 异常
      */
@@ -394,7 +394,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inpute
+     * 响应屏幕键盘按钮E输入
      *
      * @throws Exception 异常
      */
@@ -403,7 +403,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputr
+     * 响应屏幕键盘按钮R输入
      *
      * @throws Exception 异常
      */
@@ -412,7 +412,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputt
+     * 响应屏幕键盘按钮T输入
      *
      * @throws Exception 异常
      */
@@ -421,7 +421,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputy
+     * 响应屏幕键盘按钮Y输入
      *
      * @throws Exception 异常
      */
@@ -430,7 +430,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputu
+     * 响应屏幕键盘按钮U输入
      *
      * @throws Exception 异常
      */
@@ -439,7 +439,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputi
+     * 响应屏幕键盘按钮I输入
      *
      * @throws Exception 异常
      */
@@ -448,7 +448,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputo
+     * 响应屏幕键盘按钮O输入
      *
      * @throws Exception 异常
      */
@@ -457,7 +457,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputp
+     * 响应屏幕键盘按钮P输入
      *
      * @throws Exception 异常
      */
@@ -466,7 +466,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputa
+     * 响应屏幕键盘按钮A输入
      *
      * @throws Exception 异常
      */
@@ -475,7 +475,7 @@ public class AdvanceScene {
     }
 
     /**
-     * 输入
+     * 响应屏幕键盘按钮S输入
      *
      * @throws Exception 异常
      */
@@ -484,7 +484,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputd
+     * 响应屏幕键盘按钮D输入
      *
      * @throws Exception 异常
      */
@@ -493,7 +493,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputf
+     * 响应屏幕键盘按钮F输入
      *
      * @throws Exception 异常
      */
@@ -502,7 +502,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputg
+     * 响应屏幕键盘按钮G输入
      *
      * @throws Exception 异常
      */
@@ -511,7 +511,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputh
+     * 响应屏幕键盘按钮H输入
      *
      * @throws Exception 异常
      */
@@ -520,7 +520,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputj
+     * 响应屏幕键盘按钮J输入
      *
      * @throws Exception 异常
      */
@@ -529,7 +529,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputk
+     * 响应屏幕键盘按钮K输入
      *
      * @throws Exception 异常
      */
@@ -538,7 +538,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputl
+     * 响应屏幕键盘按钮L输入
      *
      * @throws Exception 异常
      */
@@ -547,7 +547,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputz
+     * 响应屏幕键盘按钮Z输入
      *
      * @throws Exception 异常
      */
@@ -556,7 +556,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputx
+     * 响应屏幕键盘按钮X输入
      *
      * @throws Exception 异常
      */
@@ -565,7 +565,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputc
+     * 响应屏幕键盘按钮C输入
      *
      * @throws Exception 异常
      */
@@ -574,7 +574,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputv
+     * 响应屏幕键盘按钮V输入
      *
      * @throws Exception 异常
      */
@@ -583,7 +583,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputb
+     * 响应屏幕键盘按钮B输入
      *
      * @throws Exception 异常
      */
@@ -592,7 +592,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputn
+     * 响应屏幕键盘按钮N输入
      *
      * @throws Exception 异常
      */
@@ -601,7 +601,7 @@ public class AdvanceScene {
     }
 
     /**
-     * inputm
+     * 响应屏幕键盘按钮M输入
      *
      * @throws Exception 异常
      */
@@ -610,14 +610,14 @@ public class AdvanceScene {
     }
 
     /**
-     * 退格
+     * 处理退格
      */
     public void backSpace() {
         Main.backSpace();
     }
 
     /**
-     * 提前进入
+     * 进入AdvanceMode
      */
     public void advanceEnter() {
         Main.advanceEnter();
