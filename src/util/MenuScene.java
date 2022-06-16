@@ -16,213 +16,210 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 
 /**
- * 菜单场景
- *
- * @author 86153
- * @date 2022/06/16
+ * 场景控件方法。
  */
 public class MenuScene {
 
     /**
-     * img回来
+     * 返回图标
      */
     @FXML
     private ImageView backImg;
 
     /**
-     * buttonq
+     * 屏幕键盘按钮Q
      */
     @FXML
     private Button ButtonQ;
 
     /**
-     * buttonw
+     * 屏幕键盘按钮W
      */
     @FXML
     private Button ButtonW;
 
     /**
-     * buttone
+     * 屏幕键盘按钮E
      */
     @FXML
     private Button ButtonE;
 
     /**
-     * buttonr
+     * 屏幕键盘按钮R
      */
     @FXML
     private Button ButtonR;
 
     /**
-     * buttont
+     * 屏幕键盘按钮T
      */
     @FXML
     private Button ButtonT;
 
     /**
-     * 钮扣状
+     * 屏幕键盘按钮Y
      */
     @FXML
     private Button ButtonY;
 
     /**
-     * buttonu
+     * 屏幕键盘按钮U
      */
     @FXML
     private Button ButtonU;
 
     /**
-     * buttoni
+     * 屏幕键盘按钮I
      */
     @FXML
     private Button ButtonI;
 
     /**
-     * buttono
+     * 屏幕键盘按钮O
      */
     @FXML
     private Button ButtonO;
 
     /**
-     * buttonp
+     * 屏幕键盘按钮P
      */
     @FXML
     private Button ButtonP;
 
     /**
-     * buttona
+     * 屏幕键盘按钮IA
      */
     @FXML
     private Button ButtonA;
 
     /**
-     * 按钮
+     * 屏幕键盘按钮S
      */
     @FXML
     private Button ButtonS;
 
     /**
-     * buttond
+     * 屏幕键盘按钮D
      */
     @FXML
     private Button ButtonD;
 
     /**
-     * buttonf
+     * 屏幕键盘按钮F
      */
     @FXML
     private Button ButtonF;
 
     /**
-     * buttong
+     * 屏幕键盘按钮G
      */
     @FXML
     private Button ButtonG;
 
     /**
-     * buttonh
+     * 屏幕键盘按钮H
      */
     @FXML
     private Button ButtonH;
 
     /**
-     * buttonj
+     * 屏幕键盘按钮J
      */
     @FXML
     private Button ButtonJ;
 
     /**
-     * buttonk
+     * 屏幕键盘按钮K
      */
     @FXML
     private Button ButtonK;
 
     /**
-     * buttonl
+     * 屏幕键盘按钮L
      */
     @FXML
     private Button ButtonL;
 
     /**
-     * buttonz
+     * 屏幕键盘按钮Z
      */
     @FXML
     private Button ButtonZ;
 
     /**
-     * buttonx
+     * 屏幕键盘按钮X
      */
     @FXML
     private Button ButtonX;
 
     /**
-     * buttonc
+     * 屏幕键盘按钮C
      */
     @FXML
     private Button ButtonC;
 
     /**
-     * buttonv
+     * 屏幕键盘按钮V
      */
     @FXML
     private Button ButtonV;
 
     /**
-     * buttonb
+     * 屏幕键盘按钮B
      */
     @FXML
     private Button ButtonB;
 
     /**
-     * buttonn
+     * 屏幕键盘按钮N
      */
     @FXML
     private Button ButtonN;
 
     /**
-     * buttonm
+     * 屏幕键盘按钮M
      */
     @FXML
     private Button ButtonM;
 
     /**
-     * 按钮进入
+     * 屏幕键盘回车按钮
      */
     @FXML
     private Button ButtonENTER;
 
     /**
-     * 按钮退格
+     * 屏幕键盘退格按钮
      */
     @FXML
     private Button ButtonBackspace;
 
     /**
-     * 正常模式
+     * 正常模式文本
      */
     @FXML
     private Text normalMode;
 
     /**
-     * 推进模式
+     * 进阶模式文本
      */
     @FXML
     private Text advanceMode;
 
     /**
-     * aishow
+     * AI演示文本
      */
     @FXML
     private Text AIShow;
 
     /**
-     * 辞职
+     * 退出文本
      */
     @FXML
     private Text quit;
 
     /**
-     * 帮助img
+     * 帮助图标
      */
     @FXML
     private ImageView helpImg;
@@ -234,8 +231,7 @@ public class MenuScene {
     private Button helpButton;
 
     /**
-     * 鼠标正常按钮
-     * 当鼠标进入按钮区域改变鼠标样式的方法。
+     * 鼠标在正常模式按钮上文本变更的方法。
      */
     public void mouseOnNormalButton(){
        // Main.getMainMenuScene().setCursor(Cursor.HAND);
@@ -245,8 +241,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开正常按钮
-     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     * 鼠标离开正常模式按钮文本变更的方法。
      */
     public void mouseLeaveNormalButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
@@ -256,7 +251,7 @@ public class MenuScene {
       }
 
     /**
-     * 老鼠前进按钮上
+     * 鼠标在进阶模式按钮上文本变更的方法。
      */
     public void mouseOnAdvanceButton(){
         // Main.getMainMenuScene().setCursor(Cursor.HAND);
@@ -266,8 +261,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开前进按钮
-     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     * 鼠标离开进阶模式按钮文本变更的方法。
      */
     public void mouseLeaveAdvanceButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
@@ -277,7 +271,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标在aibutton
+     * 鼠标在AI演示模式按钮上文本变更的方法。
      */
     public void mouseOnAIButton(){
         // Main.getMainMenuScene().setCursor(Cursor.HAND);
@@ -287,8 +281,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开aibutton
-     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     * 鼠标离开AI演示模式按钮文本变更的方法。
      */
     public void mouseLeaveAIButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
@@ -298,7 +291,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标退出按钮
+     * 鼠标在退出按钮上文本变更的方法。
      */
     public void mouseOnQuitButton(){
         // Main.getMainMenuScene().setCursor(Cursor.HAND);
@@ -308,8 +301,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开退出按钮
-     * 当鼠标离开按钮区域改变鼠标样式的方法。
+     * 鼠标离开退出按钮文本变更的方法。
      */
     public void mouseLeaveQuitButton(){
         // Main.getMainMenuScene().setCursor(Cursor.DEFAULT);
@@ -319,7 +311,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标在后退按钮
+     * 鼠标在返回按钮图片变化的方法。
      */
     public void mouseOnBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -327,7 +319,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开后退按钮
+     * 鼠标离开返回按钮图片变化的方法。
      */
     public void mouseLeaveBackButton(){
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
@@ -335,7 +327,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标在帮助img
+     * 鼠标在帮助图标上图片变化的方法。
      */
     public void mouseOnHelpImg(){
         Main.getMainWindow().getScene().setCursor(Cursor.HAND);
@@ -343,7 +335,7 @@ public class MenuScene {
     }
 
     /**
-     * 鼠标离开帮助img
+     * 鼠标离开帮助图标图片变化的方法。
      */
     public void mouseLeaveHelpImg(){
         Main.getMainWindow().getScene().setCursor(Cursor.DEFAULT);
@@ -351,7 +343,6 @@ public class MenuScene {
     }
 
     /**
-     * 开始正常按钮
      * 开始普通模式的方法。
      *
      * @throws Exception 异常
@@ -363,7 +354,7 @@ public class MenuScene {
     }
 
     /**
-     * 统治
+     * 进入规则说明的方法。
      *
      * @throws Exception 异常
      */
@@ -374,8 +365,7 @@ public class MenuScene {
     }
 
     /**
-     * 开始前进按钮
-     * 开始进阶模式的方法。
+     * 进入进阶模式的方法。
      *
      * @throws Exception 异常
      */
@@ -386,7 +376,7 @@ public class MenuScene {
     }
 
     /**
-     * 开始aishow按钮
+     * 进入AI演示模式的方法
      *
      * @throws Exception 异常
      */
@@ -397,14 +387,14 @@ public class MenuScene {
     }
 
     /**
-     * 退出按钮
+     * 系统退出方法。
      */
     public void quitButton() {
         System.exit(0);
     }
 
     /**
-     * 回到菜单
+     * 回到主界面的方法。
      *
      * @throws Exception 异常
      */
@@ -416,9 +406,9 @@ public class MenuScene {
     }
 
     /**
-     * 改变按钮颜色
+     * 改变按钮颜色的方法。
      *
-     * @param key   关键
+     * @param key   按钮键值
      * @param color 颜色
      */
     public void changeButtonColor(char key,int color) {
@@ -426,7 +416,7 @@ public class MenuScene {
     }
 
     /**
-     * inputq
+     * 屏幕键盘输入Q
      *
      * @throws Exception 异常
      */
@@ -435,7 +425,7 @@ public class MenuScene {
     }
 
     /**
-     * inputw
+     * 屏幕键盘输入W
      *
      * @throws Exception 异常
      */
@@ -444,7 +434,7 @@ public class MenuScene {
     }
 
     /**
-     * inpute
+     * 屏幕键盘输入E
      *
      * @throws Exception 异常
      */
@@ -453,7 +443,7 @@ public class MenuScene {
     }
 
     /**
-     * inputr
+     * 屏幕键盘输入R
      *
      * @throws Exception 异常
      */
@@ -462,7 +452,7 @@ public class MenuScene {
     }
 
     /**
-     * inputt
+     * 屏幕键盘输入T
      *
      * @throws Exception 异常
      */
@@ -471,7 +461,7 @@ public class MenuScene {
     }
 
     /**
-     * inputy
+     * 屏幕键盘输入Y
      *
      * @throws Exception 异常
      */
@@ -480,7 +470,7 @@ public class MenuScene {
     }
 
     /**
-     * inputu
+     * 屏幕键盘输入U
      *
      * @throws Exception 异常
      */
@@ -489,7 +479,7 @@ public class MenuScene {
     }
 
     /**
-     * inputi
+     * 屏幕键盘输入I
      *
      * @throws Exception 异常
      */
@@ -498,7 +488,7 @@ public class MenuScene {
     }
 
     /**
-     * inputo
+     * 屏幕键盘输入O
      *
      * @throws Exception 异常
      */
@@ -507,7 +497,7 @@ public class MenuScene {
     }
 
     /**
-     * inputp
+     * 屏幕键盘输入P
      *
      * @throws Exception 异常
      */
@@ -516,7 +506,7 @@ public class MenuScene {
     }
 
     /**
-     * inputa
+     * 屏幕键盘输入A
      *
      * @throws Exception 异常
      */
@@ -525,7 +515,7 @@ public class MenuScene {
     }
 
     /**
-     * 输入
+     * 屏幕键盘输入S
      *
      * @throws Exception 异常
      */
@@ -534,7 +524,7 @@ public class MenuScene {
     }
 
     /**
-     * inputd
+     * 屏幕键盘输入D
      *
      * @throws Exception 异常
      */
@@ -543,7 +533,7 @@ public class MenuScene {
     }
 
     /**
-     * inputf
+     * 屏幕键盘输入F
      *
      * @throws Exception 异常
      */
@@ -552,7 +542,7 @@ public class MenuScene {
     }
 
     /**
-     * inputg
+     * 屏幕键盘输入G
      *
      * @throws Exception 异常
      */
@@ -561,7 +551,7 @@ public class MenuScene {
     }
 
     /**
-     * inputh
+     * 屏幕键盘输入H
      *
      * @throws Exception 异常
      */
@@ -570,7 +560,7 @@ public class MenuScene {
     }
 
     /**
-     * inputj
+     * 屏幕键盘输入J
      *
      * @throws Exception 异常
      */
@@ -579,7 +569,7 @@ public class MenuScene {
     }
 
     /**
-     * inputk
+     * 屏幕键盘输入K
      *
      * @throws Exception 异常
      */
@@ -588,7 +578,7 @@ public class MenuScene {
     }
 
     /**
-     * inputl
+     * 屏幕键盘输入L
      *
      * @throws Exception 异常
      */
@@ -597,7 +587,7 @@ public class MenuScene {
     }
 
     /**
-     * inputz
+     * 屏幕键盘输入Z
      *
      * @throws Exception 异常
      */
@@ -606,7 +596,7 @@ public class MenuScene {
     }
 
     /**
-     * inputx
+     * 屏幕键盘输入X
      *
      * @throws Exception 异常
      */
@@ -615,7 +605,7 @@ public class MenuScene {
     }
 
     /**
-     * inputc
+     * 屏幕键盘输入C
      *
      * @throws Exception 异常
      */
@@ -624,7 +614,7 @@ public class MenuScene {
     }
 
     /**
-     * inputv
+     * 屏幕键盘输入V
      *
      * @throws Exception 异常
      */
@@ -633,7 +623,7 @@ public class MenuScene {
     }
 
     /**
-     * inputb
+     * 屏幕键盘输入B
      *
      * @throws Exception 异常
      */
@@ -642,7 +632,7 @@ public class MenuScene {
     }
 
     /**
-     * inputn
+     * 屏幕键盘输入N
      *
      * @throws Exception 异常
      */
@@ -651,7 +641,7 @@ public class MenuScene {
     }
 
     /**
-     * inputm
+     * 屏幕键盘输入M
      *
      * @throws Exception 异常
      */
@@ -660,14 +650,14 @@ public class MenuScene {
     }
 
     /**
-     * 退格
+     * 屏幕键盘输入退格
      */
     public void backSpace() {
         Main.backSpace();
     }
 
     /**
-     * 主要输入
+     * 屏幕键盘输入回车
      */
     public void mainEnter() {
         Main.mainEnter();
